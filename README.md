@@ -7,5 +7,11 @@ To control my air-con by phone and via network/bluetooth
 - [ ] Web page and WIFi driver
 - [ ] PCB design
 
+# Tool Chain
+- Embedded: arm-gcc + ozone + jlink 
+- App: MIT App Inventor
+- Web: Spring Boot
+- PCB: KiCAD
+
 # Contact
 Jiekai: zjkisgood@126.com
