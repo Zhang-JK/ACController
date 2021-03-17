@@ -32,7 +32,8 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#define RXBUFFERSIZE 256
+#include <stdio.h>
+int _write(int fd, char *ptr, int len);
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -60,10 +61,24 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin);
 /* Private defines -----------------------------------------------------------*/
 #define LED_ON_BOARD_Pin GPIO_PIN_13
 #define LED_ON_BOARD_GPIO_Port GPIOC
+#define LED0_Pin GPIO_PIN_3
+#define LED0_GPIO_Port GPIOA
+#define LED1_Pin GPIO_PIN_4
+#define LED1_GPIO_Port GPIOA
+#define LED2_Pin GPIO_PIN_5
+#define LED2_GPIO_Port GPIOA
+#define TEMP_PIN_Pin GPIO_PIN_6
+#define TEMP_PIN_GPIO_Port GPIOA
 #define MAIN_SWITCH_Pin GPIO_PIN_0
 #define MAIN_SWITCH_GPIO_Port GPIOB
+#define REMOTE_SWITCH_Pin GPIO_PIN_1
+#define REMOTE_SWITCH_GPIO_Port GPIOB
+#define ON_SWITCH_Pin GPIO_PIN_10
+#define ON_SWITCH_GPIO_Port GPIOB
+#define OFF_SWITCH_Pin GPIO_PIN_11
+#define OFF_SWITCH_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
-
+#define RXBUFFERSIZE 512
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

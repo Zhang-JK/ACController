@@ -1,11 +1,12 @@
 [
  {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
   "arguments": [
    "arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m3",
    "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
    "-DUSE_HAL_DRIVER",
    "-DSTM32F103xB",
    "-IInc",
@@ -30,12 +31,13 @@
   "file": "Src/main.c"
  },
  {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
   "arguments": [
    "arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m3",
    "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
    "-DUSE_HAL_DRIVER",
    "-DSTM32F103xB",
    "-IInc",
@@ -60,12 +62,13 @@
   "file": "Src/gpio.c"
  },
  {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
   "arguments": [
    "arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m3",
    "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
    "-DUSE_HAL_DRIVER",
    "-DSTM32F103xB",
    "-IInc",
@@ -90,12 +93,13 @@
   "file": "Src/stm32f1xx_it.c"
  },
  {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
   "arguments": [
    "arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m3",
    "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
    "-DUSE_HAL_DRIVER",
    "-DSTM32F103xB",
    "-IInc",
@@ -120,12 +124,13 @@
   "file": "Src/stm32f1xx_hal_msp.c"
  },
  {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
   "arguments": [
    "arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m3",
    "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
    "-DUSE_HAL_DRIVER",
    "-DSTM32F103xB",
    "-IInc",
@@ -150,12 +155,13 @@
   "file": "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c"
  },
  {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
   "arguments": [
    "arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m3",
    "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
    "-DUSE_HAL_DRIVER",
    "-DSTM32F103xB",
    "-IInc",
@@ -180,12 +186,13 @@
   "file": "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c"
  },
  {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
   "arguments": [
    "arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m3",
    "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
    "-DUSE_HAL_DRIVER",
    "-DSTM32F103xB",
    "-IInc",
@@ -210,12 +217,13 @@
   "file": "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c"
  },
  {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
   "arguments": [
    "arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m3",
    "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
    "-DUSE_HAL_DRIVER",
    "-DSTM32F103xB",
    "-IInc",
@@ -240,12 +248,13 @@
   "file": "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c"
  },
  {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
   "arguments": [
    "arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m3",
    "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
    "-DUSE_HAL_DRIVER",
    "-DSTM32F103xB",
    "-IInc",
@@ -270,12 +279,13 @@
   "file": "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c"
  },
  {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
   "arguments": [
    "arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m3",
    "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
    "-DUSE_HAL_DRIVER",
    "-DSTM32F103xB",
    "-IInc",
@@ -300,12 +310,13 @@
   "file": "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c"
  },
  {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
   "arguments": [
    "arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m3",
    "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
    "-DUSE_HAL_DRIVER",
    "-DSTM32F103xB",
    "-IInc",
@@ -330,12 +341,13 @@
   "file": "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c"
  },
  {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
   "arguments": [
    "arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m3",
    "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
    "-DUSE_HAL_DRIVER",
    "-DSTM32F103xB",
    "-IInc",
@@ -360,12 +372,13 @@
   "file": "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c"
  },
  {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
   "arguments": [
    "arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m3",
    "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
    "-DUSE_HAL_DRIVER",
    "-DSTM32F103xB",
    "-IInc",
@@ -390,12 +403,13 @@
   "file": "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c"
  },
  {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
   "arguments": [
    "arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m3",
    "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
    "-DUSE_HAL_DRIVER",
    "-DSTM32F103xB",
    "-IInc",
@@ -420,12 +434,13 @@
   "file": "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c"
  },
  {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
   "arguments": [
    "arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m3",
    "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
    "-DUSE_HAL_DRIVER",
    "-DSTM32F103xB",
    "-IInc",
@@ -450,12 +465,13 @@
   "file": "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c"
  },
  {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
   "arguments": [
    "arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m3",
    "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
    "-DUSE_HAL_DRIVER",
    "-DSTM32F103xB",
    "-IInc",
@@ -480,12 +496,13 @@
   "file": "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c"
  },
  {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
   "arguments": [
    "arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m3",
    "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
    "-DUSE_HAL_DRIVER",
    "-DSTM32F103xB",
    "-IInc",
@@ -510,12 +527,13 @@
   "file": "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c"
  },
  {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
   "arguments": [
    "arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m3",
    "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
    "-DUSE_HAL_DRIVER",
    "-DSTM32F103xB",
    "-IInc",
@@ -540,43 +558,13 @@
   "file": "Src/system_stm32f1xx.c"
  },
  {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
-  "arguments": [
-   "arm-none-eabi-gcc",
-   "-x",
-   "assembler-with-cpp",
-   "-c",
-   "-mcpu=cortex-m3",
-   "-mthumb",
-   "-DUSE_HAL_DRIVER",
-   "-DSTM32F103xB",
-   "-IInc",
-   "-IDrivers/STM32F1xx_HAL_Driver/Inc",
-   "-IDrivers/STM32F1xx_HAL_Driver/Inc/Legacy",
-   "-IDrivers/CMSIS/Device/ST/STM32F1xx/Include",
-   "-IDrivers/CMSIS/Include",
-   "-Og",
-   "-Wall",
-   "-fdata-sections",
-   "-ffunction-sections",
-   "-g",
-   "-gdwarf-2",
-   "-MMD",
-   "-MP",
-   "-MFbuild/startup_stm32f103xb.d",
-   "startup_stm32f103xb.s",
-   "-o",
-   "build/startup_stm32f103xb.o"
-  ],
-  "file": "startup_stm32f103xb.s"
- },
- {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
   "arguments": [
    "arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m3",
    "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
    "-DUSE_HAL_DRIVER",
    "-DSTM32F103xB",
    "-IInc",
@@ -601,12 +589,44 @@
   "file": "Src/usart.c"
  },
  {
-  "directory": "/home/lao_jk/Code/ACController/ACControl",
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
   "arguments": [
    "arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m3",
    "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
+   "-DUSE_HAL_DRIVER",
+   "-DSTM32F103xB",
+   "-IInc",
+   "-IDrivers/STM32F1xx_HAL_Driver/Inc",
+   "-IDrivers/STM32F1xx_HAL_Driver/Inc/Legacy",
+   "-IDrivers/CMSIS/Device/ST/STM32F1xx/Include",
+   "-IDrivers/CMSIS/Include",
+   "-Og",
+   "-Wall",
+   "-fdata-sections",
+   "-ffunction-sections",
+   "-g",
+   "-gdwarf-2",
+   "-MMD",
+   "-MP",
+   "-MFbuild/ds18b20.d",
+   "-Wa,-a,-ad,-alms=build/ds18b20.lst",
+   "Src/ds18b20.c",
+   "-o",
+   "build/ds18b20.o"
+  ],
+  "file": "Src/ds18b20.c"
+ },
+ {
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-c",
+   "-mcpu=cortex-m3",
+   "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
    "-DUSE_HAL_DRIVER",
    "-DSTM32F103xB",
    "-IInc",
@@ -629,5 +649,285 @@
    "build/stm32f1xx_hal_uart.o"
   ],
   "file": "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c"
+ },
+ {
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-c",
+   "-mcpu=cortex-m3",
+   "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
+   "-DUSE_HAL_DRIVER",
+   "-DSTM32F103xB",
+   "-IInc",
+   "-IDrivers/STM32F1xx_HAL_Driver/Inc",
+   "-IDrivers/STM32F1xx_HAL_Driver/Inc/Legacy",
+   "-IDrivers/CMSIS/Device/ST/STM32F1xx/Include",
+   "-IDrivers/CMSIS/Include",
+   "-Og",
+   "-Wall",
+   "-fdata-sections",
+   "-ffunction-sections",
+   "-g",
+   "-gdwarf-2",
+   "-MMD",
+   "-MP",
+   "-MFbuild/tim.d",
+   "-Wa,-a,-ad,-alms=build/tim.lst",
+   "Src/tim.c",
+   "-o",
+   "build/tim.o"
+  ],
+  "file": "Src/tim.c"
+ },
+ {
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-x",
+   "assembler-with-cpp",
+   "-c",
+   "-mcpu=cortex-m3",
+   "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
+   "-DUSE_HAL_DRIVER",
+   "-DSTM32F103xB",
+   "-IInc",
+   "-IDrivers/STM32F1xx_HAL_Driver/Inc",
+   "-IDrivers/STM32F1xx_HAL_Driver/Inc/Legacy",
+   "-IDrivers/CMSIS/Device/ST/STM32F1xx/Include",
+   "-IDrivers/CMSIS/Include",
+   "-Og",
+   "-Wall",
+   "-fdata-sections",
+   "-ffunction-sections",
+   "-g",
+   "-gdwarf-2",
+   "-MMD",
+   "-MP",
+   "-MFbuild/startup_stm32f103xb.d",
+   "startup_stm32f103xb.s",
+   "-o",
+   "build/startup_stm32f103xb.o"
+  ],
+  "file": "startup_stm32f103xb.s"
+ },
+ {
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-c",
+   "-mcpu=cortex-m3",
+   "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
+   "-DUSE_HAL_DRIVER",
+   "-DSTM32F103xB",
+   "-IInc",
+   "-IDrivers/STM32F1xx_HAL_Driver/Inc",
+   "-IDrivers/STM32F1xx_HAL_Driver/Inc/Legacy",
+   "-IDrivers/CMSIS/Device/ST/STM32F1xx/Include",
+   "-IDrivers/CMSIS/Include",
+   "-Og",
+   "-Wall",
+   "-fdata-sections",
+   "-ffunction-sections",
+   "-g",
+   "-gdwarf-2",
+   "-MMD",
+   "-MP",
+   "-MFbuild/us_delay.d",
+   "-Wa,-a,-ad,-alms=build/us_delay.lst",
+   "Src/us_delay.c",
+   "-o",
+   "build/us_delay.o"
+  ],
+  "file": "Src/us_delay.c"
+ },
+ {
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-c",
+   "-mcpu=cortex-m3",
+   "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
+   "-DUSE_HAL_DRIVER",
+   "-DSTM32F103xB",
+   "-IInc",
+   "-IDrivers/STM32F1xx_HAL_Driver/Inc",
+   "-IDrivers/STM32F1xx_HAL_Driver/Inc/Legacy",
+   "-IDrivers/CMSIS/Device/ST/STM32F1xx/Include",
+   "-IDrivers/CMSIS/Include",
+   "-Og",
+   "-Wall",
+   "-fdata-sections",
+   "-ffunction-sections",
+   "-g",
+   "-gdwarf-2",
+   "-MMD",
+   "-MP",
+   "-MFbuild/adc.d",
+   "-Wa,-a,-ad,-alms=build/adc.lst",
+   "Src/adc.c",
+   "-o",
+   "build/adc.o"
+  ],
+  "file": "Src/adc.c"
+ },
+ {
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-c",
+   "-mcpu=cortex-m3",
+   "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
+   "-DUSE_HAL_DRIVER",
+   "-DSTM32F103xB",
+   "-IInc",
+   "-IDrivers/STM32F1xx_HAL_Driver/Inc",
+   "-IDrivers/STM32F1xx_HAL_Driver/Inc/Legacy",
+   "-IDrivers/CMSIS/Device/ST/STM32F1xx/Include",
+   "-IDrivers/CMSIS/Include",
+   "-Og",
+   "-Wall",
+   "-fdata-sections",
+   "-ffunction-sections",
+   "-g",
+   "-gdwarf-2",
+   "-MMD",
+   "-MP",
+   "-MFbuild/stm32f1xx_hal_adc.d",
+   "-Wa,-a,-ad,-alms=build/stm32f1xx_hal_adc.lst",
+   "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c",
+   "-o",
+   "build/stm32f1xx_hal_adc.o"
+  ],
+  "file": "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c"
+ },
+ {
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-c",
+   "-mcpu=cortex-m3",
+   "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
+   "-DUSE_HAL_DRIVER",
+   "-DSTM32F103xB",
+   "-IInc",
+   "-IDrivers/STM32F1xx_HAL_Driver/Inc",
+   "-IDrivers/STM32F1xx_HAL_Driver/Inc/Legacy",
+   "-IDrivers/CMSIS/Device/ST/STM32F1xx/Include",
+   "-IDrivers/CMSIS/Include",
+   "-Og",
+   "-Wall",
+   "-fdata-sections",
+   "-ffunction-sections",
+   "-g",
+   "-gdwarf-2",
+   "-MMD",
+   "-MP",
+   "-MFbuild/stm32f1xx_hal_adc_ex.d",
+   "-Wa,-a,-ad,-alms=build/stm32f1xx_hal_adc_ex.lst",
+   "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c",
+   "-o",
+   "build/stm32f1xx_hal_adc_ex.o"
+  ],
+  "file": "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c"
+ },
+ {
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-c",
+   "-mcpu=cortex-m3",
+   "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
+   "-DUSE_HAL_DRIVER",
+   "-DSTM32F103xB",
+   "-IInc",
+   "-IDrivers/STM32F1xx_HAL_Driver/Inc",
+   "-IDrivers/STM32F1xx_HAL_Driver/Inc/Legacy",
+   "-IDrivers/CMSIS/Device/ST/STM32F1xx/Include",
+   "-IDrivers/CMSIS/Include",
+   "-Og",
+   "-Wall",
+   "-fdata-sections",
+   "-ffunction-sections",
+   "-g",
+   "-gdwarf-2",
+   "-MMD",
+   "-MP",
+   "-MFbuild/dma.d",
+   "-Wa,-a,-ad,-alms=build/dma.lst",
+   "Src/dma.c",
+   "-o",
+   "build/dma.o"
+  ],
+  "file": "Src/dma.c"
+ },
+ {
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-c",
+   "-mcpu=cortex-m3",
+   "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
+   "-DUSE_HAL_DRIVER",
+   "-DSTM32F103xB",
+   "-IInc",
+   "-IDrivers/STM32F1xx_HAL_Driver/Inc",
+   "-IDrivers/STM32F1xx_HAL_Driver/Inc/Legacy",
+   "-IDrivers/CMSIS/Device/ST/STM32F1xx/Include",
+   "-IDrivers/CMSIS/Include",
+   "-Og",
+   "-Wall",
+   "-fdata-sections",
+   "-ffunction-sections",
+   "-g",
+   "-gdwarf-2",
+   "-MMD",
+   "-MP",
+   "-MFbuild/core.d",
+   "-Wa,-a,-ad,-alms=build/core.lst",
+   "Src/core.c",
+   "-o",
+   "build/core.o"
+  ],
+  "file": "Src/core.c"
+ },
+ {
+  "directory": "/home/lao_jk/Code/ACController/STM32/ACControl",
+  "arguments": [
+   "arm-none-eabi-gcc",
+   "-c",
+   "-mcpu=cortex-m3",
+   "-mthumb",
+   "-DUSE_HAL_TIM_REGISTER_CALLBACKS=1",
+   "-DUSE_HAL_DRIVER",
+   "-DSTM32F103xB",
+   "-IInc",
+   "-IDrivers/STM32F1xx_HAL_Driver/Inc",
+   "-IDrivers/STM32F1xx_HAL_Driver/Inc/Legacy",
+   "-IDrivers/CMSIS/Device/ST/STM32F1xx/Include",
+   "-IDrivers/CMSIS/Include",
+   "-Og",
+   "-Wall",
+   "-fdata-sections",
+   "-ffunction-sections",
+   "-g",
+   "-gdwarf-2",
+   "-MMD",
+   "-MP",
+   "-MFbuild/timer.d",
+   "-Wa,-a,-ad,-alms=build/timer.lst",
+   "Src/timer.c",
+   "-o",
+   "build/timer.o"
+  ],
+  "file": "Src/timer.c"
  }
 ]

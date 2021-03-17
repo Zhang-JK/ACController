@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccSjEB07.s 			page 1
+ARM GAS  /tmp/ccTwbUxa.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccSjEB07.s 			page 1
   30:Src/system_stm32f1xx.c ****   *    are using different crystal you have to adapt the HSE value to your own
   31:Src/system_stm32f1xx.c ****   *    configuration.
   32:Src/system_stm32f1xx.c ****   *        
-ARM GAS  /tmp/ccSjEB07.s 			page 2
+ARM GAS  /tmp/ccTwbUxa.s 			page 2
 
 
   33:Src/system_stm32f1xx.c ****   ******************************************************************************
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccSjEB07.s 			page 1
   87:Src/system_stm32f1xx.c **** /*!< Uncomment the following line if you need to use external SRAM  */ 
   88:Src/system_stm32f1xx.c **** #if defined(STM32F100xE) || defined(STM32F101xE) || defined(STM32F101xG) || defined(STM32F103xE) ||
   89:Src/system_stm32f1xx.c **** /* #define DATA_IN_ExtSRAM */
-ARM GAS  /tmp/ccSjEB07.s 			page 3
+ARM GAS  /tmp/ccTwbUxa.s 			page 3
 
 
   90:Src/system_stm32f1xx.c **** #endif /* STM32F100xE || STM32F101xE || STM32F101xG || STM32F103xE || STM32F103xG */
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccSjEB07.s 			page 1
  144:Src/system_stm32f1xx.c **** const uint8_t APBPrescTable[8U] =  {0, 0, 0, 0, 1, 2, 3, 4};
  145:Src/system_stm32f1xx.c **** 
  146:Src/system_stm32f1xx.c **** /**
-ARM GAS  /tmp/ccSjEB07.s 			page 4
+ARM GAS  /tmp/ccTwbUxa.s 			page 4
 
 
  147:Src/system_stm32f1xx.c ****   * @}
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccSjEB07.s 			page 1
   40              		.syntax unified
   41              		.thumb
   42              		.thumb_func
-ARM GAS  /tmp/ccSjEB07.s 			page 5
+ARM GAS  /tmp/ccTwbUxa.s 			page 5
 
 
   43              		.fpu softvfp
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccSjEB07.s 			page 1
  233:Src/system_stm32f1xx.c **** #if defined(STM32F100xB) || defined(STM32F100xE)
  234:Src/system_stm32f1xx.c ****   uint32_t prediv1factor = 0U;
  235:Src/system_stm32f1xx.c **** #endif /* STM32F100xB or STM32F100xE */
-ARM GAS  /tmp/ccSjEB07.s 			page 6
+ARM GAS  /tmp/ccTwbUxa.s 			page 6
 
 
  236:Src/system_stm32f1xx.c ****     
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccSjEB07.s 			page 1
  277:Src/system_stm32f1xx.c ****         }
  278:Src/system_stm32f1xx.c ****  #endif
  279:Src/system_stm32f1xx.c ****       }
-ARM GAS  /tmp/ccSjEB07.s 			page 7
+ARM GAS  /tmp/ccTwbUxa.s 			page 7
 
 
  280:Src/system_stm32f1xx.c **** #else
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccSjEB07.s 			page 1
   77              	.L9:
  243:Src/system_stm32f1xx.c ****       break;
   78              		.loc 1 243 7 view .LVU12
-ARM GAS  /tmp/ccSjEB07.s 			page 8
+ARM GAS  /tmp/ccTwbUxa.s 			page 8
 
 
  243:Src/system_stm32f1xx.c ****       break;
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccSjEB07.s 			page 1
  118              	.L4:
  251:Src/system_stm32f1xx.c ****       pllsource = RCC->CFGR & RCC_CFGR_PLLSRC;
  119              		.loc 1 251 7 view .LVU27
-ARM GAS  /tmp/ccSjEB07.s 			page 9
+ARM GAS  /tmp/ccTwbUxa.s 			page 9
 
 
  251:Src/system_stm32f1xx.c ****       pllsource = RCC->CFGR & RCC_CFGR_PLLSRC;
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccSjEB07.s 			page 1
  158              		.loc 1 270 12 view .LVU43
  159 0060 12F4003F 		tst	r2, #131072
  160 0064 05D0     		beq	.L8
-ARM GAS  /tmp/ccSjEB07.s 			page 10
+ARM GAS  /tmp/ccTwbUxa.s 			page 10
 
 
  272:Src/system_stm32f1xx.c ****         }
@@ -589,60 +589,42 @@ ARM GAS  /tmp/ccSjEB07.s 			page 1
  203              		.align	2
  204              		.set	.LANCHOR1,. + 0
  207              	AHBPrescTable:
- 208 0000 00       		.byte	0
- 209 0001 00       		.byte	0
- 210 0002 00       		.byte	0
- 211 0003 00       		.byte	0
- 212 0004 00       		.byte	0
- 213 0005 00       		.byte	0
- 214 0006 00       		.byte	0
- 215 0007 00       		.byte	0
- 216 0008 01       		.byte	1
-ARM GAS  /tmp/ccSjEB07.s 			page 11
+ 208 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\001\002\003\004\006"
+ 208      00000000 
+ 208      01020304 
+ 208      06
+ 209 000d 070809   		.ascii	"\007\010\011"
+ 210              		.section	.rodata.APBPrescTable,"a"
+ 211              		.align	2
+ 214              	APBPrescTable:
+ 215 0000 00000000 		.ascii	"\000\000\000\000\001\002\003\004"
+ARM GAS  /tmp/ccTwbUxa.s 			page 11
 
 
- 217 0009 02       		.byte	2
- 218 000a 03       		.byte	3
- 219 000b 04       		.byte	4
- 220 000c 06       		.byte	6
- 221 000d 07       		.byte	7
- 222 000e 08       		.byte	8
- 223 000f 09       		.byte	9
- 224              		.section	.rodata.APBPrescTable,"a"
- 225              		.align	2
- 228              	APBPrescTable:
- 229 0000 00       		.byte	0
- 230 0001 00       		.byte	0
- 231 0002 00       		.byte	0
- 232 0003 00       		.byte	0
- 233 0004 01       		.byte	1
- 234 0005 02       		.byte	2
- 235 0006 03       		.byte	3
- 236 0007 04       		.byte	4
- 237              		.text
- 238              	.Letext0:
- 239              		.file 2 "/usr/local/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include/machine/_default_type
- 240              		.file 3 "/usr/local/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include/sys/_stdint.h"
- 241              		.file 4 "Drivers/CMSIS/Include/core_cm3.h"
- 242              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
- 243              		.file 6 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 244              		.file 7 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
- 245              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
-ARM GAS  /tmp/ccSjEB07.s 			page 12
+ 215      01020304 
+ 216              		.text
+ 217              	.Letext0:
+ 218              		.file 2 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h"
+ 219              		.file 3 "Drivers/CMSIS/Include/core_cm3.h"
+ 220              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 221              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 222              		.file 6 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
+ 223              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ARM GAS  /tmp/ccTwbUxa.s 			page 12
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 system_stm32f1xx.c
-     /tmp/ccSjEB07.s:16     .text.SystemInit:0000000000000000 $t
-     /tmp/ccSjEB07.s:24     .text.SystemInit:0000000000000000 SystemInit
-     /tmp/ccSjEB07.s:38     .text.SystemCoreClockUpdate:0000000000000000 $t
-     /tmp/ccSjEB07.s:45     .text.SystemCoreClockUpdate:0000000000000000 SystemCoreClockUpdate
-     /tmp/ccSjEB07.s:184    .text.SystemCoreClockUpdate:0000000000000080 $d
-     /tmp/ccSjEB07.s:228    .rodata.APBPrescTable:0000000000000000 APBPrescTable
-     /tmp/ccSjEB07.s:207    .rodata.AHBPrescTable:0000000000000000 AHBPrescTable
-     /tmp/ccSjEB07.s:200    .data.SystemCoreClock:0000000000000000 SystemCoreClock
-     /tmp/ccSjEB07.s:196    .data.SystemCoreClock:0000000000000000 $d
-     /tmp/ccSjEB07.s:203    .rodata.AHBPrescTable:0000000000000000 $d
-     /tmp/ccSjEB07.s:225    .rodata.APBPrescTable:0000000000000000 $d
+     /tmp/ccTwbUxa.s:16     .text.SystemInit:0000000000000000 $t
+     /tmp/ccTwbUxa.s:24     .text.SystemInit:0000000000000000 SystemInit
+     /tmp/ccTwbUxa.s:38     .text.SystemCoreClockUpdate:0000000000000000 $t
+     /tmp/ccTwbUxa.s:45     .text.SystemCoreClockUpdate:0000000000000000 SystemCoreClockUpdate
+     /tmp/ccTwbUxa.s:184    .text.SystemCoreClockUpdate:0000000000000080 $d
+     /tmp/ccTwbUxa.s:214    .rodata.APBPrescTable:0000000000000000 APBPrescTable
+     /tmp/ccTwbUxa.s:207    .rodata.AHBPrescTable:0000000000000000 AHBPrescTable
+     /tmp/ccTwbUxa.s:200    .data.SystemCoreClock:0000000000000000 SystemCoreClock
+     /tmp/ccTwbUxa.s:196    .data.SystemCoreClock:0000000000000000 $d
+     /tmp/ccTwbUxa.s:203    .rodata.AHBPrescTable:0000000000000000 $d
+     /tmp/ccTwbUxa.s:211    .rodata.APBPrescTable:0000000000000000 $d
 
 NO UNDEFINED SYMBOLS

@@ -19,13 +19,16 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "adc.h"
+#include "dma.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "core.h"
+static volatile int test = 0;
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -51,14 +54,15 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+int _write(int fd, char *ptr, int len) {
+  HAL_UART_Transmit(&huart1, (uint8_t *)ptr, len, 0xFFFF);
+  return len;
+}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-char RxBuffer[RXBUFFERSIZE]; //接收数据
-uint8_t aRxBuffer;           //接收中断缓冲
-uint8_t Uart1_Rx_Cnt = 0;    //接收缓冲计数
+
 /* USER CODE END 0 */
 
 /**
@@ -89,51 +93,38 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_USART1_UART_Init();
   MX_TIM1_Init();
   MX_TIM2_Init();
+  MX_TIM3_Init();
+  MX_ADC1_Init();
+  MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
-  HAL_GPIO_WritePin(LED_ON_BOARD_GPIO_Port, LED_ON_BOARD_Pin, GPIO_PIN_RESET);
-  HAL_UART_Receive_IT(&huart1, (uint8_t *)&aRxBuffer, 1);
-  HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
-  HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_1);
-
-  int pwm_val = 200;
+  while (!init_system())
+    ;
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int counter = 0;
   while (1) {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    if (HAL_GPIO_ReadPin(MAIN_SWITCH_GPIO_Port, MAIN_SWITCH_Pin) ==
-        GPIO_PIN_SET)
-      HAL_GPIO_WritePin(LED_ON_BOARD_GPIO_Port, LED_ON_BOARD_Pin, GPIO_PIN_SET);
-    else
-      HAL_GPIO_WritePin(LED_ON_BOARD_GPIO_Port, LED_ON_BOARD_Pin,
-                        GPIO_PIN_RESET);
-
-    if(pwm_val <= 2000) {
-      pwm_val += 200;
-      __HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_1, pwm_val);
-      __HAL_TIM_SetCompare(&htim2, TIM_CHANNEL_1, pwm_val);
-    }
-    else {
-      pwm_val -= 1800;
-      __HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_1, pwm_val);
-      __HAL_TIM_SetCompare(&htim2, TIM_CHANNEL_1, pwm_val);
-    }
-
     HAL_Delay(1000);
-    // HAL_UART_Transmit(&huart1, (uint8_t *)"TEST", 4, 0xFFFF);
 
-    HAL_UART_Transmit(&huart1, (uint8_t *)&RxBuffer, Uart1_Rx_Cnt,
-                      0xFFFF); //将收到的信息发送出去
-    while (HAL_UART_GetState(&huart1) == HAL_UART_STATE_BUSY_TX)
-      ; //检测UART发送结束
-    Uart1_Rx_Cnt = 0;
-    memset(RxBuffer, 0x00, sizeof(RxBuffer)); //清空数组
+    update_info();
+
+    if (counter >= 10) {
+      send_state();
+      counter = 0;
+    } else {
+      counter++;
+    }
+
+    // if(state.mode == TEMP_MODE) tempCheck();
+    // else if(state.mode == TIME_MODE) timeCheck();
   }
   /* USER CODE END 3 */
 }
@@ -146,6 +137,7 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
@@ -174,9 +166,20 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC;
+  PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV2;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
+  {
+    Error_Handler();
+  }
 }
 
 /* USER CODE BEGIN 4 */
+// void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
+//   temp = adc_buf *
+//          0.322; // convert value from adc buffer to temperature in Centigrade
+//   HAL_ADC_Start_IT(&hadc1);
+// }
 // void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 // {
 //   if(GPIO_Pin == MAIN_SWITCH_Pin)
@@ -203,7 +206,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
            the HAL_UART_TxCpltCallback could be implemented in the user file
    */
 
-  if (Uart1_Rx_Cnt >= 255) //溢出判断
+  if (Uart1_Rx_Cnt >= 511) //溢出判断
   {
     Uart1_Rx_Cnt = 0;
     memset(RxBuffer, 0x00, sizeof(RxBuffer));
@@ -211,17 +214,23 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
   } else {
     RxBuffer[Uart1_Rx_Cnt++] = aRxBuffer; //接收数据转存
-
-    // HAL_UART_Transmit(&huart1, (uint8_t *)&RxBuffer, Uart1_Rx_Cnt,
-    //                   0xFFFF); //将收到的信息发送出去
-    // while (HAL_UART_GetState(&huart1) == HAL_UART_STATE_BUSY_TX)
-    //   ; //检测UART发送结束
-    // Uart1_Rx_Cnt = 0;
-    // memset(RxBuffer, 0x00, sizeof(RxBuffer)); //清空数组
   }
 
   HAL_UART_Receive_IT(&huart1, (uint8_t *)&aRxBuffer, 1); //再开启接收中断
 }
+
+// #ifdef __GNUC__
+// #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+// #else
+// #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+// #endif
+// PUTCHAR_PROTOTYPE
+// {
+//     //具体哪个串口可以更改USART1为其它串口
+//     while ((USART1->SR & 0X40) == 0); //循环发送,直到发送完毕
+//     USART1->DR = (uint8_t) ch;
+//     return ch;
+// }
 
 /* USER CODE END 4 */
 

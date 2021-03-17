@@ -1,0 +1,153 @@
+ARM GAS  /tmp/ccQhyg1D.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"timer.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.timerCallback,"ax",%progbits
+  16              		.align	1
+  17              		.global	timerCallback
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	timerCallback:
+  25              	.LVL0:
+  26              	.LFB69:
+  27              		.file 1 "Src/timer.c"
+   1:Src/timer.c   **** #include "timer.h"
+   2:Src/timer.c   **** 
+   3:Src/timer.c   **** uint64_t runningTime = 0;
+   4:Src/timer.c   **** 
+   5:Src/timer.c   **** void timerInit() {
+   6:Src/timer.c   ****     HAL_TIM_RegisterCallback(&htim4, HAL_TIM_PERIOD_ELAPSED_CB_ID,
+   7:Src/timer.c   ****                            timerCallback);
+   8:Src/timer.c   ****     HAL_TIM_Base_Start_IT(&htim4);
+   9:Src/timer.c   **** }
+  10:Src/timer.c   **** 
+  11:Src/timer.c   **** void timerCallback(TIM_HandleTypeDef *htim) {
+  28              		.loc 1 11 45 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  12:Src/timer.c   ****     runningTime++;
+  33              		.loc 1 12 5 view .LVU1
+  34              		.loc 1 12 16 is_stmt 0 view .LVU2
+  35 0000 044A     		ldr	r2, .L2
+  36 0002 1368     		ldr	r3, [r2]
+  37 0004 5168     		ldr	r1, [r2, #4]
+  38 0006 0133     		adds	r3, r3, #1
+  39 0008 41F10001 		adc	r1, r1, #0
+  40 000c 1360     		str	r3, [r2]
+  41 000e 5160     		str	r1, [r2, #4]
+  13:Src/timer.c   **** }...
+  42              		.loc 1 13 1 view .LVU3
+  43 0010 7047     		bx	lr
+  44              	.L3:
+  45 0012 00BF     		.align	2
+ARM GAS  /tmp/ccQhyg1D.s 			page 2
+
+
+  46              	.L2:
+  47 0014 00000000 		.word	.LANCHOR0
+  48              		.cfi_endproc
+  49              	.LFE69:
+  51              		.section	.text.timerInit,"ax",%progbits
+  52              		.align	1
+  53              		.global	timerInit
+  54              		.syntax unified
+  55              		.thumb
+  56              		.thumb_func
+  57              		.fpu softvfp
+  59              	timerInit:
+  60              	.LFB68:
+   5:Src/timer.c   **** void timerInit() {
+  61              		.loc 1 5 18 is_stmt 1 view -0
+  62              		.cfi_startproc
+  63              		@ args = 0, pretend = 0, frame = 0
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+  65 0000 10B5     		push	{r4, lr}
+  66              	.LCFI0:
+  67              		.cfi_def_cfa_offset 8
+  68              		.cfi_offset 4, -8
+  69              		.cfi_offset 14, -4
+   6:Src/timer.c   ****     HAL_TIM_RegisterCallback(&htim4, HAL_TIM_PERIOD_ELAPSED_CB_ID,
+  70              		.loc 1 6 5 view .LVU5
+  71 0002 054C     		ldr	r4, .L6
+  72 0004 054A     		ldr	r2, .L6+4
+  73 0006 0E21     		movs	r1, #14
+  74 0008 2046     		mov	r0, r4
+  75 000a FFF7FEFF 		bl	HAL_TIM_RegisterCallback
+  76              	.LVL1:
+   8:Src/timer.c   ****     HAL_TIM_Base_Start_IT(&htim4);
+  77              		.loc 1 8 5 view .LVU6
+  78 000e 2046     		mov	r0, r4
+  79 0010 FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
+  80              	.LVL2:
+   9:Src/timer.c   **** }
+  81              		.loc 1 9 1 is_stmt 0 view .LVU7
+  82 0014 10BD     		pop	{r4, pc}
+  83              	.L7:
+  84 0016 00BF     		.align	2
+  85              	.L6:
+  86 0018 00000000 		.word	htim4
+  87 001c 00000000 		.word	timerCallback
+  88              		.cfi_endproc
+  89              	.LFE68:
+  91              		.global	runningTime
+  92              		.section	.bss.runningTime,"aw",%nobits
+  93              		.align	3
+  94              		.set	.LANCHOR0,. + 0
+  97              	runningTime:
+  98 0000 00000000 		.space	8
+  98      00000000 
+  99              		.text
+ 100              	.Letext0:
+ 101              		.file 2 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h"
+ 102              		.file 3 "Drivers/CMSIS/Include/core_cm3.h"
+ARM GAS  /tmp/ccQhyg1D.s 			page 3
+
+
+ 103              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 104              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 105              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 106              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 107              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 108              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 109              		.file 10 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stddef.h"
+ 110              		.file 11 "/usr/include/newlib/sys/_types.h"
+ 111              		.file 12 "/usr/include/newlib/sys/reent.h"
+ 112              		.file 13 "/usr/include/newlib/sys/lock.h"
+ 113              		.file 14 "Inc/tim.h"
+ 114              		.file 15 "Inc/timer.h"
+ARM GAS  /tmp/ccQhyg1D.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 timer.c
+     /tmp/ccQhyg1D.s:16     .text.timerCallback:0000000000000000 $t
+     /tmp/ccQhyg1D.s:24     .text.timerCallback:0000000000000000 timerCallback
+     /tmp/ccQhyg1D.s:47     .text.timerCallback:0000000000000014 $d
+     /tmp/ccQhyg1D.s:52     .text.timerInit:0000000000000000 $t
+     /tmp/ccQhyg1D.s:59     .text.timerInit:0000000000000000 timerInit
+     /tmp/ccQhyg1D.s:86     .text.timerInit:0000000000000018 $d
+     /tmp/ccQhyg1D.s:97     .bss.runningTime:0000000000000000 runningTime
+     /tmp/ccQhyg1D.s:93     .bss.runningTime:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+HAL_TIM_RegisterCallback
+HAL_TIM_Base_Start_IT
+htim4

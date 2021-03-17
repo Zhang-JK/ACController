@@ -1,0 +1,1457 @@
+ARM GAS  /tmp/ccCyGVCL.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"ds18b20.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.DS18B20_Mode_OUT_PP,"ax",%progbits
+  16              		.align	1
+  17              		.arch armv7-m
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  21              		.fpu softvfp
+  23              	DS18B20_Mode_OUT_PP:
+  24              	.LFB65:
+  25              		.file 1 "Src/ds18b20.c"
+   1:Src/ds18b20.c **** /**
+   2:Src/ds18b20.c ****  ******************************************************************************
+   3:Src/ds18b20.c ****  * @file            bsp_ds18b20.c
+   4:Src/ds18b20.c ****  * @author
+   5:Src/ds18b20.c ****  * @date
+   6:Src/ds18b20.c ****  * @version         v1.0
+   7:Src/ds18b20.c ****  * @note            DHT11 driver
+   8:Src/ds18b20.c ****  ******************************************************************************
+   9:Src/ds18b20.c ****  */
+  10:Src/ds18b20.c **** 
+  11:Src/ds18b20.c **** #include "ds18b20.h"
+  12:Src/ds18b20.c **** 
+  13:Src/ds18b20.c **** /**
+  14:Src/ds18b20.c ****  * @brief DS18B20 输出模式
+  15:Src/ds18b20.c ****  */
+  16:Src/ds18b20.c **** static void DS18B20_Mode_OUT_PP(void) {
+  26              		.loc 1 16 39 view -0
+  27              		.cfi_startproc
+  28              		@ args = 0, pretend = 0, frame = 16
+  29              		@ frame_needed = 0, uses_anonymous_args = 0
+  30 0000 00B5     		push	{lr}
+  31              	.LCFI0:
+  32              		.cfi_def_cfa_offset 4
+  33              		.cfi_offset 14, -4
+  34 0002 85B0     		sub	sp, sp, #20
+  35              	.LCFI1:
+  36              		.cfi_def_cfa_offset 24
+  17:Src/ds18b20.c ****   GPIO_InitTypeDef GPIO_InitStruct;
+  37              		.loc 1 17 3 view .LVU1
+  18:Src/ds18b20.c **** 
+  19:Src/ds18b20.c ****   GPIO_InitStruct.Pin = BSP_DS18B20_PIN;
+  38              		.loc 1 19 3 view .LVU2
+  39              		.loc 1 19 23 is_stmt 0 view .LVU3
+ARM GAS  /tmp/ccCyGVCL.s 			page 2
+
+
+  40 0004 4023     		movs	r3, #64
+  41 0006 0093     		str	r3, [sp]
+  20:Src/ds18b20.c ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  42              		.loc 1 20 3 is_stmt 1 view .LVU4
+  43              		.loc 1 20 24 is_stmt 0 view .LVU5
+  44 0008 0123     		movs	r3, #1
+  45 000a 0193     		str	r3, [sp, #4]
+  21:Src/ds18b20.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  46              		.loc 1 21 3 is_stmt 1 view .LVU6
+  47              		.loc 1 21 25 is_stmt 0 view .LVU7
+  48 000c 0323     		movs	r3, #3
+  49 000e 0393     		str	r3, [sp, #12]
+  22:Src/ds18b20.c **** 
+  23:Src/ds18b20.c ****   HAL_GPIO_Init(BSP_DS18B20_PORT, &GPIO_InitStruct);
+  50              		.loc 1 23 3 is_stmt 1 view .LVU8
+  51 0010 6946     		mov	r1, sp
+  52 0012 0348     		ldr	r0, .L3
+  53 0014 FFF7FEFF 		bl	HAL_GPIO_Init
+  54              	.LVL0:
+  24:Src/ds18b20.c **** }
+  55              		.loc 1 24 1 is_stmt 0 view .LVU9
+  56 0018 05B0     		add	sp, sp, #20
+  57              	.LCFI2:
+  58              		.cfi_def_cfa_offset 4
+  59              		@ sp needed
+  60 001a 5DF804FB 		ldr	pc, [sp], #4
+  61              	.L4:
+  62 001e 00BF     		.align	2
+  63              	.L3:
+  64 0020 00080140 		.word	1073809408
+  65              		.cfi_endproc
+  66              	.LFE65:
+  68              		.section	.text.DS18B20_Mode_IN_NP,"ax",%progbits
+  69              		.align	1
+  70              		.syntax unified
+  71              		.thumb
+  72              		.thumb_func
+  73              		.fpu softvfp
+  75              	DS18B20_Mode_IN_NP:
+  76              	.LFB66:
+  25:Src/ds18b20.c **** 
+  26:Src/ds18b20.c **** /**
+  27:Src/ds18b20.c ****  * @brief DS18B20 输入模式
+  28:Src/ds18b20.c ****  */
+  29:Src/ds18b20.c **** static void DS18B20_Mode_IN_NP(void) {
+  77              		.loc 1 29 38 is_stmt 1 view -0
+  78              		.cfi_startproc
+  79              		@ args = 0, pretend = 0, frame = 16
+  80              		@ frame_needed = 0, uses_anonymous_args = 0
+  81 0000 00B5     		push	{lr}
+  82              	.LCFI3:
+  83              		.cfi_def_cfa_offset 4
+  84              		.cfi_offset 14, -4
+  85 0002 85B0     		sub	sp, sp, #20
+  86              	.LCFI4:
+  87              		.cfi_def_cfa_offset 24
+  30:Src/ds18b20.c ****   GPIO_InitTypeDef GPIO_InitStruct;
+ARM GAS  /tmp/ccCyGVCL.s 			page 3
+
+
+  88              		.loc 1 30 3 view .LVU11
+  31:Src/ds18b20.c **** 
+  32:Src/ds18b20.c ****   GPIO_InitStruct.Pin = BSP_DS18B20_PIN;
+  89              		.loc 1 32 3 view .LVU12
+  90              		.loc 1 32 23 is_stmt 0 view .LVU13
+  91 0004 4023     		movs	r3, #64
+  92 0006 0093     		str	r3, [sp]
+  33:Src/ds18b20.c ****   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  93              		.loc 1 33 3 is_stmt 1 view .LVU14
+  94              		.loc 1 33 24 is_stmt 0 view .LVU15
+  95 0008 0023     		movs	r3, #0
+  96 000a 0193     		str	r3, [sp, #4]
+  34:Src/ds18b20.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
+  97              		.loc 1 34 3 is_stmt 1 view .LVU16
+  98              		.loc 1 34 24 is_stmt 0 view .LVU17
+  99 000c 0293     		str	r3, [sp, #8]
+  35:Src/ds18b20.c **** 
+  36:Src/ds18b20.c ****   HAL_GPIO_Init(BSP_DS18B20_PORT, &GPIO_InitStruct);
+ 100              		.loc 1 36 3 is_stmt 1 view .LVU18
+ 101 000e 6946     		mov	r1, sp
+ 102 0010 0248     		ldr	r0, .L7
+ 103 0012 FFF7FEFF 		bl	HAL_GPIO_Init
+ 104              	.LVL1:
+  37:Src/ds18b20.c **** }
+ 105              		.loc 1 37 1 is_stmt 0 view .LVU19
+ 106 0016 05B0     		add	sp, sp, #20
+ 107              	.LCFI5:
+ 108              		.cfi_def_cfa_offset 4
+ 109              		@ sp needed
+ 110 0018 5DF804FB 		ldr	pc, [sp], #4
+ 111              	.L8:
+ 112              		.align	2
+ 113              	.L7:
+ 114 001c 00080140 		.word	1073809408
+ 115              		.cfi_endproc
+ 116              	.LFE66:
+ 118              		.section	.text.DS18B20_Reset,"ax",%progbits
+ 119              		.align	1
+ 120              		.syntax unified
+ 121              		.thumb
+ 122              		.thumb_func
+ 123              		.fpu softvfp
+ 125              	DS18B20_Reset:
+ 126              	.LFB67:
+  38:Src/ds18b20.c **** 
+  39:Src/ds18b20.c **** /**
+  40:Src/ds18b20.c ****  * @brief 主机给从机发送复位脉冲
+  41:Src/ds18b20.c ****  */
+  42:Src/ds18b20.c **** static void DS18B20_Reset(void) {
+ 127              		.loc 1 42 33 is_stmt 1 view -0
+ 128              		.cfi_startproc
+ 129              		@ args = 0, pretend = 0, frame = 0
+ 130              		@ frame_needed = 0, uses_anonymous_args = 0
+ 131 0000 10B5     		push	{r4, lr}
+ 132              	.LCFI6:
+ 133              		.cfi_def_cfa_offset 8
+ 134              		.cfi_offset 4, -8
+ARM GAS  /tmp/ccCyGVCL.s 			page 4
+
+
+ 135              		.cfi_offset 14, -4
+  43:Src/ds18b20.c ****   DS18B20_Mode_OUT_PP(); // 主机输出
+ 136              		.loc 1 43 3 view .LVU21
+ 137 0002 FFF7FEFF 		bl	DS18B20_Mode_OUT_PP
+ 138              	.LVL2:
+  44:Src/ds18b20.c **** 
+  45:Src/ds18b20.c ****   DS18B20_OUT_0; // 主机至少产生 480us 的低电平复位信号
+ 139              		.loc 1 45 3 view .LVU22
+ 140 0006 094C     		ldr	r4, .L11
+ 141 0008 0022     		movs	r2, #0
+ 142 000a 4021     		movs	r1, #64
+ 143 000c 2046     		mov	r0, r4
+ 144 000e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 145              	.LVL3:
+  46:Src/ds18b20.c ****   bsp_delay_us(750);
+ 146              		.loc 1 46 3 view .LVU23
+ 147 0012 40F2EE20 		movw	r0, #750
+ 148 0016 FFF7FEFF 		bl	bsp_delay_us
+ 149              	.LVL4:
+  47:Src/ds18b20.c **** 
+  48:Src/ds18b20.c ****   DS18B20_OUT_1; // 主机在产生复位信号后，需将总线拉高
+ 150              		.loc 1 48 3 view .LVU24
+ 151 001a 0122     		movs	r2, #1
+ 152 001c 4021     		movs	r1, #64
+ 153 001e 2046     		mov	r0, r4
+ 154 0020 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 155              	.LVL5:
+  49:Src/ds18b20.c **** 
+  50:Src/ds18b20.c ****   // 从机接收到主机的复位信号后，会在 15 ~ 60 us 后给主机发一个存在脉冲
+  51:Src/ds18b20.c ****   bsp_delay_us(15);
+ 156              		.loc 1 51 3 view .LVU25
+ 157 0024 0F20     		movs	r0, #15
+ 158 0026 FFF7FEFF 		bl	bsp_delay_us
+ 159              	.LVL6:
+  52:Src/ds18b20.c **** }
+ 160              		.loc 1 52 1 is_stmt 0 view .LVU26
+ 161 002a 10BD     		pop	{r4, pc}
+ 162              	.L12:
+ 163              		.align	2
+ 164              	.L11:
+ 165 002c 00080140 		.word	1073809408
+ 166              		.cfi_endproc
+ 167              	.LFE67:
+ 169              		.section	.text.DS18B20_WriteByte,"ax",%progbits
+ 170              		.align	1
+ 171              		.syntax unified
+ 172              		.thumb
+ 173              		.thumb_func
+ 174              		.fpu softvfp
+ 176              	DS18B20_WriteByte:
+ 177              	.LVL7:
+ 178              	.LFB72:
+  53:Src/ds18b20.c **** 
+  54:Src/ds18b20.c **** /**
+  55:Src/ds18b20.c ****  * @brief  检测从机给主机返回的存在脉冲
+  56:Src/ds18b20.c ****  * @return 0：成功		1：失败
+  57:Src/ds18b20.c ****  */
+ARM GAS  /tmp/ccCyGVCL.s 			page 5
+
+
+  58:Src/ds18b20.c **** static uint8_t DS18B20_Presence(void) {
+  59:Src/ds18b20.c ****   uint8_t pulse_time = 0;
+  60:Src/ds18b20.c **** 
+  61:Src/ds18b20.c ****   DS18B20_Mode_IN_NP(); // 主机设为输入
+  62:Src/ds18b20.c **** 
+  63:Src/ds18b20.c ****   // 等待存在脉冲的到来，存在脉冲为一个 60 ~ 240 us 的低电平信号
+  64:Src/ds18b20.c ****   // 如果存在脉冲没有来则做超时处理，从机接收到主机的复位信号后，会�
+  65:Src/ds18b20.c ****   // 后给主机发一个存在脉冲
+  66:Src/ds18b20.c **** 
+  67:Src/ds18b20.c ****   while (DS18B20_IN && (pulse_time < 100)) // 等待低电平响应脉冲
+  68:Src/ds18b20.c ****   {
+  69:Src/ds18b20.c ****     pulse_time++;
+  70:Src/ds18b20.c ****     bsp_delay_us(1);
+  71:Src/ds18b20.c ****   }
+  72:Src/ds18b20.c ****   // 经过 100 us 后，存在脉冲都还没有到来
+  73:Src/ds18b20.c ****   if (pulse_time >= 100) {
+  74:Src/ds18b20.c ****     return 1;
+  75:Src/ds18b20.c ****   } else {
+  76:Src/ds18b20.c ****     pulse_time = 0;
+  77:Src/ds18b20.c ****   }
+  78:Src/ds18b20.c **** 
+  79:Src/ds18b20.c ****   // 响应脉冲（低电平）到来，且存在的时间不能超过 240 us
+  80:Src/ds18b20.c ****   while (!(DS18B20_IN) && pulse_time < 240) {
+  81:Src/ds18b20.c ****     pulse_time++;
+  82:Src/ds18b20.c ****     bsp_delay_us(1);
+  83:Src/ds18b20.c ****   }
+  84:Src/ds18b20.c ****   if (pulse_time >= 240) {
+  85:Src/ds18b20.c ****     return 1;
+  86:Src/ds18b20.c ****   } else {
+  87:Src/ds18b20.c ****     return 0;
+  88:Src/ds18b20.c ****   }
+  89:Src/ds18b20.c **** }
+  90:Src/ds18b20.c **** 
+  91:Src/ds18b20.c **** /**
+  92:Src/ds18b20.c ****  * @brief  DS18B20 初始化函数
+  93:Src/ds18b20.c ****  * @reurn  0：成功		1：失败
+  94:Src/ds18b20.c ****  */
+  95:Src/ds18b20.c **** uint8_t DS18B20_Init(void) {
+  96:Src/ds18b20.c ****   DS18B20_Mode_OUT_PP();
+  97:Src/ds18b20.c ****   DS18B20_OUT_1;
+  98:Src/ds18b20.c **** 
+  99:Src/ds18b20.c ****   DS18B20_Reset();
+ 100:Src/ds18b20.c ****   return DS18B20_Presence();
+ 101:Src/ds18b20.c **** }
+ 102:Src/ds18b20.c **** 
+ 103:Src/ds18b20.c **** /**
+ 104:Src/ds18b20.c ****  * @brief 从DS18B20读取一个bit
+ 105:Src/ds18b20.c ****  */
+ 106:Src/ds18b20.c **** static uint8_t DS18B20_ReadBit(void) {
+ 107:Src/ds18b20.c ****   uint8_t dat;
+ 108:Src/ds18b20.c **** 
+ 109:Src/ds18b20.c ****   DS18B20_Mode_OUT_PP(); // 读 0 和读 1 的时间至少要大于 60 us
+ 110:Src/ds18b20.c **** 
+ 111:Src/ds18b20.c ****   DS18B20_OUT_0; // 读时间的起始：必须由主机产生 > 1us < 15us 的低电平信号
+ 112:Src/ds18b20.c **** 
+ 113:Src/ds18b20.c ****   // 这个时间非常重要，设置为 < 15，需要多次尝试；如果设置不合理，数�
+ 114:Src/ds18b20.c ****   // 参数建议设为 10 11 12，具体值要根据延时函数的执行效率测试
+ARM GAS  /tmp/ccCyGVCL.s 			page 6
+
+
+ 115:Src/ds18b20.c ****   bsp_delay_us(13);
+ 116:Src/ds18b20.c **** 
+ 117:Src/ds18b20.c ****   DS18B20_Mode_IN_NP(); // 设置成输入，释放总线，由外部上拉电阻将总线拉高
+ 118:Src/ds18b20.c **** 
+ 119:Src/ds18b20.c ****   if (DS18B20_IN == 1) {
+ 120:Src/ds18b20.c ****     dat = 1;
+ 121:Src/ds18b20.c ****   } else {
+ 122:Src/ds18b20.c ****     dat = 0;
+ 123:Src/ds18b20.c ****   }
+ 124:Src/ds18b20.c **** 
+ 125:Src/ds18b20.c ****   bsp_delay_us(45); // 这个延时参数参考时序图
+ 126:Src/ds18b20.c **** 
+ 127:Src/ds18b20.c ****   return dat;
+ 128:Src/ds18b20.c **** }
+ 129:Src/ds18b20.c **** 
+ 130:Src/ds18b20.c **** /**
+ 131:Src/ds18b20.c ****  * @brief 从 DS18B20 读一个字节，低位先行
+ 132:Src/ds18b20.c ****  */
+ 133:Src/ds18b20.c **** static uint8_t DS18B20_ReadByte(void) {
+ 134:Src/ds18b20.c ****   uint8_t i, j, dat = 0;
+ 135:Src/ds18b20.c **** 
+ 136:Src/ds18b20.c ****   for (i = 0; i < 8; i++) {
+ 137:Src/ds18b20.c ****     j = DS18B20_ReadBit();
+ 138:Src/ds18b20.c ****     dat = (dat) | (j << i);
+ 139:Src/ds18b20.c ****   }
+ 140:Src/ds18b20.c **** 
+ 141:Src/ds18b20.c ****   return dat;
+ 142:Src/ds18b20.c **** }
+ 143:Src/ds18b20.c **** 
+ 144:Src/ds18b20.c **** /**
+ 145:Src/ds18b20.c ****  * @brief 写一个字节到 DS18B20，低位先行
+ 146:Src/ds18b20.c ****  */
+ 147:Src/ds18b20.c **** static void DS18B20_WriteByte(uint8_t dat) {
+ 179              		.loc 1 147 44 is_stmt 1 view -0
+ 180              		.cfi_startproc
+ 181              		@ args = 0, pretend = 0, frame = 0
+ 182              		@ frame_needed = 0, uses_anonymous_args = 0
+ 183              		.loc 1 147 44 is_stmt 0 view .LVU28
+ 184 0000 70B5     		push	{r4, r5, r6, lr}
+ 185              	.LCFI7:
+ 186              		.cfi_def_cfa_offset 16
+ 187              		.cfi_offset 4, -16
+ 188              		.cfi_offset 5, -12
+ 189              		.cfi_offset 6, -8
+ 190              		.cfi_offset 14, -4
+ 191 0002 0546     		mov	r5, r0
+ 148:Src/ds18b20.c ****   uint8_t i, testb;
+ 192              		.loc 1 148 3 is_stmt 1 view .LVU29
+ 149:Src/ds18b20.c ****   DS18B20_Mode_OUT_PP();
+ 193              		.loc 1 149 3 view .LVU30
+ 194 0004 FFF7FEFF 		bl	DS18B20_Mode_OUT_PP
+ 195              	.LVL8:
+ 150:Src/ds18b20.c **** 
+ 151:Src/ds18b20.c ****   for (i = 0; i < 8; i++) {
+ 196              		.loc 1 151 3 view .LVU31
+ 197              		.loc 1 151 10 is_stmt 0 view .LVU32
+ 198 0008 0024     		movs	r4, #0
+ARM GAS  /tmp/ccCyGVCL.s 			page 7
+
+
+ 199              		.loc 1 151 3 view .LVU33
+ 200 000a 12E0     		b	.L14
+ 201              	.LVL9:
+ 202              	.L15:
+ 203              	.LBB2:
+ 152:Src/ds18b20.c ****     testb = dat & 0x01;
+ 153:Src/ds18b20.c **** 
+ 154:Src/ds18b20.c ****     dat = dat >> 1;
+ 155:Src/ds18b20.c **** 
+ 156:Src/ds18b20.c ****     // 写 0 和写 1 的时间至少要大于60us
+ 157:Src/ds18b20.c **** 
+ 158:Src/ds18b20.c ****     if (testb) // 当前位写 1
+ 159:Src/ds18b20.c ****     {
+ 160:Src/ds18b20.c ****       DS18B20_OUT_0;
+ 161:Src/ds18b20.c **** 
+ 162:Src/ds18b20.c ****       bsp_delay_us(5); // 拉低发送写时段信号
+ 163:Src/ds18b20.c **** 
+ 164:Src/ds18b20.c ****       DS18B20_OUT_1; // 读取电平时间保持高电平
+ 165:Src/ds18b20.c ****       bsp_delay_us(65);
+ 166:Src/ds18b20.c ****     } else // 当前位写 0
+ 167:Src/ds18b20.c ****     {
+ 168:Src/ds18b20.c ****       DS18B20_OUT_0;    // 拉低发送写时段信号
+ 204              		.loc 1 168 7 is_stmt 1 view .LVU34
+ 205 000c 164E     		ldr	r6, .L20
+ 206 000e 0022     		movs	r2, #0
+ 207 0010 4021     		movs	r1, #64
+ 208 0012 3046     		mov	r0, r6
+ 209 0014 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 210              	.LVL10:
+ 169:Src/ds18b20.c ****       bsp_delay_us(70); // 读取电平时间保持低电平
+ 211              		.loc 1 169 7 view .LVU35
+ 212 0018 4620     		movs	r0, #70
+ 213 001a FFF7FEFF 		bl	bsp_delay_us
+ 214              	.LVL11:
+ 170:Src/ds18b20.c **** 
+ 171:Src/ds18b20.c ****       DS18B20_OUT_1;
+ 215              		.loc 1 171 7 view .LVU36
+ 216 001e 0122     		movs	r2, #1
+ 217 0020 4021     		movs	r1, #64
+ 218 0022 3046     		mov	r0, r6
+ 219 0024 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 220              	.LVL12:
+ 172:Src/ds18b20.c ****       bsp_delay_us(2); // 恢复时间
+ 221              		.loc 1 172 7 view .LVU37
+ 222 0028 0220     		movs	r0, #2
+ 223 002a FFF7FEFF 		bl	bsp_delay_us
+ 224              	.LVL13:
+ 225              	.L16:
+ 226              	.LBE2:
+ 151:Src/ds18b20.c ****     testb = dat & 0x01;
+ 227              		.loc 1 151 22 discriminator 2 view .LVU38
+ 151:Src/ds18b20.c ****     testb = dat & 0x01;
+ 228              		.loc 1 151 23 is_stmt 0 discriminator 2 view .LVU39
+ 229 002e 0134     		adds	r4, r4, #1
+ 230              	.LVL14:
+ 151:Src/ds18b20.c ****     testb = dat & 0x01;
+ 231              		.loc 1 151 23 discriminator 2 view .LVU40
+ARM GAS  /tmp/ccCyGVCL.s 			page 8
+
+
+ 232 0030 E4B2     		uxtb	r4, r4
+ 233              	.LVL15:
+ 234              	.L14:
+ 151:Src/ds18b20.c ****     testb = dat & 0x01;
+ 235              		.loc 1 151 15 is_stmt 1 discriminator 1 view .LVU41
+ 151:Src/ds18b20.c ****     testb = dat & 0x01;
+ 236              		.loc 1 151 3 is_stmt 0 discriminator 1 view .LVU42
+ 237 0032 072C     		cmp	r4, #7
+ 238 0034 16D8     		bhi	.L19
+ 152:Src/ds18b20.c **** 
+ 239              		.loc 1 152 5 is_stmt 1 view .LVU43
+ 152:Src/ds18b20.c **** 
+ 240              		.loc 1 152 11 is_stmt 0 view .LVU44
+ 241 0036 05F00103 		and	r3, r5, #1
+ 242              	.LVL16:
+ 154:Src/ds18b20.c **** 
+ 243              		.loc 1 154 5 is_stmt 1 view .LVU45
+ 154:Src/ds18b20.c **** 
+ 244              		.loc 1 154 9 is_stmt 0 view .LVU46
+ 245 003a 6D08     		lsrs	r5, r5, #1
+ 246              	.LVL17:
+ 158:Src/ds18b20.c ****     {
+ 247              		.loc 1 158 5 is_stmt 1 view .LVU47
+ 158:Src/ds18b20.c ****     {
+ 248              		.loc 1 158 8 is_stmt 0 view .LVU48
+ 249 003c 002B     		cmp	r3, #0
+ 250 003e E5D0     		beq	.L15
+ 251              	.LBB3:
+ 160:Src/ds18b20.c **** 
+ 252              		.loc 1 160 7 is_stmt 1 view .LVU49
+ 253 0040 094E     		ldr	r6, .L20
+ 254 0042 0022     		movs	r2, #0
+ 255 0044 4021     		movs	r1, #64
+ 256 0046 3046     		mov	r0, r6
+ 257 0048 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 258              	.LVL18:
+ 162:Src/ds18b20.c **** 
+ 259              		.loc 1 162 7 view .LVU50
+ 260 004c 0520     		movs	r0, #5
+ 261 004e FFF7FEFF 		bl	bsp_delay_us
+ 262              	.LVL19:
+ 164:Src/ds18b20.c ****       bsp_delay_us(65);
+ 263              		.loc 1 164 7 view .LVU51
+ 264 0052 0122     		movs	r2, #1
+ 265 0054 4021     		movs	r1, #64
+ 266 0056 3046     		mov	r0, r6
+ 267 0058 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 268              	.LVL20:
+ 165:Src/ds18b20.c ****     } else // 当前位写 0
+ 269              		.loc 1 165 7 view .LVU52
+ 270 005c 4120     		movs	r0, #65
+ 271 005e FFF7FEFF 		bl	bsp_delay_us
+ 272              	.LVL21:
+ 273              	.LBE3:
+ 274 0062 E4E7     		b	.L16
+ 275              	.L19:
+ 173:Src/ds18b20.c ****     }
+ARM GAS  /tmp/ccCyGVCL.s 			page 9
+
+
+ 174:Src/ds18b20.c ****   }
+ 175:Src/ds18b20.c **** }
+ 276              		.loc 1 175 1 is_stmt 0 view .LVU53
+ 277 0064 70BD     		pop	{r4, r5, r6, pc}
+ 278              	.LVL22:
+ 279              	.L21:
+ 280              		.loc 1 175 1 view .LVU54
+ 281 0066 00BF     		.align	2
+ 282              	.L20:
+ 283 0068 00080140 		.word	1073809408
+ 284              		.cfi_endproc
+ 285              	.LFE72:
+ 287              		.section	.text.DS18B20_Presence,"ax",%progbits
+ 288              		.align	1
+ 289              		.syntax unified
+ 290              		.thumb
+ 291              		.thumb_func
+ 292              		.fpu softvfp
+ 294              	DS18B20_Presence:
+ 295              	.LFB68:
+  58:Src/ds18b20.c ****   uint8_t pulse_time = 0;
+ 296              		.loc 1 58 39 is_stmt 1 view -0
+ 297              		.cfi_startproc
+ 298              		@ args = 0, pretend = 0, frame = 0
+ 299              		@ frame_needed = 0, uses_anonymous_args = 0
+ 300 0000 10B5     		push	{r4, lr}
+ 301              	.LCFI8:
+ 302              		.cfi_def_cfa_offset 8
+ 303              		.cfi_offset 4, -8
+ 304              		.cfi_offset 14, -4
+  59:Src/ds18b20.c **** 
+ 305              		.loc 1 59 3 view .LVU56
+ 306              	.LVL23:
+  61:Src/ds18b20.c **** 
+ 307              		.loc 1 61 3 view .LVU57
+ 308 0002 FFF7FEFF 		bl	DS18B20_Mode_IN_NP
+ 309              	.LVL24:
+  67:Src/ds18b20.c ****   {
+ 310              		.loc 1 67 3 view .LVU58
+  59:Src/ds18b20.c **** 
+ 311              		.loc 1 59 11 is_stmt 0 view .LVU59
+ 312 0006 0024     		movs	r4, #0
+ 313              	.LVL25:
+ 314              	.L23:
+  67:Src/ds18b20.c ****   {
+ 315              		.loc 1 67 9 is_stmt 1 view .LVU60
+  67:Src/ds18b20.c ****   {
+ 316              		.loc 1 67 10 is_stmt 0 view .LVU61
+ 317 0008 4021     		movs	r1, #64
+ 318 000a 1248     		ldr	r0, .L33
+ 319 000c FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 320              	.LVL26:
+  67:Src/ds18b20.c ****   {
+ 321              		.loc 1 67 9 view .LVU62
+ 322 0010 38B1     		cbz	r0, .L24
+  67:Src/ds18b20.c ****   {
+ 323              		.loc 1 67 21 discriminator 1 view .LVU63
+ARM GAS  /tmp/ccCyGVCL.s 			page 10
+
+
+ 324 0012 632C     		cmp	r4, #99
+ 325 0014 05D8     		bhi	.L24
+ 326              	.LBB4:
+  69:Src/ds18b20.c ****     bsp_delay_us(1);
+ 327              		.loc 1 69 5 is_stmt 1 view .LVU64
+  69:Src/ds18b20.c ****     bsp_delay_us(1);
+ 328              		.loc 1 69 15 is_stmt 0 view .LVU65
+ 329 0016 0134     		adds	r4, r4, #1
+ 330              	.LVL27:
+  69:Src/ds18b20.c ****     bsp_delay_us(1);
+ 331              		.loc 1 69 15 view .LVU66
+ 332 0018 E4B2     		uxtb	r4, r4
+ 333              	.LVL28:
+  70:Src/ds18b20.c ****   }
+ 334              		.loc 1 70 5 is_stmt 1 view .LVU67
+ 335 001a 0120     		movs	r0, #1
+ 336 001c FFF7FEFF 		bl	bsp_delay_us
+ 337              	.LVL29:
+ 338 0020 F2E7     		b	.L23
+ 339              	.L24:
+  70:Src/ds18b20.c ****   }
+ 340              		.loc 1 70 5 is_stmt 0 view .LVU68
+ 341              	.LBE4:
+  73:Src/ds18b20.c ****     return 1;
+ 342              		.loc 1 73 3 is_stmt 1 view .LVU69
+  73:Src/ds18b20.c ****     return 1;
+ 343              		.loc 1 73 6 is_stmt 0 view .LVU70
+ 344 0022 632C     		cmp	r4, #99
+ 345 0024 11D8     		bhi	.L30
+  76:Src/ds18b20.c ****   }
+ 346              		.loc 1 76 16 view .LVU71
+ 347 0026 0024     		movs	r4, #0
+ 348              	.LVL30:
+ 349              	.L27:
+  80:Src/ds18b20.c ****     pulse_time++;
+ 350              		.loc 1 80 9 is_stmt 1 view .LVU72
+  80:Src/ds18b20.c ****     pulse_time++;
+ 351              		.loc 1 80 12 is_stmt 0 view .LVU73
+ 352 0028 4021     		movs	r1, #64
+ 353 002a 0A48     		ldr	r0, .L33
+ 354 002c FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 355              	.LVL31:
+  80:Src/ds18b20.c ****     pulse_time++;
+ 356              		.loc 1 80 9 view .LVU74
+ 357 0030 38B9     		cbnz	r0, .L28
+  80:Src/ds18b20.c ****     pulse_time++;
+ 358              		.loc 1 80 24 discriminator 1 view .LVU75
+ 359 0032 EF2C     		cmp	r4, #239
+ 360 0034 05D8     		bhi	.L28
+ 361              	.LBB5:
+  81:Src/ds18b20.c ****     bsp_delay_us(1);
+ 362              		.loc 1 81 5 is_stmt 1 view .LVU76
+  81:Src/ds18b20.c ****     bsp_delay_us(1);
+ 363              		.loc 1 81 15 is_stmt 0 view .LVU77
+ 364 0036 0134     		adds	r4, r4, #1
+ 365              	.LVL32:
+  81:Src/ds18b20.c ****     bsp_delay_us(1);
+ARM GAS  /tmp/ccCyGVCL.s 			page 11
+
+
+ 366              		.loc 1 81 15 view .LVU78
+ 367 0038 E4B2     		uxtb	r4, r4
+ 368              	.LVL33:
+  82:Src/ds18b20.c ****   }
+ 369              		.loc 1 82 5 is_stmt 1 view .LVU79
+ 370 003a 0120     		movs	r0, #1
+ 371 003c FFF7FEFF 		bl	bsp_delay_us
+ 372              	.LVL34:
+ 373 0040 F2E7     		b	.L27
+ 374              	.L28:
+  82:Src/ds18b20.c ****   }
+ 375              		.loc 1 82 5 is_stmt 0 view .LVU80
+ 376              	.LBE5:
+  84:Src/ds18b20.c ****     return 1;
+ 377              		.loc 1 84 3 is_stmt 1 view .LVU81
+  84:Src/ds18b20.c ****     return 1;
+ 378              		.loc 1 84 6 is_stmt 0 view .LVU82
+ 379 0042 EF2C     		cmp	r4, #239
+ 380 0044 03D9     		bls	.L31
+  85:Src/ds18b20.c ****   } else {
+ 381              		.loc 1 85 12 view .LVU83
+ 382 0046 0120     		movs	r0, #1
+ 383 0048 00E0     		b	.L26
+ 384              	.L30:
+  74:Src/ds18b20.c ****   } else {
+ 385              		.loc 1 74 12 view .LVU84
+ 386 004a 0120     		movs	r0, #1
+ 387              	.L26:
+  89:Src/ds18b20.c **** 
+ 388              		.loc 1 89 1 view .LVU85
+ 389 004c 10BD     		pop	{r4, pc}
+ 390              	.LVL35:
+ 391              	.L31:
+  87:Src/ds18b20.c ****   }
+ 392              		.loc 1 87 12 view .LVU86
+ 393 004e 0020     		movs	r0, #0
+ 394 0050 FCE7     		b	.L26
+ 395              	.L34:
+ 396 0052 00BF     		.align	2
+ 397              	.L33:
+ 398 0054 00080140 		.word	1073809408
+ 399              		.cfi_endproc
+ 400              	.LFE68:
+ 402              		.section	.text.DS18B20_SkipRom,"ax",%progbits
+ 403              		.align	1
+ 404              		.syntax unified
+ 405              		.thumb
+ 406              		.thumb_func
+ 407              		.fpu softvfp
+ 409              	DS18B20_SkipRom:
+ 410              	.LFB73:
+ 176:Src/ds18b20.c **** 
+ 177:Src/ds18b20.c **** /**
+ 178:Src/ds18b20.c ****  * @brief  跳过匹配 DS18B20 ROM
+ 179:Src/ds18b20.c ****  */
+ 180:Src/ds18b20.c **** static void DS18B20_SkipRom(void) {
+ 411              		.loc 1 180 35 is_stmt 1 view -0
+ARM GAS  /tmp/ccCyGVCL.s 			page 12
+
+
+ 412              		.cfi_startproc
+ 413              		@ args = 0, pretend = 0, frame = 0
+ 414              		@ frame_needed = 0, uses_anonymous_args = 0
+ 415 0000 08B5     		push	{r3, lr}
+ 416              	.LCFI9:
+ 417              		.cfi_def_cfa_offset 8
+ 418              		.cfi_offset 3, -8
+ 419              		.cfi_offset 14, -4
+ 181:Src/ds18b20.c ****   DS18B20_Reset();
+ 420              		.loc 1 181 3 view .LVU88
+ 421 0002 FFF7FEFF 		bl	DS18B20_Reset
+ 422              	.LVL36:
+ 182:Src/ds18b20.c **** 
+ 183:Src/ds18b20.c ****   DS18B20_Presence();
+ 423              		.loc 1 183 3 view .LVU89
+ 424 0006 FFF7FEFF 		bl	DS18B20_Presence
+ 425              	.LVL37:
+ 184:Src/ds18b20.c **** 
+ 185:Src/ds18b20.c ****   DS18B20_WriteByte(0XCC); /* 跳过 ROM */
+ 426              		.loc 1 185 3 view .LVU90
+ 427 000a CC20     		movs	r0, #204
+ 428 000c FFF7FEFF 		bl	DS18B20_WriteByte
+ 429              	.LVL38:
+ 186:Src/ds18b20.c **** }
+ 430              		.loc 1 186 1 is_stmt 0 view .LVU91
+ 431 0010 08BD     		pop	{r3, pc}
+ 432              		.cfi_endproc
+ 433              	.LFE73:
+ 435              		.section	.text.DS18B20_MatchRom,"ax",%progbits
+ 436              		.align	1
+ 437              		.syntax unified
+ 438              		.thumb
+ 439              		.thumb_func
+ 440              		.fpu softvfp
+ 442              	DS18B20_MatchRom:
+ 443              	.LFB74:
+ 187:Src/ds18b20.c **** 
+ 188:Src/ds18b20.c **** /**
+ 189:Src/ds18b20.c ****  * @brief  执行匹配 DS18B20 ROM
+ 190:Src/ds18b20.c ****  */
+ 191:Src/ds18b20.c **** static void DS18B20_MatchRom(void) {
+ 444              		.loc 1 191 36 is_stmt 1 view -0
+ 445              		.cfi_startproc
+ 446              		@ args = 0, pretend = 0, frame = 0
+ 447              		@ frame_needed = 0, uses_anonymous_args = 0
+ 448 0000 08B5     		push	{r3, lr}
+ 449              	.LCFI10:
+ 450              		.cfi_def_cfa_offset 8
+ 451              		.cfi_offset 3, -8
+ 452              		.cfi_offset 14, -4
+ 192:Src/ds18b20.c ****   DS18B20_Reset();
+ 453              		.loc 1 192 3 view .LVU93
+ 454 0002 FFF7FEFF 		bl	DS18B20_Reset
+ 455              	.LVL39:
+ 193:Src/ds18b20.c **** 
+ 194:Src/ds18b20.c ****   DS18B20_Presence();
+ 456              		.loc 1 194 3 view .LVU94
+ARM GAS  /tmp/ccCyGVCL.s 			page 13
+
+
+ 457 0006 FFF7FEFF 		bl	DS18B20_Presence
+ 458              	.LVL40:
+ 195:Src/ds18b20.c **** 
+ 196:Src/ds18b20.c ****   DS18B20_WriteByte(0X55); /* 匹配 ROM */
+ 459              		.loc 1 196 3 view .LVU95
+ 460 000a 5520     		movs	r0, #85
+ 461 000c FFF7FEFF 		bl	DS18B20_WriteByte
+ 462              	.LVL41:
+ 197:Src/ds18b20.c **** }
+ 463              		.loc 1 197 1 is_stmt 0 view .LVU96
+ 464 0010 08BD     		pop	{r3, pc}
+ 465              		.cfi_endproc
+ 466              	.LFE74:
+ 468              		.section	.text.DS18B20_ReadBit,"ax",%progbits
+ 469              		.align	1
+ 470              		.syntax unified
+ 471              		.thumb
+ 472              		.thumb_func
+ 473              		.fpu softvfp
+ 475              	DS18B20_ReadBit:
+ 476              	.LFB70:
+ 106:Src/ds18b20.c ****   uint8_t dat;
+ 477              		.loc 1 106 38 is_stmt 1 view -0
+ 478              		.cfi_startproc
+ 479              		@ args = 0, pretend = 0, frame = 0
+ 480              		@ frame_needed = 0, uses_anonymous_args = 0
+ 481 0000 10B5     		push	{r4, lr}
+ 482              	.LCFI11:
+ 483              		.cfi_def_cfa_offset 8
+ 484              		.cfi_offset 4, -8
+ 485              		.cfi_offset 14, -4
+ 107:Src/ds18b20.c **** 
+ 486              		.loc 1 107 3 view .LVU98
+ 109:Src/ds18b20.c **** 
+ 487              		.loc 1 109 3 view .LVU99
+ 488 0002 FFF7FEFF 		bl	DS18B20_Mode_OUT_PP
+ 489              	.LVL42:
+ 111:Src/ds18b20.c **** 
+ 490              		.loc 1 111 3 view .LVU100
+ 491 0006 0C4C     		ldr	r4, .L43
+ 492 0008 0022     		movs	r2, #0
+ 493 000a 4021     		movs	r1, #64
+ 494 000c 2046     		mov	r0, r4
+ 495 000e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 496              	.LVL43:
+ 115:Src/ds18b20.c **** 
+ 497              		.loc 1 115 3 view .LVU101
+ 498 0012 0D20     		movs	r0, #13
+ 499 0014 FFF7FEFF 		bl	bsp_delay_us
+ 500              	.LVL44:
+ 117:Src/ds18b20.c **** 
+ 501              		.loc 1 117 3 view .LVU102
+ 502 0018 FFF7FEFF 		bl	DS18B20_Mode_IN_NP
+ 503              	.LVL45:
+ 119:Src/ds18b20.c ****     dat = 1;
+ 504              		.loc 1 119 3 view .LVU103
+ 119:Src/ds18b20.c ****     dat = 1;
+ARM GAS  /tmp/ccCyGVCL.s 			page 14
+
+
+ 505              		.loc 1 119 7 is_stmt 0 view .LVU104
+ 506 001c 4021     		movs	r1, #64
+ 507 001e 2046     		mov	r0, r4
+ 508 0020 FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 509              	.LVL46:
+ 510 0024 0446     		mov	r4, r0
+ 119:Src/ds18b20.c ****     dat = 1;
+ 511              		.loc 1 119 6 view .LVU105
+ 512 0026 0128     		cmp	r0, #1
+ 513 0028 00D0     		beq	.L40
+ 122:Src/ds18b20.c ****   }
+ 514              		.loc 1 122 9 view .LVU106
+ 515 002a 0024     		movs	r4, #0
+ 516              	.L40:
+ 517              	.LVL47:
+ 125:Src/ds18b20.c **** 
+ 518              		.loc 1 125 3 is_stmt 1 view .LVU107
+ 519 002c 2D20     		movs	r0, #45
+ 520 002e FFF7FEFF 		bl	bsp_delay_us
+ 521              	.LVL48:
+ 127:Src/ds18b20.c **** }
+ 522              		.loc 1 127 3 view .LVU108
+ 128:Src/ds18b20.c **** 
+ 523              		.loc 1 128 1 is_stmt 0 view .LVU109
+ 524 0032 2046     		mov	r0, r4
+ 525 0034 10BD     		pop	{r4, pc}
+ 526              	.LVL49:
+ 527              	.L44:
+ 128:Src/ds18b20.c **** 
+ 528              		.loc 1 128 1 view .LVU110
+ 529 0036 00BF     		.align	2
+ 530              	.L43:
+ 531 0038 00080140 		.word	1073809408
+ 532              		.cfi_endproc
+ 533              	.LFE70:
+ 535              		.section	.text.DS18B20_ReadByte,"ax",%progbits
+ 536              		.align	1
+ 537              		.syntax unified
+ 538              		.thumb
+ 539              		.thumb_func
+ 540              		.fpu softvfp
+ 542              	DS18B20_ReadByte:
+ 543              	.LFB71:
+ 133:Src/ds18b20.c ****   uint8_t i, j, dat = 0;
+ 544              		.loc 1 133 39 is_stmt 1 view -0
+ 545              		.cfi_startproc
+ 546              		@ args = 0, pretend = 0, frame = 0
+ 547              		@ frame_needed = 0, uses_anonymous_args = 0
+ 548 0000 38B5     		push	{r3, r4, r5, lr}
+ 549              	.LCFI12:
+ 550              		.cfi_def_cfa_offset 16
+ 551              		.cfi_offset 3, -16
+ 552              		.cfi_offset 4, -12
+ 553              		.cfi_offset 5, -8
+ 554              		.cfi_offset 14, -4
+ 134:Src/ds18b20.c **** 
+ 555              		.loc 1 134 3 view .LVU112
+ARM GAS  /tmp/ccCyGVCL.s 			page 15
+
+
+ 556              	.LVL50:
+ 136:Src/ds18b20.c ****     j = DS18B20_ReadBit();
+ 557              		.loc 1 136 3 view .LVU113
+ 134:Src/ds18b20.c **** 
+ 558              		.loc 1 134 17 is_stmt 0 view .LVU114
+ 559 0002 0025     		movs	r5, #0
+ 136:Src/ds18b20.c ****     j = DS18B20_ReadBit();
+ 560              		.loc 1 136 10 view .LVU115
+ 561 0004 2C46     		mov	r4, r5
+ 136:Src/ds18b20.c ****     j = DS18B20_ReadBit();
+ 562              		.loc 1 136 3 view .LVU116
+ 563 0006 06E0     		b	.L46
+ 564              	.LVL51:
+ 565              	.L47:
+ 137:Src/ds18b20.c ****     dat = (dat) | (j << i);
+ 566              		.loc 1 137 5 is_stmt 1 discriminator 3 view .LVU117
+ 137:Src/ds18b20.c ****     dat = (dat) | (j << i);
+ 567              		.loc 1 137 9 is_stmt 0 discriminator 3 view .LVU118
+ 568 0008 FFF7FEFF 		bl	DS18B20_ReadBit
+ 569              	.LVL52:
+ 138:Src/ds18b20.c ****   }
+ 570              		.loc 1 138 5 is_stmt 1 discriminator 3 view .LVU119
+ 138:Src/ds18b20.c ****   }
+ 571              		.loc 1 138 22 is_stmt 0 discriminator 3 view .LVU120
+ 572 000c A040     		lsls	r0, r0, r4
+ 573              	.LVL53:
+ 138:Src/ds18b20.c ****   }
+ 574              		.loc 1 138 17 discriminator 3 view .LVU121
+ 575 000e 0543     		orrs	r5, r5, r0
+ 576              	.LVL54:
+ 138:Src/ds18b20.c ****   }
+ 577              		.loc 1 138 9 discriminator 3 view .LVU122
+ 578 0010 EDB2     		uxtb	r5, r5
+ 579              	.LVL55:
+ 136:Src/ds18b20.c ****     j = DS18B20_ReadBit();
+ 580              		.loc 1 136 22 is_stmt 1 discriminator 3 view .LVU123
+ 136:Src/ds18b20.c ****     j = DS18B20_ReadBit();
+ 581              		.loc 1 136 23 is_stmt 0 discriminator 3 view .LVU124
+ 582 0012 0134     		adds	r4, r4, #1
+ 583              	.LVL56:
+ 136:Src/ds18b20.c ****     j = DS18B20_ReadBit();
+ 584              		.loc 1 136 23 discriminator 3 view .LVU125
+ 585 0014 E4B2     		uxtb	r4, r4
+ 586              	.LVL57:
+ 587              	.L46:
+ 136:Src/ds18b20.c ****     j = DS18B20_ReadBit();
+ 588              		.loc 1 136 15 is_stmt 1 discriminator 1 view .LVU126
+ 136:Src/ds18b20.c ****     j = DS18B20_ReadBit();
+ 589              		.loc 1 136 3 is_stmt 0 discriminator 1 view .LVU127
+ 590 0016 072C     		cmp	r4, #7
+ 591 0018 F6D9     		bls	.L47
+ 141:Src/ds18b20.c **** }
+ 592              		.loc 1 141 3 is_stmt 1 view .LVU128
+ 142:Src/ds18b20.c **** 
+ 593              		.loc 1 142 1 is_stmt 0 view .LVU129
+ 594 001a 2846     		mov	r0, r5
+ 595 001c 38BD     		pop	{r3, r4, r5, pc}
+ARM GAS  /tmp/ccCyGVCL.s 			page 16
+
+
+ 142:Src/ds18b20.c **** 
+ 596              		.loc 1 142 1 view .LVU130
+ 597              		.cfi_endproc
+ 598              	.LFE71:
+ 600              		.section	.text.DS18B20_Init,"ax",%progbits
+ 601              		.align	1
+ 602              		.global	DS18B20_Init
+ 603              		.syntax unified
+ 604              		.thumb
+ 605              		.thumb_func
+ 606              		.fpu softvfp
+ 608              	DS18B20_Init:
+ 609              	.LFB69:
+  95:Src/ds18b20.c ****   DS18B20_Mode_OUT_PP();
+ 610              		.loc 1 95 28 is_stmt 1 view -0
+ 611              		.cfi_startproc
+ 612              		@ args = 0, pretend = 0, frame = 0
+ 613              		@ frame_needed = 0, uses_anonymous_args = 0
+ 614 0000 08B5     		push	{r3, lr}
+ 615              	.LCFI13:
+ 616              		.cfi_def_cfa_offset 8
+ 617              		.cfi_offset 3, -8
+ 618              		.cfi_offset 14, -4
+  96:Src/ds18b20.c ****   DS18B20_OUT_1;
+ 619              		.loc 1 96 3 view .LVU132
+ 620 0002 FFF7FEFF 		bl	DS18B20_Mode_OUT_PP
+ 621              	.LVL58:
+  97:Src/ds18b20.c **** 
+ 622              		.loc 1 97 3 view .LVU133
+ 623 0006 0122     		movs	r2, #1
+ 624 0008 4021     		movs	r1, #64
+ 625 000a 0448     		ldr	r0, .L51
+ 626 000c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 627              	.LVL59:
+  99:Src/ds18b20.c ****   return DS18B20_Presence();
+ 628              		.loc 1 99 3 view .LVU134
+ 629 0010 FFF7FEFF 		bl	DS18B20_Reset
+ 630              	.LVL60:
+ 100:Src/ds18b20.c **** }
+ 631              		.loc 1 100 3 view .LVU135
+ 100:Src/ds18b20.c **** }
+ 632              		.loc 1 100 10 is_stmt 0 view .LVU136
+ 633 0014 FFF7FEFF 		bl	DS18B20_Presence
+ 634              	.LVL61:
+ 101:Src/ds18b20.c **** 
+ 635              		.loc 1 101 1 view .LVU137
+ 636 0018 08BD     		pop	{r3, pc}
+ 637              	.L52:
+ 638 001a 00BF     		.align	2
+ 639              	.L51:
+ 640 001c 00080140 		.word	1073809408
+ 641              		.cfi_endproc
+ 642              	.LFE69:
+ 644              		.global	__aeabi_i2f
+ 645              		.global	__aeabi_fmul
+ 646              		.section	.text.DS18B20_GetTemp_SkipRom,"ax",%progbits
+ 647              		.align	1
+ARM GAS  /tmp/ccCyGVCL.s 			page 17
+
+
+ 648              		.global	DS18B20_GetTemp_SkipRom
+ 649              		.syntax unified
+ 650              		.thumb
+ 651              		.thumb_func
+ 652              		.fpu softvfp
+ 654              	DS18B20_GetTemp_SkipRom:
+ 655              	.LFB75:
+ 198:Src/ds18b20.c **** 
+ 199:Src/ds18b20.c **** /**
+ 200:Src/ds18b20.c ****  * 存储的温度是16 位的带符号扩展的二进制补码形式
+ 201:Src/ds18b20.c ****  * 当工作在12位分辨率时，其中5个符号位，7个整数位，4个小数位
+ 202:Src/ds18b20.c ****  *
+ 203:Src/ds18b20.c ****  *         |---------整数----------|-----小数 分辨率 1/(2^4)=0.0625----|
+ 204:Src/ds18b20.c ****  * 低字节  | 2^3 | 2^2 | 2^1 | 2^0 | 2^(-1) | 2^(-2) | 2^(-3) | 2^(-4) |
+ 205:Src/ds18b20.c ****  *
+ 206:Src/ds18b20.c ****  *
+ 207:Src/ds18b20.c ****  *         |-----符号位：0->正  1->负-------|-----------整数-----------|
+ 208:Src/ds18b20.c ****  * 高字节  |  s  |  s  |  s  |  s  |    s   |   2^6  |   2^5  |   2^4  |
+ 209:Src/ds18b20.c ****  *
+ 210:Src/ds18b20.c ****  *
+ 211:Src/ds18b20.c ****  * 温度 = 符号位 + 整数 + 小数*0.0625
+ 212:Src/ds18b20.c ****  */
+ 213:Src/ds18b20.c **** 
+ 214:Src/ds18b20.c **** /**
+ 215:Src/ds18b20.c ****  * @brief  在跳过匹配 ROM 情况下获取 DS18B20 温度值
+ 216:Src/ds18b20.c ****  * @param  无
+ 217:Src/ds18b20.c ****  * @retval 温度值
+ 218:Src/ds18b20.c ****  */
+ 219:Src/ds18b20.c **** float DS18B20_GetTemp_SkipRom(void) {
+ 656              		.loc 1 219 37 is_stmt 1 view -0
+ 657              		.cfi_startproc
+ 658              		@ args = 0, pretend = 0, frame = 0
+ 659              		@ frame_needed = 0, uses_anonymous_args = 0
+ 660 0000 10B5     		push	{r4, lr}
+ 661              	.LCFI14:
+ 662              		.cfi_def_cfa_offset 8
+ 663              		.cfi_offset 4, -8
+ 664              		.cfi_offset 14, -4
+ 220:Src/ds18b20.c ****   uint8_t tpmsb, tplsb;
+ 665              		.loc 1 220 3 view .LVU139
+ 221:Src/ds18b20.c ****   int16_t s_tem;
+ 666              		.loc 1 221 3 view .LVU140
+ 222:Src/ds18b20.c ****   float f_tem;
+ 667              		.loc 1 222 3 view .LVU141
+ 223:Src/ds18b20.c **** 
+ 224:Src/ds18b20.c ****   DS18B20_SkipRom();
+ 668              		.loc 1 224 3 view .LVU142
+ 669 0002 FFF7FEFF 		bl	DS18B20_SkipRom
+ 670              	.LVL62:
+ 225:Src/ds18b20.c ****   DS18B20_WriteByte(0X44); /* 开始转换 */
+ 671              		.loc 1 225 3 view .LVU143
+ 672 0006 4420     		movs	r0, #68
+ 673 0008 FFF7FEFF 		bl	DS18B20_WriteByte
+ 674              	.LVL63:
+ 226:Src/ds18b20.c **** 
+ 227:Src/ds18b20.c ****   DS18B20_SkipRom();
+ 675              		.loc 1 227 3 view .LVU144
+ARM GAS  /tmp/ccCyGVCL.s 			page 18
+
+
+ 676 000c FFF7FEFF 		bl	DS18B20_SkipRom
+ 677              	.LVL64:
+ 228:Src/ds18b20.c ****   DS18B20_WriteByte(0XBE); /* 读温度值 */
+ 678              		.loc 1 228 3 view .LVU145
+ 679 0010 BE20     		movs	r0, #190
+ 680 0012 FFF7FEFF 		bl	DS18B20_WriteByte
+ 681              	.LVL65:
+ 229:Src/ds18b20.c **** 
+ 230:Src/ds18b20.c ****   tplsb = DS18B20_ReadByte();
+ 682              		.loc 1 230 3 view .LVU146
+ 683              		.loc 1 230 11 is_stmt 0 view .LVU147
+ 684 0016 FFF7FEFF 		bl	DS18B20_ReadByte
+ 685              	.LVL66:
+ 686 001a 0446     		mov	r4, r0
+ 687              	.LVL67:
+ 231:Src/ds18b20.c ****   tpmsb = DS18B20_ReadByte();
+ 688              		.loc 1 231 3 is_stmt 1 view .LVU148
+ 689              		.loc 1 231 11 is_stmt 0 view .LVU149
+ 690 001c FFF7FEFF 		bl	DS18B20_ReadByte
+ 691              	.LVL68:
+ 232:Src/ds18b20.c **** 
+ 233:Src/ds18b20.c ****   s_tem = tpmsb << 8;
+ 692              		.loc 1 233 3 is_stmt 1 view .LVU150
+ 693              		.loc 1 233 17 is_stmt 0 view .LVU151
+ 694 0020 0002     		lsls	r0, r0, #8
+ 695              	.LVL69:
+ 696              		.loc 1 233 9 view .LVU152
+ 697 0022 03B2     		sxth	r3, r0
+ 698              	.LVL70:
+ 234:Src/ds18b20.c ****   s_tem = s_tem | tplsb;
+ 699              		.loc 1 234 3 is_stmt 1 view .LVU153
+ 700              		.loc 1 234 17 is_stmt 0 view .LVU154
+ 701 0024 20B2     		sxth	r0, r4
+ 702              	.LVL71:
+ 235:Src/ds18b20.c **** 
+ 236:Src/ds18b20.c ****   if (s_tem < 0) /* 负温度 */
+ 703              		.loc 1 236 3 is_stmt 1 view .LVU155
+ 704              		.loc 1 236 6 is_stmt 0 view .LVU156
+ 705 0026 1843     		orrs	r0, r0, r3
+ 706              	.LVL72:
+ 707              		.loc 1 236 6 view .LVU157
+ 708 0028 06D4     		bmi	.L57
+ 237:Src/ds18b20.c ****   {
+ 238:Src/ds18b20.c ****     f_tem = (~s_tem + 1) * 0.0625f;
+ 239:Src/ds18b20.c ****   } else {
+ 240:Src/ds18b20.c ****     f_tem = s_tem * 0.0625f;
+ 709              		.loc 1 240 5 is_stmt 1 view .LVU158
+ 710              		.loc 1 240 19 is_stmt 0 view .LVU159
+ 711 002a FFF7FEFF 		bl	__aeabi_i2f
+ 712              	.LVL73:
+ 713              		.loc 1 240 11 view .LVU160
+ 714 002e 4FF07651 		mov	r1, #1031798784
+ 715 0032 FFF7FEFF 		bl	__aeabi_fmul
+ 716              	.LVL74:
+ 241:Src/ds18b20.c ****   }
+ 242:Src/ds18b20.c **** 
+ 243:Src/ds18b20.c ****   return f_tem;
+ARM GAS  /tmp/ccCyGVCL.s 			page 19
+
+
+ 717              		.loc 1 243 3 is_stmt 1 view .LVU161
+ 718              	.L53:
+ 244:Src/ds18b20.c **** }
+ 719              		.loc 1 244 1 is_stmt 0 view .LVU162
+ 720 0036 10BD     		pop	{r4, pc}
+ 721              	.LVL75:
+ 722              	.L57:
+ 238:Src/ds18b20.c ****   } else {
+ 723              		.loc 1 238 5 is_stmt 1 view .LVU163
+ 238:Src/ds18b20.c ****   } else {
+ 724              		.loc 1 238 26 is_stmt 0 view .LVU164
+ 725 0038 4042     		rsbs	r0, r0, #0
+ 726              	.LVL76:
+ 238:Src/ds18b20.c ****   } else {
+ 727              		.loc 1 238 26 view .LVU165
+ 728 003a FFF7FEFF 		bl	__aeabi_i2f
+ 729              	.LVL77:
+ 238:Src/ds18b20.c ****   } else {
+ 730              		.loc 1 238 11 view .LVU166
+ 731 003e 4FF07651 		mov	r1, #1031798784
+ 732 0042 FFF7FEFF 		bl	__aeabi_fmul
+ 733              	.LVL78:
+ 238:Src/ds18b20.c ****   } else {
+ 734              		.loc 1 238 11 view .LVU167
+ 735 0046 F6E7     		b	.L53
+ 736              		.cfi_endproc
+ 737              	.LFE75:
+ 739              		.section	.text.DS18B20_ReadId,"ax",%progbits
+ 740              		.align	1
+ 741              		.global	DS18B20_ReadId
+ 742              		.syntax unified
+ 743              		.thumb
+ 744              		.thumb_func
+ 745              		.fpu softvfp
+ 747              	DS18B20_ReadId:
+ 748              	.LVL79:
+ 749              	.LFB76:
+ 245:Src/ds18b20.c **** 
+ 246:Src/ds18b20.c **** /**
+ 247:Src/ds18b20.c ****  * @brief  在匹配 ROM 情况下获取 DS18B20 温度值
+ 248:Src/ds18b20.c ****  * @param  ds18b20_id：用于存放 DS18B20 序列号的数组的首地址
+ 249:Src/ds18b20.c ****  */
+ 250:Src/ds18b20.c **** void DS18B20_ReadId(uint8_t *ds18b20_id) {
+ 750              		.loc 1 250 42 is_stmt 1 view -0
+ 751              		.cfi_startproc
+ 752              		@ args = 0, pretend = 0, frame = 0
+ 753              		@ frame_needed = 0, uses_anonymous_args = 0
+ 754              		.loc 1 250 42 is_stmt 0 view .LVU169
+ 755 0000 38B5     		push	{r3, r4, r5, lr}
+ 756              	.LCFI15:
+ 757              		.cfi_def_cfa_offset 16
+ 758              		.cfi_offset 3, -16
+ 759              		.cfi_offset 4, -12
+ 760              		.cfi_offset 5, -8
+ 761              		.cfi_offset 14, -4
+ 762 0002 0546     		mov	r5, r0
+ 251:Src/ds18b20.c ****   uint8_t uc;
+ARM GAS  /tmp/ccCyGVCL.s 			page 20
+
+
+ 763              		.loc 1 251 3 is_stmt 1 view .LVU170
+ 252:Src/ds18b20.c **** 
+ 253:Src/ds18b20.c ****   DS18B20_WriteByte(0x33); //读取序列号
+ 764              		.loc 1 253 3 view .LVU171
+ 765 0004 3320     		movs	r0, #51
+ 766              	.LVL80:
+ 767              		.loc 1 253 3 is_stmt 0 view .LVU172
+ 768 0006 FFF7FEFF 		bl	DS18B20_WriteByte
+ 769              	.LVL81:
+ 254:Src/ds18b20.c **** 
+ 255:Src/ds18b20.c ****   for (uc = 0; uc < 8; uc++) {
+ 770              		.loc 1 255 3 is_stmt 1 view .LVU173
+ 771              		.loc 1 255 11 is_stmt 0 view .LVU174
+ 772 000a 0024     		movs	r4, #0
+ 773              		.loc 1 255 3 view .LVU175
+ 774 000c 04E0     		b	.L59
+ 775              	.LVL82:
+ 776              	.L60:
+ 256:Src/ds18b20.c ****     ds18b20_id[uc] = DS18B20_ReadByte();
+ 777              		.loc 1 256 5 is_stmt 1 discriminator 3 view .LVU176
+ 778              		.loc 1 256 22 is_stmt 0 discriminator 3 view .LVU177
+ 779 000e FFF7FEFF 		bl	DS18B20_ReadByte
+ 780              	.LVL83:
+ 781              		.loc 1 256 20 discriminator 3 view .LVU178
+ 782 0012 2855     		strb	r0, [r5, r4]
+ 255:Src/ds18b20.c ****     ds18b20_id[uc] = DS18B20_ReadByte();
+ 783              		.loc 1 255 24 is_stmt 1 discriminator 3 view .LVU179
+ 255:Src/ds18b20.c ****     ds18b20_id[uc] = DS18B20_ReadByte();
+ 784              		.loc 1 255 26 is_stmt 0 discriminator 3 view .LVU180
+ 785 0014 0134     		adds	r4, r4, #1
+ 786              	.LVL84:
+ 255:Src/ds18b20.c ****     ds18b20_id[uc] = DS18B20_ReadByte();
+ 787              		.loc 1 255 26 discriminator 3 view .LVU181
+ 788 0016 E4B2     		uxtb	r4, r4
+ 789              	.LVL85:
+ 790              	.L59:
+ 255:Src/ds18b20.c ****     ds18b20_id[uc] = DS18B20_ReadByte();
+ 791              		.loc 1 255 16 is_stmt 1 discriminator 1 view .LVU182
+ 255:Src/ds18b20.c ****     ds18b20_id[uc] = DS18B20_ReadByte();
+ 792              		.loc 1 255 3 is_stmt 0 discriminator 1 view .LVU183
+ 793 0018 072C     		cmp	r4, #7
+ 794 001a F8D9     		bls	.L60
+ 257:Src/ds18b20.c ****   }
+ 258:Src/ds18b20.c **** }
+ 795              		.loc 1 258 1 view .LVU184
+ 796 001c 38BD     		pop	{r3, r4, r5, pc}
+ 797              		.loc 1 258 1 view .LVU185
+ 798              		.cfi_endproc
+ 799              	.LFE76:
+ 801              		.section	.text.DS18B20_GetTemp_MatchRom,"ax",%progbits
+ 802              		.align	1
+ 803              		.global	DS18B20_GetTemp_MatchRom
+ 804              		.syntax unified
+ 805              		.thumb
+ 806              		.thumb_func
+ 807              		.fpu softvfp
+ 809              	DS18B20_GetTemp_MatchRom:
+ARM GAS  /tmp/ccCyGVCL.s 			page 21
+
+
+ 810              	.LVL86:
+ 811              	.LFB77:
+ 259:Src/ds18b20.c **** 
+ 260:Src/ds18b20.c **** /**
+ 261:Src/ds18b20.c ****  * @brief  在匹配 ROM 情况下获取 DS18B20 温度值
+ 262:Src/ds18b20.c ****  * @param  ds18b20_id：存放 DS18B20 序列号的数组的首地址
+ 263:Src/ds18b20.c ****  * @retval 温度值
+ 264:Src/ds18b20.c ****  */
+ 265:Src/ds18b20.c **** float DS18B20_GetTemp_MatchRom(uint8_t *ds18b20_id) {
+ 812              		.loc 1 265 53 is_stmt 1 view -0
+ 813              		.cfi_startproc
+ 814              		@ args = 0, pretend = 0, frame = 0
+ 815              		@ frame_needed = 0, uses_anonymous_args = 0
+ 816              		.loc 1 265 53 is_stmt 0 view .LVU187
+ 817 0000 38B5     		push	{r3, r4, r5, lr}
+ 818              	.LCFI16:
+ 819              		.cfi_def_cfa_offset 16
+ 820              		.cfi_offset 3, -16
+ 821              		.cfi_offset 4, -12
+ 822              		.cfi_offset 5, -8
+ 823              		.cfi_offset 14, -4
+ 824 0002 0546     		mov	r5, r0
+ 266:Src/ds18b20.c ****   uint8_t tpmsb, tplsb, i;
+ 825              		.loc 1 266 3 is_stmt 1 view .LVU188
+ 267:Src/ds18b20.c ****   int16_t s_tem;
+ 826              		.loc 1 267 3 view .LVU189
+ 268:Src/ds18b20.c ****   float f_tem;
+ 827              		.loc 1 268 3 view .LVU190
+ 269:Src/ds18b20.c **** 
+ 270:Src/ds18b20.c ****   DS18B20_MatchRom(); /* 匹配ROM */
+ 828              		.loc 1 270 3 view .LVU191
+ 829 0004 FFF7FEFF 		bl	DS18B20_MatchRom
+ 830              	.LVL87:
+ 271:Src/ds18b20.c **** 
+ 272:Src/ds18b20.c ****   for (i = 0; i < 8; i++) {
+ 831              		.loc 1 272 3 view .LVU192
+ 832              		.loc 1 272 10 is_stmt 0 view .LVU193
+ 833 0008 0024     		movs	r4, #0
+ 834              		.loc 1 272 3 view .LVU194
+ 835 000a 04E0     		b	.L63
+ 836              	.LVL88:
+ 837              	.L64:
+ 273:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
+ 838              		.loc 1 273 5 is_stmt 1 discriminator 3 view .LVU195
+ 839 000c 285D     		ldrb	r0, [r5, r4]	@ zero_extendqisi2
+ 840 000e FFF7FEFF 		bl	DS18B20_WriteByte
+ 841              	.LVL89:
+ 272:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
+ 842              		.loc 1 272 22 discriminator 3 view .LVU196
+ 272:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
+ 843              		.loc 1 272 23 is_stmt 0 discriminator 3 view .LVU197
+ 844 0012 0134     		adds	r4, r4, #1
+ 845              	.LVL90:
+ 272:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
+ 846              		.loc 1 272 23 discriminator 3 view .LVU198
+ 847 0014 E4B2     		uxtb	r4, r4
+ 848              	.LVL91:
+ARM GAS  /tmp/ccCyGVCL.s 			page 22
+
+
+ 849              	.L63:
+ 272:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
+ 850              		.loc 1 272 15 is_stmt 1 discriminator 1 view .LVU199
+ 272:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
+ 851              		.loc 1 272 3 is_stmt 0 discriminator 1 view .LVU200
+ 852 0016 072C     		cmp	r4, #7
+ 853 0018 F8D9     		bls	.L64
+ 274:Src/ds18b20.c ****   }
+ 275:Src/ds18b20.c **** 
+ 276:Src/ds18b20.c ****   DS18B20_WriteByte(0X44); /* 开始转换 */
+ 854              		.loc 1 276 3 is_stmt 1 view .LVU201
+ 855 001a 4420     		movs	r0, #68
+ 856 001c FFF7FEFF 		bl	DS18B20_WriteByte
+ 857              	.LVL92:
+ 277:Src/ds18b20.c **** 
+ 278:Src/ds18b20.c ****   DS18B20_MatchRom(); /* 匹配ROM */
+ 858              		.loc 1 278 3 view .LVU202
+ 859 0020 FFF7FEFF 		bl	DS18B20_MatchRom
+ 860              	.LVL93:
+ 279:Src/ds18b20.c **** 
+ 280:Src/ds18b20.c ****   for (i = 0; i < 8; i++) {
+ 861              		.loc 1 280 3 view .LVU203
+ 862              		.loc 1 280 10 is_stmt 0 view .LVU204
+ 863 0024 0024     		movs	r4, #0
+ 864              		.loc 1 280 3 view .LVU205
+ 865 0026 04E0     		b	.L65
+ 866              	.LVL94:
+ 867              	.L66:
+ 281:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
+ 868              		.loc 1 281 5 is_stmt 1 discriminator 3 view .LVU206
+ 869 0028 285D     		ldrb	r0, [r5, r4]	@ zero_extendqisi2
+ 870 002a FFF7FEFF 		bl	DS18B20_WriteByte
+ 871              	.LVL95:
+ 280:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
+ 872              		.loc 1 280 22 discriminator 3 view .LVU207
+ 280:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
+ 873              		.loc 1 280 23 is_stmt 0 discriminator 3 view .LVU208
+ 874 002e 0134     		adds	r4, r4, #1
+ 875              	.LVL96:
+ 280:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
+ 876              		.loc 1 280 23 discriminator 3 view .LVU209
+ 877 0030 E4B2     		uxtb	r4, r4
+ 878              	.LVL97:
+ 879              	.L65:
+ 280:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
+ 880              		.loc 1 280 15 is_stmt 1 discriminator 1 view .LVU210
+ 280:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
+ 881              		.loc 1 280 3 is_stmt 0 discriminator 1 view .LVU211
+ 882 0032 072C     		cmp	r4, #7
+ 883 0034 F8D9     		bls	.L66
+ 282:Src/ds18b20.c ****   }
+ 283:Src/ds18b20.c **** 
+ 284:Src/ds18b20.c ****   DS18B20_WriteByte(0XBE); /* 读温度值 */
+ 884              		.loc 1 284 3 is_stmt 1 view .LVU212
+ 885 0036 BE20     		movs	r0, #190
+ 886 0038 FFF7FEFF 		bl	DS18B20_WriteByte
+ 887              	.LVL98:
+ARM GAS  /tmp/ccCyGVCL.s 			page 23
+
+
+ 285:Src/ds18b20.c **** 
+ 286:Src/ds18b20.c ****   tplsb = DS18B20_ReadByte();
+ 888              		.loc 1 286 3 view .LVU213
+ 889              		.loc 1 286 11 is_stmt 0 view .LVU214
+ 890 003c FFF7FEFF 		bl	DS18B20_ReadByte
+ 891              	.LVL99:
+ 892 0040 0446     		mov	r4, r0
+ 893              	.LVL100:
+ 287:Src/ds18b20.c ****   tpmsb = DS18B20_ReadByte();
+ 894              		.loc 1 287 3 is_stmt 1 view .LVU215
+ 895              		.loc 1 287 11 is_stmt 0 view .LVU216
+ 896 0042 FFF7FEFF 		bl	DS18B20_ReadByte
+ 897              	.LVL101:
+ 288:Src/ds18b20.c **** 
+ 289:Src/ds18b20.c ****   s_tem = tpmsb << 8;
+ 898              		.loc 1 289 3 is_stmt 1 view .LVU217
+ 899              		.loc 1 289 17 is_stmt 0 view .LVU218
+ 900 0046 0002     		lsls	r0, r0, #8
+ 901              	.LVL102:
+ 902              		.loc 1 289 9 view .LVU219
+ 903 0048 03B2     		sxth	r3, r0
+ 904              	.LVL103:
+ 290:Src/ds18b20.c ****   s_tem = s_tem | tplsb;
+ 905              		.loc 1 290 3 is_stmt 1 view .LVU220
+ 906              		.loc 1 290 17 is_stmt 0 view .LVU221
+ 907 004a 20B2     		sxth	r0, r4
+ 908              	.LVL104:
+ 291:Src/ds18b20.c **** 
+ 292:Src/ds18b20.c ****   if (s_tem < 0) /* 负温度 */
+ 909              		.loc 1 292 3 is_stmt 1 view .LVU222
+ 910              		.loc 1 292 6 is_stmt 0 view .LVU223
+ 911 004c 1843     		orrs	r0, r0, r3
+ 912              	.LVL105:
+ 913              		.loc 1 292 6 view .LVU224
+ 914 004e 06D4     		bmi	.L70
+ 293:Src/ds18b20.c ****   {
+ 294:Src/ds18b20.c ****     f_tem = (~s_tem + 1) * 0.0625f;
+ 295:Src/ds18b20.c ****   } else {
+ 296:Src/ds18b20.c ****     f_tem = s_tem * 0.0625f;
+ 915              		.loc 1 296 5 is_stmt 1 view .LVU225
+ 916              		.loc 1 296 19 is_stmt 0 view .LVU226
+ 917 0050 FFF7FEFF 		bl	__aeabi_i2f
+ 918              	.LVL106:
+ 919              		.loc 1 296 11 view .LVU227
+ 920 0054 4FF07651 		mov	r1, #1031798784
+ 921 0058 FFF7FEFF 		bl	__aeabi_fmul
+ 922              	.LVL107:
+ 297:Src/ds18b20.c ****   }
+ 298:Src/ds18b20.c **** 
+ 299:Src/ds18b20.c ****   return f_tem;
+ 923              		.loc 1 299 3 is_stmt 1 view .LVU228
+ 924              	.L62:
+ 300:Src/ds18b20.c **** }
+ 925              		.loc 1 300 1 is_stmt 0 view .LVU229
+ 926 005c 38BD     		pop	{r3, r4, r5, pc}
+ 927              	.LVL108:
+ 928              	.L70:
+ARM GAS  /tmp/ccCyGVCL.s 			page 24
+
+
+ 294:Src/ds18b20.c ****   } else {
+ 929              		.loc 1 294 5 is_stmt 1 view .LVU230
+ 294:Src/ds18b20.c ****   } else {
+ 930              		.loc 1 294 26 is_stmt 0 view .LVU231
+ 931 005e 4042     		rsbs	r0, r0, #0
+ 932              	.LVL109:
+ 294:Src/ds18b20.c ****   } else {
+ 933              		.loc 1 294 26 view .LVU232
+ 934 0060 FFF7FEFF 		bl	__aeabi_i2f
+ 935              	.LVL110:
+ 294:Src/ds18b20.c ****   } else {
+ 936              		.loc 1 294 11 view .LVU233
+ 937 0064 4FF07651 		mov	r1, #1031798784
+ 938 0068 FFF7FEFF 		bl	__aeabi_fmul
+ 939              	.LVL111:
+ 294:Src/ds18b20.c ****   } else {
+ 940              		.loc 1 294 11 view .LVU234
+ 941 006c F6E7     		b	.L62
+ 942              		.cfi_endproc
+ 943              	.LFE77:
+ 945              		.text
+ 946              	.Letext0:
+ 947              		.file 2 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h"
+ 948              		.file 3 "Drivers/CMSIS/Include/core_cm3.h"
+ 949              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 950              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 951              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 952              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ARM GAS  /tmp/ccCyGVCL.s 			page 25
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 ds18b20.c
+     /tmp/ccCyGVCL.s:16     .text.DS18B20_Mode_OUT_PP:0000000000000000 $t
+     /tmp/ccCyGVCL.s:23     .text.DS18B20_Mode_OUT_PP:0000000000000000 DS18B20_Mode_OUT_PP
+     /tmp/ccCyGVCL.s:64     .text.DS18B20_Mode_OUT_PP:0000000000000020 $d
+     /tmp/ccCyGVCL.s:69     .text.DS18B20_Mode_IN_NP:0000000000000000 $t
+     /tmp/ccCyGVCL.s:75     .text.DS18B20_Mode_IN_NP:0000000000000000 DS18B20_Mode_IN_NP
+     /tmp/ccCyGVCL.s:114    .text.DS18B20_Mode_IN_NP:000000000000001c $d
+     /tmp/ccCyGVCL.s:119    .text.DS18B20_Reset:0000000000000000 $t
+     /tmp/ccCyGVCL.s:125    .text.DS18B20_Reset:0000000000000000 DS18B20_Reset
+     /tmp/ccCyGVCL.s:165    .text.DS18B20_Reset:000000000000002c $d
+     /tmp/ccCyGVCL.s:170    .text.DS18B20_WriteByte:0000000000000000 $t
+     /tmp/ccCyGVCL.s:176    .text.DS18B20_WriteByte:0000000000000000 DS18B20_WriteByte
+     /tmp/ccCyGVCL.s:283    .text.DS18B20_WriteByte:0000000000000068 $d
+     /tmp/ccCyGVCL.s:288    .text.DS18B20_Presence:0000000000000000 $t
+     /tmp/ccCyGVCL.s:294    .text.DS18B20_Presence:0000000000000000 DS18B20_Presence
+     /tmp/ccCyGVCL.s:398    .text.DS18B20_Presence:0000000000000054 $d
+     /tmp/ccCyGVCL.s:403    .text.DS18B20_SkipRom:0000000000000000 $t
+     /tmp/ccCyGVCL.s:409    .text.DS18B20_SkipRom:0000000000000000 DS18B20_SkipRom
+     /tmp/ccCyGVCL.s:436    .text.DS18B20_MatchRom:0000000000000000 $t
+     /tmp/ccCyGVCL.s:442    .text.DS18B20_MatchRom:0000000000000000 DS18B20_MatchRom
+     /tmp/ccCyGVCL.s:469    .text.DS18B20_ReadBit:0000000000000000 $t
+     /tmp/ccCyGVCL.s:475    .text.DS18B20_ReadBit:0000000000000000 DS18B20_ReadBit
+     /tmp/ccCyGVCL.s:531    .text.DS18B20_ReadBit:0000000000000038 $d
+     /tmp/ccCyGVCL.s:536    .text.DS18B20_ReadByte:0000000000000000 $t
+     /tmp/ccCyGVCL.s:542    .text.DS18B20_ReadByte:0000000000000000 DS18B20_ReadByte
+     /tmp/ccCyGVCL.s:601    .text.DS18B20_Init:0000000000000000 $t
+     /tmp/ccCyGVCL.s:608    .text.DS18B20_Init:0000000000000000 DS18B20_Init
+     /tmp/ccCyGVCL.s:640    .text.DS18B20_Init:000000000000001c $d
+     /tmp/ccCyGVCL.s:647    .text.DS18B20_GetTemp_SkipRom:0000000000000000 $t
+     /tmp/ccCyGVCL.s:654    .text.DS18B20_GetTemp_SkipRom:0000000000000000 DS18B20_GetTemp_SkipRom
+     /tmp/ccCyGVCL.s:740    .text.DS18B20_ReadId:0000000000000000 $t
+     /tmp/ccCyGVCL.s:747    .text.DS18B20_ReadId:0000000000000000 DS18B20_ReadId
+     /tmp/ccCyGVCL.s:802    .text.DS18B20_GetTemp_MatchRom:0000000000000000 $t
+     /tmp/ccCyGVCL.s:809    .text.DS18B20_GetTemp_MatchRom:0000000000000000 DS18B20_GetTemp_MatchRom
+
+UNDEFINED SYMBOLS
+HAL_GPIO_Init
+HAL_GPIO_WritePin
+bsp_delay_us
+HAL_GPIO_ReadPin
+__aeabi_i2f
+__aeabi_fmul
