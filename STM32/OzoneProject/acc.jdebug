@@ -4,8 +4,8 @@
 *                         www.segger.com                             *
 **********************************************************************
                                                                       
-File          : /home/lao_jk/Code/ACController/acc.jdebug
-Created       : 14 Apr 2021 17:18
+File          : /home/lao_jk/Code/ACController/STM32/OzoneProject/acc.jdebug
+Created       : 15 Apr 2021 18:39
 Ozone Version : V3.20f
 */
 
@@ -22,8 +22,8 @@ void OnProjectLoad (void) {
   //
   // Dialog-generated settings
   //
-  Project.AddPathSubstitute ("/home/lao_jk/Code/ACController", "$(ProjectDir)");
-  Project.AddPathSubstitute ("/home/lao_jk/code/accontroller", "$(ProjectDir)");
+  Project.AddPathSubstitute ("/home/lao_jk/Code/ACController/STM32/OzoneProject", "$(ProjectDir)");
+  Project.AddPathSubstitute ("/home/lao_jk/code/accontroller/stm32/ozoneproject", "$(ProjectDir)");
   Project.SetDevice ("STM32F103C8");
   Project.SetHostIF ("USB", "");
   Project.SetTargetIF ("SWD");
@@ -32,7 +32,7 @@ void OnProjectLoad (void) {
   //
   // User settings
   //
-  File.Open ("$(ProjectDir)/ACControl/build/ACControl.elf");
+  File.Open ("/home/lao_jk/Code/ACController/STM32/ACControl/build/ACControl.elf");
 }
 
 /*********************************************************************

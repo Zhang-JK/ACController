@@ -1,0 +1,32 @@
+
+
+Breakpoint=core.c:116:47, State=BP_STATE_DISABLED
+GraphedExpression="runningTime", DisplayFormat=DISPLAY_FORMAT_DEC
+GraphedExpression="(state).temp"
+GraphedExpression="Uart1_Rx_Cnt", DisplayFormat=DISPLAY_FORMAT_DEC
+OpenDocument="stm32f1xx_it.c", FilePath="/home/lao_jk/Code/ACController/STM32/ACControl/Src/stm32f1xx_it.c", Line=79
+OpenDocument="startup_stm32f103xb.s", FilePath="/home/lao_jk/Code/ACController/STM32/ACControl/startup_stm32f103xb.s", Line=57
+OpenDocument="main.c", FilePath="/home/lao_jk/Code/ACController/STM32/ACControl/Src/main.c", Line=65
+OpenDocument="stm32f1xx_hal_uart.c", FilePath="/home/lao_jk/Code/ACController/STM32/ACControl/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c", Line=1252
+OpenDocument="stm32f1xx_hal.h", FilePath="/home/lao_jk/Code/ACController/STM32/ACControl/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h", Line=47
+OpenDocument="stm32f1xx_hal.c", FilePath="/home/lao_jk/Code/ACController/STM32/ACControl/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c", Line=289
+OpenDocument="core.c", FilePath="/home/lao_jk/Code/ACController/STM32/ACControl/Src/core.c", Line=65
+OpenDocument="stm32f1xx_hal_adc.c", FilePath="/home/lao_jk/Code/ACController/STM32/ACControl/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c", Line=1779
+OpenToolbar="Debug", Floating=0, x=0, y=0
+OpenWindow="Call Stack", DockArea=RIGHT, x=0, y=0, w=750, h=114, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=1, w=750, h=161, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Global Data", DockArea=RIGHT, x=0, y=2, w=750, h=165, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Local Data", DockArea=RIGHT, x=0, y=2, w=750, h=165, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Watched Data 1", DockArea=LEFT, x=0, y=0, w=438, h=469, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Data Sampling", DockArea=BOTTOM, x=1, y=0, w=612, h=471, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VisibleTab=0, UniformSampleSpacing=0
+OpenWindow="Timeline", DockArea=BOTTOM, x=0, y=0, w=1244, h=471, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=1, DataPaneShown=1, PowerPaneShown=0, CodePaneShown=0, PinCursor="Cursor Movable", TimePerDiv="1 s", TimeStampFormat="Time", DataGraphDrawAsPoints=0, DataGraphLegendShown=1, DataGraphUniformSampleSpacing=0, DataGraphLegendPosition="0;0", PowerGraphDrawAsPoints=0, PowerGraphLegendShown=0, PowerGraphAvgFilterTime=Off, PowerGraphAvgFilterLen=Off, PowerGraphUniformSampleSpacing=0, PowerGraphLegendPosition="1034;-22", CodeGraphLegendShown=0, CodeGraphLegendPosition="1050;0"
+TableHeader="Local Data", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Location";"Size";"Type";"Scope"], ColWidths=[122;100;100;100;100;228]
+TableHeader="Global Data", SortCol="Name", SortOrder="DESCENDING", VisibleCols=["Name";"Value";"Location";"Size";"Type";"Scope"], ColWidths=[178;100;100;100;100;157]
+TableHeader="Call Stack", SortCol="Function", SortOrder="ASCENDING", VisibleCols=["Function";"Stack Frame";"Source";"PC";"Return Address";"Stack Used"], ColWidths=[164;105;100;100;100;181]
+TableHeader="Data Sampling Table", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time";" runningTime";" (state).temp";" Uart1_Rx_Cnt"], ColWidths=[100;100;100;100;100]
+TableHeader="Data Sampling Setup", SortCol="Expression", SortOrder="ASCENDING", VisibleCols=["Expression";"Type";"Value";"Min";"Max";"Average";"# Changes";"Min. Change";"Max. Change"], ColWidths=[161;140;100;100;100;100;100;105;100]
+TableHeader="Power Sampling", SortCol="Index", SortOrder="ASCENDING", VisibleCols=["Index";"Time";"Ch 0"], ColWidths=[100;100;100]
+TableHeader="Watched Data 1", SortCol="Expression", SortOrder="ASCENDING", VisibleCols=["Expression";"Value";"Location";"Refresh"], ColWidths=[140;100;100;100]
+TableHeader="RegisterSelectionDialog", SortCol="None", SortOrder="ASCENDING", VisibleCols=[], ColWidths=[]
+WatchedExpression="state", RefreshRate=5, Window=Watched Data 1
+WatchedExpression="RxBuffer", RefreshRate=5, Window=Watched Data 1
