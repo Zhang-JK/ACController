@@ -120,8 +120,10 @@ int main(void)
       timeCheck();
     else if(state.mode == TEMP_MODE)
       tempCheck();
+    // if(state.mode != ONOFF_MODE)
+    //   validCheck();
 
-    if (counter >= 10) {
+    if (counter >= 15) {
       send_state();
       counter = 0;
     } else {

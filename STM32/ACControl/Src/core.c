@@ -8,10 +8,10 @@
 //   return len;
 // }
 
-int servo1_up = 1900;
+int servo1_up = 2000;
 int servo1_down = 1300;
-int servo2_up = 1950;
-int servo2_down = 1370;
+int servo2_up = 1750;
+int servo2_down = 1100;
 
 struct State state;
 
@@ -24,7 +24,7 @@ int init_system() {
     state.re_sw = HAL_GPIO_ReadPin(REMOTE_SWITCH_GPIO_Port, REMOTE_SWITCH_Pin) == GPIO_PIN_RESET ? REMOTE_ON : REMOTE_OFF;
     state.mode = ONOFF_MODE;
     state.lightOff = 0;
-    state.tarTemp = 26;
+    state.tarTemp = 24;
     state.tarTime[0] = 30;
     state.tarTime[1] = 30;
     state.startTime = 0;
@@ -195,16 +195,20 @@ void send_state() {
 
     printf("Current temperature is : %3.1f\n", state.temp);
 
-    int currentTime = runningTime;
+    volatile int currentTime = runningTime;
     char msg3[25];
     strcpy(msg3, "The air-con has ");
     strcat(msg3, state.sw == SYS_ON ? "run" : "closed");
     strcat(msg3, " for ");
     printf("%s%d%s", msg3, (currentTime - (state.sw == SYS_ON ? state.startTime : state.shutDownTime)) / 60, " minutes\n");
 
-    if(state.mode == TEMP_MODE){
+    if(state.mode == TEMP_MODE) {
         printf("The target temperature is %3.1f\n", state.tarTemp);
         printf("The last temperature achievement is %d\n", lastAchievement);
+        if(state.sw == SYS_ON)
+            printf("Closed for %d mins and Opened for %d mins\n", (state.startTime - state.shutDownTime) / 60, (currentTime - state.startTime) / 60);
+        else
+            printf("Opened for %d mins and closed for %d mins\n", (state.shutDownTime - state.startTime) / 60, (currentTime - state.shutDownTime) / 60);
     }
     else if(state.mode == TIME_MODE) {
         int passTime = (currentTime - (state.sw == SYS_ON ? state.startTime : state.shutDownTime)) / 60;
@@ -213,9 +217,11 @@ void send_state() {
         printf("Open for %d mins and close for %d mins\n", state.tarTime[0], state.tarTime[1]);
     }
 
+    // printf("%d  %d  %d\n", currentTime, state.startTime, state.shutDownTime);
     printf("\n");
 }
 
+int initTemp = 0;
 void move(enum SystemSwitch pos) {
     if(pos == SYS_ON) {
         HAL_Delay(100);
@@ -229,6 +235,7 @@ void move(enum SystemSwitch pos) {
         }
 
         state.startTime = runningTime;
+        initTemp = state.temp;
         HAL_GPIO_WritePin(LED_ON_BOARD_GPIO_Port, LED_ON_BOARD_Pin, GPIO_PIN_RESET);
     }
 
@@ -257,10 +264,11 @@ void tempCheck() {
         if(state.temp > state.tarTemp + 0.5)
             state.tempAchieveCounter++;
     if(checkounter >= 60) {
-        if(state.tempAchieveCounter >= 45)
+        if(state.tempAchieveCounter >= 54) {
             if(state.sw == SYS_ON) state.sw = SYS_OFF;
             else state.sw = SYS_ON;
-        move(state.sw);
+            move(state.sw);
+        }
         checkounter = 0;
         lastAchievement = state.tempAchieveCounter;
         state.tempAchieveCounter = 0;
@@ -283,4 +291,19 @@ void timeCheck() {
     }
 
 }
+
+// int validCheckConter = 0;
+// void validCheck() {
+//     if (state.sw == SYS_ON)
+//         if(validCheckConter >= 180) {
+//             if(state.temp > initTemp){
+//                 move(SYS_OFF);
+//                 HAL_Delay(3000);
+//                 move(SYS_ON);
+//             }
+//             validCheckConter = 0;
+//         }
+//         else
+//             validCheckConter++;
+// }
 

@@ -64,5 +64,6 @@ void update_info();
 void send_state();
 void tempCheck();
 void timeCheck();
+void validCheck();
 
 #endif
