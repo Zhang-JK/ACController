@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccL1HI8r.s 			page 1
+ARM GAS  /tmp/ccCjPTTd.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccL1HI8r.s 			page 1
   30:Src/dma.c     **** 
   31:Src/dma.c     **** /* USER CODE BEGIN 1 */
   32:Src/dma.c     **** 
-ARM GAS  /tmp/ccL1HI8r.s 			page 2
+ARM GAS  /tmp/ccCjPTTd.s 			page 2
 
 
   33:Src/dma.c     **** /* USER CODE END 1 */
@@ -97,59 +97,59 @@ ARM GAS  /tmp/ccL1HI8r.s 			page 1
   50              		.loc 1 42 3 view .LVU5
   51 0016 019B     		ldr	r3, [sp, #4]
   52              	.LBE2:
-  53              		.loc 1 42 3 view .LVU6
   43:Src/dma.c     **** 
   44:Src/dma.c     ****   /* DMA interrupt init */
   45:Src/dma.c     ****   /* DMA1_Channel1_IRQn interrupt configuration */
   46:Src/dma.c     ****   HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 0, 0);
-  54              		.loc 1 46 3 view .LVU7
-  55 0018 0022     		movs	r2, #0
-  56 001a 1146     		mov	r1, r2
-  57 001c 0B20     		movs	r0, #11
-  58 001e FFF7FEFF 		bl	HAL_NVIC_SetPriority
-  59              	.LVL0:
+  53              		.loc 1 46 3 view .LVU6
+  54 0018 0022     		movs	r2, #0
+  55 001a 1146     		mov	r1, r2
+  56 001c 0B20     		movs	r0, #11
+  57 001e FFF7FEFF 		bl	HAL_NVIC_SetPriority
+  58              	.LVL0:
   47:Src/dma.c     ****   HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
-  60              		.loc 1 47 3 view .LVU8
-  61 0022 0B20     		movs	r0, #11
-  62 0024 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
-  63              	.LVL1:
+  59              		.loc 1 47 3 view .LVU7
+  60 0022 0B20     		movs	r0, #11
+  61 0024 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+  62              	.LVL1:
   48:Src/dma.c     **** 
   49:Src/dma.c     **** }
-  64              		.loc 1 49 1 is_stmt 0 view .LVU9
-  65 0028 03B0     		add	sp, sp, #12
-  66              	.LCFI2:
-ARM GAS  /tmp/ccL1HI8r.s 			page 3
+  63              		.loc 1 49 1 is_stmt 0 view .LVU8
+  64 0028 03B0     		add	sp, sp, #12
+  65              	.LCFI2:
+  66              		.cfi_def_cfa_offset 4
+ARM GAS  /tmp/ccCjPTTd.s 			page 3
 
 
-  67              		.cfi_def_cfa_offset 4
-  68              		@ sp needed
-  69 002a 5DF804FB 		ldr	pc, [sp], #4
-  70              	.L4:
-  71 002e 00BF     		.align	2
-  72              	.L3:
-  73 0030 00100240 		.word	1073876992
-  74              		.cfi_endproc
-  75              	.LFE68:
-  77              		.text
-  78              	.Letext0:
-  79              		.file 2 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h"
-  80              		.file 3 "Drivers/CMSIS/Include/core_cm3.h"
-  81              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
-  82              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
-  83              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
-  84              		.file 7 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stddef.h"
-  85              		.file 8 "/usr/include/newlib/sys/_types.h"
-  86              		.file 9 "/usr/include/newlib/sys/reent.h"
-  87              		.file 10 "/usr/include/newlib/sys/lock.h"
-  88              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h"
-ARM GAS  /tmp/ccL1HI8r.s 			page 4
+  67              		@ sp needed
+  68 002a 5DF804FB 		ldr	pc, [sp], #4
+  69              	.L4:
+  70 002e 00BF     		.align	2
+  71              	.L3:
+  72 0030 00100240 		.word	1073876992
+  73              		.cfi_endproc
+  74              	.LFE68:
+  76              		.text
+  77              	.Letext0:
+  78              		.file 2 "/usr/local/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include/machine/_default_type
+  79              		.file 3 "/usr/local/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include/sys/_stdint.h"
+  80              		.file 4 "Drivers/CMSIS/Include/core_cm3.h"
+  81              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+  82              		.file 6 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+  83              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+  84              		.file 8 "/usr/local/gcc-arm-none-eabi-8-2019-q3-update/lib/gcc/arm-none-eabi/8.3.1/include/stddef.
+  85              		.file 9 "/usr/local/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include/sys/_types.h"
+  86              		.file 10 "/usr/local/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include/sys/reent.h"
+  87              		.file 11 "/usr/local/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include/sys/lock.h"
+  88              		.file 12 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h"
+ARM GAS  /tmp/ccCjPTTd.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 dma.c
-     /tmp/ccL1HI8r.s:16     .text.MX_DMA_Init:0000000000000000 $t
-     /tmp/ccL1HI8r.s:24     .text.MX_DMA_Init:0000000000000000 MX_DMA_Init
-     /tmp/ccL1HI8r.s:73     .text.MX_DMA_Init:0000000000000030 $d
+     /tmp/ccCjPTTd.s:16     .text.MX_DMA_Init:0000000000000000 $t
+     /tmp/ccCjPTTd.s:24     .text.MX_DMA_Init:0000000000000000 MX_DMA_Init
+     /tmp/ccCjPTTd.s:72     .text.MX_DMA_Init:0000000000000030 $d
 
 UNDEFINED SYMBOLS
 HAL_NVIC_SetPriority

@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccCyGVCL.s 			page 1
+ARM GAS  /tmp/ccSHVwWu.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccCyGVCL.s 			page 1
   19:Src/ds18b20.c ****   GPIO_InitStruct.Pin = BSP_DS18B20_PIN;
   38              		.loc 1 19 3 view .LVU2
   39              		.loc 1 19 23 is_stmt 0 view .LVU3
-ARM GAS  /tmp/ccCyGVCL.s 			page 2
+ARM GAS  /tmp/ccSHVwWu.s 			page 2
 
 
   40 0004 4023     		movs	r3, #64
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccCyGVCL.s 			page 1
   86              	.LCFI4:
   87              		.cfi_def_cfa_offset 24
   30:Src/ds18b20.c ****   GPIO_InitTypeDef GPIO_InitStruct;
-ARM GAS  /tmp/ccCyGVCL.s 			page 3
+ARM GAS  /tmp/ccSHVwWu.s 			page 3
 
 
   88              		.loc 1 30 3 view .LVU11
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccCyGVCL.s 			page 1
  132              	.LCFI6:
  133              		.cfi_def_cfa_offset 8
  134              		.cfi_offset 4, -8
-ARM GAS  /tmp/ccCyGVCL.s 			page 4
+ARM GAS  /tmp/ccSHVwWu.s 			page 4
 
 
  135              		.cfi_offset 14, -4
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccCyGVCL.s 			page 1
   55:Src/ds18b20.c ****  * @brief  检测从机给主机返回的存在脉冲
   56:Src/ds18b20.c ****  * @return 0：成功		1：失败
   57:Src/ds18b20.c ****  */
-ARM GAS  /tmp/ccCyGVCL.s 			page 5
+ARM GAS  /tmp/ccSHVwWu.s 			page 5
 
 
   58:Src/ds18b20.c **** static uint8_t DS18B20_Presence(void) {
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccCyGVCL.s 			page 1
  112:Src/ds18b20.c **** 
  113:Src/ds18b20.c ****   // 这个时间非常重要，设置为 < 15，需要多次尝试；如果设置不合理，数�
  114:Src/ds18b20.c ****   // 参数建议设为 10 11 12，具体值要根据延时函数的执行效率测试
-ARM GAS  /tmp/ccCyGVCL.s 			page 6
+ARM GAS  /tmp/ccSHVwWu.s 			page 6
 
 
  115:Src/ds18b20.c ****   bsp_delay_us(13);
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccCyGVCL.s 			page 1
  196              		.loc 1 151 3 view .LVU31
  197              		.loc 1 151 10 is_stmt 0 view .LVU32
  198 0008 0024     		movs	r4, #0
-ARM GAS  /tmp/ccCyGVCL.s 			page 7
+ARM GAS  /tmp/ccSHVwWu.s 			page 7
 
 
  199              		.loc 1 151 3 view .LVU33
@@ -411,568 +411,556 @@ ARM GAS  /tmp/ccCyGVCL.s 			page 1
  225              	.L16:
  226              	.LBE2:
  151:Src/ds18b20.c ****     testb = dat & 0x01;
- 227              		.loc 1 151 22 discriminator 2 view .LVU38
+ 227              		.loc 1 151 23 is_stmt 0 discriminator 2 view .LVU38
+ 228 002e 0134     		adds	r4, r4, #1
+ 229              	.LVL14:
  151:Src/ds18b20.c ****     testb = dat & 0x01;
- 228              		.loc 1 151 23 is_stmt 0 discriminator 2 view .LVU39
- 229 002e 0134     		adds	r4, r4, #1
- 230              	.LVL14:
- 151:Src/ds18b20.c ****     testb = dat & 0x01;
- 231              		.loc 1 151 23 discriminator 2 view .LVU40
-ARM GAS  /tmp/ccCyGVCL.s 			page 8
+ 230              		.loc 1 151 23 discriminator 2 view .LVU39
+ 231 0030 E4B2     		uxtb	r4, r4
+ 232              	.LVL15:
+ARM GAS  /tmp/ccSHVwWu.s 			page 8
 
 
- 232 0030 E4B2     		uxtb	r4, r4
- 233              	.LVL15:
- 234              	.L14:
+ 233              	.L14:
  151:Src/ds18b20.c ****     testb = dat & 0x01;
- 235              		.loc 1 151 15 is_stmt 1 discriminator 1 view .LVU41
- 151:Src/ds18b20.c ****     testb = dat & 0x01;
- 236              		.loc 1 151 3 is_stmt 0 discriminator 1 view .LVU42
- 237 0032 072C     		cmp	r4, #7
- 238 0034 16D8     		bhi	.L19
+ 234              		.loc 1 151 3 discriminator 1 view .LVU40
+ 235 0032 072C     		cmp	r4, #7
+ 236 0034 16D8     		bhi	.L19
  152:Src/ds18b20.c **** 
- 239              		.loc 1 152 5 is_stmt 1 view .LVU43
+ 237              		.loc 1 152 5 is_stmt 1 view .LVU41
  152:Src/ds18b20.c **** 
- 240              		.loc 1 152 11 is_stmt 0 view .LVU44
- 241 0036 05F00103 		and	r3, r5, #1
- 242              	.LVL16:
+ 238              		.loc 1 152 11 is_stmt 0 view .LVU42
+ 239 0036 05F00103 		and	r3, r5, #1
+ 240              	.LVL16:
  154:Src/ds18b20.c **** 
- 243              		.loc 1 154 5 is_stmt 1 view .LVU45
+ 241              		.loc 1 154 5 is_stmt 1 view .LVU43
  154:Src/ds18b20.c **** 
- 244              		.loc 1 154 9 is_stmt 0 view .LVU46
- 245 003a 6D08     		lsrs	r5, r5, #1
- 246              	.LVL17:
+ 242              		.loc 1 154 9 is_stmt 0 view .LVU44
+ 243 003a 6D08     		lsrs	r5, r5, #1
+ 244              	.LVL17:
  158:Src/ds18b20.c ****     {
- 247              		.loc 1 158 5 is_stmt 1 view .LVU47
+ 245              		.loc 1 158 5 is_stmt 1 view .LVU45
  158:Src/ds18b20.c ****     {
- 248              		.loc 1 158 8 is_stmt 0 view .LVU48
- 249 003c 002B     		cmp	r3, #0
- 250 003e E5D0     		beq	.L15
- 251              	.LBB3:
+ 246              		.loc 1 158 8 is_stmt 0 view .LVU46
+ 247 003c 002B     		cmp	r3, #0
+ 248 003e E5D0     		beq	.L15
+ 249              	.LBB3:
  160:Src/ds18b20.c **** 
- 252              		.loc 1 160 7 is_stmt 1 view .LVU49
- 253 0040 094E     		ldr	r6, .L20
- 254 0042 0022     		movs	r2, #0
- 255 0044 4021     		movs	r1, #64
- 256 0046 3046     		mov	r0, r6
- 257 0048 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 258              	.LVL18:
+ 250              		.loc 1 160 7 is_stmt 1 view .LVU47
+ 251 0040 094E     		ldr	r6, .L20
+ 252 0042 0022     		movs	r2, #0
+ 253 0044 4021     		movs	r1, #64
+ 254 0046 3046     		mov	r0, r6
+ 255 0048 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 256              	.LVL18:
  162:Src/ds18b20.c **** 
- 259              		.loc 1 162 7 view .LVU50
- 260 004c 0520     		movs	r0, #5
- 261 004e FFF7FEFF 		bl	bsp_delay_us
- 262              	.LVL19:
+ 257              		.loc 1 162 7 view .LVU48
+ 258 004c 0520     		movs	r0, #5
+ 259 004e FFF7FEFF 		bl	bsp_delay_us
+ 260              	.LVL19:
  164:Src/ds18b20.c ****       bsp_delay_us(65);
- 263              		.loc 1 164 7 view .LVU51
- 264 0052 0122     		movs	r2, #1
- 265 0054 4021     		movs	r1, #64
- 266 0056 3046     		mov	r0, r6
- 267 0058 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 268              	.LVL20:
+ 261              		.loc 1 164 7 view .LVU49
+ 262 0052 0122     		movs	r2, #1
+ 263 0054 4021     		movs	r1, #64
+ 264 0056 3046     		mov	r0, r6
+ 265 0058 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 266              	.LVL20:
  165:Src/ds18b20.c ****     } else // 当前位写 0
- 269              		.loc 1 165 7 view .LVU52
- 270 005c 4120     		movs	r0, #65
- 271 005e FFF7FEFF 		bl	bsp_delay_us
- 272              	.LVL21:
- 273              	.LBE3:
- 274 0062 E4E7     		b	.L16
- 275              	.L19:
+ 267              		.loc 1 165 7 view .LVU50
+ 268 005c 4120     		movs	r0, #65
+ 269 005e FFF7FEFF 		bl	bsp_delay_us
+ 270              	.LVL21:
+ 271              	.LBE3:
+ 272 0062 E4E7     		b	.L16
+ 273              	.L19:
  173:Src/ds18b20.c ****     }
-ARM GAS  /tmp/ccCyGVCL.s 			page 9
-
-
  174:Src/ds18b20.c ****   }
  175:Src/ds18b20.c **** }
- 276              		.loc 1 175 1 is_stmt 0 view .LVU53
- 277 0064 70BD     		pop	{r4, r5, r6, pc}
- 278              	.LVL22:
- 279              	.L21:
- 280              		.loc 1 175 1 view .LVU54
- 281 0066 00BF     		.align	2
- 282              	.L20:
- 283 0068 00080140 		.word	1073809408
- 284              		.cfi_endproc
- 285              	.LFE72:
- 287              		.section	.text.DS18B20_Presence,"ax",%progbits
- 288              		.align	1
- 289              		.syntax unified
- 290              		.thumb
- 291              		.thumb_func
- 292              		.fpu softvfp
- 294              	DS18B20_Presence:
- 295              	.LFB68:
+ 274              		.loc 1 175 1 is_stmt 0 view .LVU51
+ 275 0064 70BD     		pop	{r4, r5, r6, pc}
+ARM GAS  /tmp/ccSHVwWu.s 			page 9
+
+
+ 276              	.LVL22:
+ 277              	.L21:
+ 278              		.loc 1 175 1 view .LVU52
+ 279 0066 00BF     		.align	2
+ 280              	.L20:
+ 281 0068 00080140 		.word	1073809408
+ 282              		.cfi_endproc
+ 283              	.LFE72:
+ 285              		.section	.text.DS18B20_Presence,"ax",%progbits
+ 286              		.align	1
+ 287              		.syntax unified
+ 288              		.thumb
+ 289              		.thumb_func
+ 290              		.fpu softvfp
+ 292              	DS18B20_Presence:
+ 293              	.LFB68:
   58:Src/ds18b20.c ****   uint8_t pulse_time = 0;
- 296              		.loc 1 58 39 is_stmt 1 view -0
- 297              		.cfi_startproc
- 298              		@ args = 0, pretend = 0, frame = 0
- 299              		@ frame_needed = 0, uses_anonymous_args = 0
- 300 0000 10B5     		push	{r4, lr}
- 301              	.LCFI8:
- 302              		.cfi_def_cfa_offset 8
- 303              		.cfi_offset 4, -8
- 304              		.cfi_offset 14, -4
+ 294              		.loc 1 58 39 is_stmt 1 view -0
+ 295              		.cfi_startproc
+ 296              		@ args = 0, pretend = 0, frame = 0
+ 297              		@ frame_needed = 0, uses_anonymous_args = 0
+ 298 0000 10B5     		push	{r4, lr}
+ 299              	.LCFI8:
+ 300              		.cfi_def_cfa_offset 8
+ 301              		.cfi_offset 4, -8
+ 302              		.cfi_offset 14, -4
   59:Src/ds18b20.c **** 
- 305              		.loc 1 59 3 view .LVU56
- 306              	.LVL23:
+ 303              		.loc 1 59 3 view .LVU54
+ 304              	.LVL23:
   61:Src/ds18b20.c **** 
- 307              		.loc 1 61 3 view .LVU57
- 308 0002 FFF7FEFF 		bl	DS18B20_Mode_IN_NP
- 309              	.LVL24:
+ 305              		.loc 1 61 3 view .LVU55
+ 306 0002 FFF7FEFF 		bl	DS18B20_Mode_IN_NP
+ 307              	.LVL24:
   67:Src/ds18b20.c ****   {
- 310              		.loc 1 67 3 view .LVU58
+ 308              		.loc 1 67 3 view .LVU56
   59:Src/ds18b20.c **** 
- 311              		.loc 1 59 11 is_stmt 0 view .LVU59
- 312 0006 0024     		movs	r4, #0
- 313              	.LVL25:
- 314              	.L23:
+ 309              		.loc 1 59 11 is_stmt 0 view .LVU57
+ 310 0006 0024     		movs	r4, #0
+ 311              	.LVL25:
+ 312              	.L23:
   67:Src/ds18b20.c ****   {
- 315              		.loc 1 67 9 is_stmt 1 view .LVU60
+ 313              		.loc 1 67 10 view .LVU58
+ 314 0008 4021     		movs	r1, #64
+ 315 000a 1248     		ldr	r0, .L33
+ 316 000c FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 317              	.LVL26:
   67:Src/ds18b20.c ****   {
- 316              		.loc 1 67 10 is_stmt 0 view .LVU61
- 317 0008 4021     		movs	r1, #64
- 318 000a 1248     		ldr	r0, .L33
- 319 000c FFF7FEFF 		bl	HAL_GPIO_ReadPin
- 320              	.LVL26:
+ 318              		.loc 1 67 9 view .LVU59
+ 319 0010 38B1     		cbz	r0, .L24
   67:Src/ds18b20.c ****   {
- 321              		.loc 1 67 9 view .LVU62
- 322 0010 38B1     		cbz	r0, .L24
-  67:Src/ds18b20.c ****   {
- 323              		.loc 1 67 21 discriminator 1 view .LVU63
-ARM GAS  /tmp/ccCyGVCL.s 			page 10
+ 320              		.loc 1 67 21 discriminator 1 view .LVU60
+ 321 0012 632C     		cmp	r4, #99
+ 322 0014 05D8     		bhi	.L24
+ 323              	.LBB4:
+  69:Src/ds18b20.c ****     bsp_delay_us(1);
+ 324              		.loc 1 69 5 is_stmt 1 view .LVU61
+  69:Src/ds18b20.c ****     bsp_delay_us(1);
+ARM GAS  /tmp/ccSHVwWu.s 			page 10
 
 
- 324 0012 632C     		cmp	r4, #99
- 325 0014 05D8     		bhi	.L24
- 326              	.LBB4:
+ 325              		.loc 1 69 15 is_stmt 0 view .LVU62
+ 326 0016 0134     		adds	r4, r4, #1
+ 327              	.LVL27:
   69:Src/ds18b20.c ****     bsp_delay_us(1);
- 327              		.loc 1 69 5 is_stmt 1 view .LVU64
-  69:Src/ds18b20.c ****     bsp_delay_us(1);
- 328              		.loc 1 69 15 is_stmt 0 view .LVU65
- 329 0016 0134     		adds	r4, r4, #1
- 330              	.LVL27:
-  69:Src/ds18b20.c ****     bsp_delay_us(1);
- 331              		.loc 1 69 15 view .LVU66
- 332 0018 E4B2     		uxtb	r4, r4
- 333              	.LVL28:
+ 328              		.loc 1 69 15 view .LVU63
+ 329 0018 E4B2     		uxtb	r4, r4
+ 330              	.LVL28:
   70:Src/ds18b20.c ****   }
- 334              		.loc 1 70 5 is_stmt 1 view .LVU67
- 335 001a 0120     		movs	r0, #1
- 336 001c FFF7FEFF 		bl	bsp_delay_us
- 337              	.LVL29:
- 338 0020 F2E7     		b	.L23
- 339              	.L24:
+ 331              		.loc 1 70 5 is_stmt 1 view .LVU64
+ 332 001a 0120     		movs	r0, #1
+ 333 001c FFF7FEFF 		bl	bsp_delay_us
+ 334              	.LVL29:
+ 335 0020 F2E7     		b	.L23
+ 336              	.L24:
   70:Src/ds18b20.c ****   }
- 340              		.loc 1 70 5 is_stmt 0 view .LVU68
- 341              	.LBE4:
+ 337              		.loc 1 70 5 is_stmt 0 view .LVU65
+ 338              	.LBE4:
   73:Src/ds18b20.c ****     return 1;
- 342              		.loc 1 73 3 is_stmt 1 view .LVU69
+ 339              		.loc 1 73 3 is_stmt 1 view .LVU66
   73:Src/ds18b20.c ****     return 1;
- 343              		.loc 1 73 6 is_stmt 0 view .LVU70
- 344 0022 632C     		cmp	r4, #99
- 345 0024 11D8     		bhi	.L30
+ 340              		.loc 1 73 6 is_stmt 0 view .LVU67
+ 341 0022 632C     		cmp	r4, #99
+ 342 0024 11D8     		bhi	.L30
   76:Src/ds18b20.c ****   }
- 346              		.loc 1 76 16 view .LVU71
- 347 0026 0024     		movs	r4, #0
- 348              	.LVL30:
- 349              	.L27:
+ 343              		.loc 1 76 16 view .LVU68
+ 344 0026 0024     		movs	r4, #0
+ 345              	.LVL30:
+ 346              	.L27:
   80:Src/ds18b20.c ****     pulse_time++;
- 350              		.loc 1 80 9 is_stmt 1 view .LVU72
+ 347              		.loc 1 80 12 view .LVU69
+ 348 0028 4021     		movs	r1, #64
+ 349 002a 0A48     		ldr	r0, .L33
+ 350 002c FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 351              	.LVL31:
   80:Src/ds18b20.c ****     pulse_time++;
- 351              		.loc 1 80 12 is_stmt 0 view .LVU73
- 352 0028 4021     		movs	r1, #64
- 353 002a 0A48     		ldr	r0, .L33
- 354 002c FFF7FEFF 		bl	HAL_GPIO_ReadPin
- 355              	.LVL31:
+ 352              		.loc 1 80 9 view .LVU70
+ 353 0030 38B9     		cbnz	r0, .L28
   80:Src/ds18b20.c ****     pulse_time++;
- 356              		.loc 1 80 9 view .LVU74
- 357 0030 38B9     		cbnz	r0, .L28
-  80:Src/ds18b20.c ****     pulse_time++;
- 358              		.loc 1 80 24 discriminator 1 view .LVU75
- 359 0032 EF2C     		cmp	r4, #239
- 360 0034 05D8     		bhi	.L28
- 361              	.LBB5:
+ 354              		.loc 1 80 24 discriminator 1 view .LVU71
+ 355 0032 EF2C     		cmp	r4, #239
+ 356 0034 05D8     		bhi	.L28
+ 357              	.LBB5:
   81:Src/ds18b20.c ****     bsp_delay_us(1);
- 362              		.loc 1 81 5 is_stmt 1 view .LVU76
+ 358              		.loc 1 81 5 is_stmt 1 view .LVU72
   81:Src/ds18b20.c ****     bsp_delay_us(1);
- 363              		.loc 1 81 15 is_stmt 0 view .LVU77
- 364 0036 0134     		adds	r4, r4, #1
- 365              	.LVL32:
+ 359              		.loc 1 81 15 is_stmt 0 view .LVU73
+ 360 0036 0134     		adds	r4, r4, #1
+ 361              	.LVL32:
   81:Src/ds18b20.c ****     bsp_delay_us(1);
-ARM GAS  /tmp/ccCyGVCL.s 			page 11
+ 362              		.loc 1 81 15 view .LVU74
+ 363 0038 E4B2     		uxtb	r4, r4
+ 364              	.LVL33:
+  82:Src/ds18b20.c ****   }
+ 365              		.loc 1 82 5 is_stmt 1 view .LVU75
+ 366 003a 0120     		movs	r0, #1
+ 367 003c FFF7FEFF 		bl	bsp_delay_us
+ 368              	.LVL34:
+ARM GAS  /tmp/ccSHVwWu.s 			page 11
 
 
- 366              		.loc 1 81 15 view .LVU78
- 367 0038 E4B2     		uxtb	r4, r4
- 368              	.LVL33:
+ 369 0040 F2E7     		b	.L27
+ 370              	.L28:
   82:Src/ds18b20.c ****   }
- 369              		.loc 1 82 5 is_stmt 1 view .LVU79
- 370 003a 0120     		movs	r0, #1
- 371 003c FFF7FEFF 		bl	bsp_delay_us
- 372              	.LVL34:
- 373 0040 F2E7     		b	.L27
- 374              	.L28:
-  82:Src/ds18b20.c ****   }
- 375              		.loc 1 82 5 is_stmt 0 view .LVU80
- 376              	.LBE5:
+ 371              		.loc 1 82 5 is_stmt 0 view .LVU76
+ 372              	.LBE5:
   84:Src/ds18b20.c ****     return 1;
- 377              		.loc 1 84 3 is_stmt 1 view .LVU81
+ 373              		.loc 1 84 3 is_stmt 1 view .LVU77
   84:Src/ds18b20.c ****     return 1;
- 378              		.loc 1 84 6 is_stmt 0 view .LVU82
- 379 0042 EF2C     		cmp	r4, #239
- 380 0044 03D9     		bls	.L31
+ 374              		.loc 1 84 6 is_stmt 0 view .LVU78
+ 375 0042 EF2C     		cmp	r4, #239
+ 376 0044 03D9     		bls	.L31
   85:Src/ds18b20.c ****   } else {
- 381              		.loc 1 85 12 view .LVU83
- 382 0046 0120     		movs	r0, #1
- 383 0048 00E0     		b	.L26
- 384              	.L30:
+ 377              		.loc 1 85 12 view .LVU79
+ 378 0046 0120     		movs	r0, #1
+ 379 0048 00E0     		b	.L26
+ 380              	.L30:
   74:Src/ds18b20.c ****   } else {
- 385              		.loc 1 74 12 view .LVU84
- 386 004a 0120     		movs	r0, #1
- 387              	.L26:
+ 381              		.loc 1 74 12 view .LVU80
+ 382 004a 0120     		movs	r0, #1
+ 383              	.L26:
   89:Src/ds18b20.c **** 
- 388              		.loc 1 89 1 view .LVU85
- 389 004c 10BD     		pop	{r4, pc}
- 390              	.LVL35:
- 391              	.L31:
+ 384              		.loc 1 89 1 view .LVU81
+ 385 004c 10BD     		pop	{r4, pc}
+ 386              	.LVL35:
+ 387              	.L31:
   87:Src/ds18b20.c ****   }
- 392              		.loc 1 87 12 view .LVU86
- 393 004e 0020     		movs	r0, #0
- 394 0050 FCE7     		b	.L26
- 395              	.L34:
- 396 0052 00BF     		.align	2
- 397              	.L33:
- 398 0054 00080140 		.word	1073809408
- 399              		.cfi_endproc
- 400              	.LFE68:
- 402              		.section	.text.DS18B20_SkipRom,"ax",%progbits
- 403              		.align	1
- 404              		.syntax unified
- 405              		.thumb
- 406              		.thumb_func
- 407              		.fpu softvfp
- 409              	DS18B20_SkipRom:
- 410              	.LFB73:
+ 388              		.loc 1 87 12 view .LVU82
+ 389 004e 0020     		movs	r0, #0
+ 390 0050 FCE7     		b	.L26
+ 391              	.L34:
+ 392 0052 00BF     		.align	2
+ 393              	.L33:
+ 394 0054 00080140 		.word	1073809408
+ 395              		.cfi_endproc
+ 396              	.LFE68:
+ 398              		.section	.text.DS18B20_SkipRom,"ax",%progbits
+ 399              		.align	1
+ 400              		.syntax unified
+ 401              		.thumb
+ 402              		.thumb_func
+ 403              		.fpu softvfp
+ 405              	DS18B20_SkipRom:
+ 406              	.LFB73:
  176:Src/ds18b20.c **** 
  177:Src/ds18b20.c **** /**
  178:Src/ds18b20.c ****  * @brief  跳过匹配 DS18B20 ROM
  179:Src/ds18b20.c ****  */
  180:Src/ds18b20.c **** static void DS18B20_SkipRom(void) {
- 411              		.loc 1 180 35 is_stmt 1 view -0
-ARM GAS  /tmp/ccCyGVCL.s 			page 12
+ 407              		.loc 1 180 35 is_stmt 1 view -0
+ 408              		.cfi_startproc
+ 409              		@ args = 0, pretend = 0, frame = 0
+ 410              		@ frame_needed = 0, uses_anonymous_args = 0
+ 411 0000 08B5     		push	{r3, lr}
+ 412              	.LCFI9:
+ 413              		.cfi_def_cfa_offset 8
+ 414              		.cfi_offset 3, -8
+ 415              		.cfi_offset 14, -4
+ARM GAS  /tmp/ccSHVwWu.s 			page 12
 
 
- 412              		.cfi_startproc
- 413              		@ args = 0, pretend = 0, frame = 0
- 414              		@ frame_needed = 0, uses_anonymous_args = 0
- 415 0000 08B5     		push	{r3, lr}
- 416              	.LCFI9:
- 417              		.cfi_def_cfa_offset 8
- 418              		.cfi_offset 3, -8
- 419              		.cfi_offset 14, -4
  181:Src/ds18b20.c ****   DS18B20_Reset();
- 420              		.loc 1 181 3 view .LVU88
- 421 0002 FFF7FEFF 		bl	DS18B20_Reset
- 422              	.LVL36:
+ 416              		.loc 1 181 3 view .LVU84
+ 417 0002 FFF7FEFF 		bl	DS18B20_Reset
+ 418              	.LVL36:
  182:Src/ds18b20.c **** 
  183:Src/ds18b20.c ****   DS18B20_Presence();
- 423              		.loc 1 183 3 view .LVU89
- 424 0006 FFF7FEFF 		bl	DS18B20_Presence
- 425              	.LVL37:
+ 419              		.loc 1 183 3 view .LVU85
+ 420 0006 FFF7FEFF 		bl	DS18B20_Presence
+ 421              	.LVL37:
  184:Src/ds18b20.c **** 
  185:Src/ds18b20.c ****   DS18B20_WriteByte(0XCC); /* 跳过 ROM */
- 426              		.loc 1 185 3 view .LVU90
- 427 000a CC20     		movs	r0, #204
- 428 000c FFF7FEFF 		bl	DS18B20_WriteByte
- 429              	.LVL38:
+ 422              		.loc 1 185 3 view .LVU86
+ 423 000a CC20     		movs	r0, #204
+ 424 000c FFF7FEFF 		bl	DS18B20_WriteByte
+ 425              	.LVL38:
  186:Src/ds18b20.c **** }
- 430              		.loc 1 186 1 is_stmt 0 view .LVU91
- 431 0010 08BD     		pop	{r3, pc}
- 432              		.cfi_endproc
- 433              	.LFE73:
- 435              		.section	.text.DS18B20_MatchRom,"ax",%progbits
- 436              		.align	1
- 437              		.syntax unified
- 438              		.thumb
- 439              		.thumb_func
- 440              		.fpu softvfp
- 442              	DS18B20_MatchRom:
- 443              	.LFB74:
+ 426              		.loc 1 186 1 is_stmt 0 view .LVU87
+ 427 0010 08BD     		pop	{r3, pc}
+ 428              		.cfi_endproc
+ 429              	.LFE73:
+ 431              		.section	.text.DS18B20_MatchRom,"ax",%progbits
+ 432              		.align	1
+ 433              		.syntax unified
+ 434              		.thumb
+ 435              		.thumb_func
+ 436              		.fpu softvfp
+ 438              	DS18B20_MatchRom:
+ 439              	.LFB74:
  187:Src/ds18b20.c **** 
  188:Src/ds18b20.c **** /**
  189:Src/ds18b20.c ****  * @brief  执行匹配 DS18B20 ROM
  190:Src/ds18b20.c ****  */
  191:Src/ds18b20.c **** static void DS18B20_MatchRom(void) {
- 444              		.loc 1 191 36 is_stmt 1 view -0
- 445              		.cfi_startproc
- 446              		@ args = 0, pretend = 0, frame = 0
- 447              		@ frame_needed = 0, uses_anonymous_args = 0
- 448 0000 08B5     		push	{r3, lr}
- 449              	.LCFI10:
- 450              		.cfi_def_cfa_offset 8
- 451              		.cfi_offset 3, -8
- 452              		.cfi_offset 14, -4
+ 440              		.loc 1 191 36 is_stmt 1 view -0
+ 441              		.cfi_startproc
+ 442              		@ args = 0, pretend = 0, frame = 0
+ 443              		@ frame_needed = 0, uses_anonymous_args = 0
+ 444 0000 08B5     		push	{r3, lr}
+ 445              	.LCFI10:
+ 446              		.cfi_def_cfa_offset 8
+ 447              		.cfi_offset 3, -8
+ 448              		.cfi_offset 14, -4
  192:Src/ds18b20.c ****   DS18B20_Reset();
- 453              		.loc 1 192 3 view .LVU93
- 454 0002 FFF7FEFF 		bl	DS18B20_Reset
- 455              	.LVL39:
+ 449              		.loc 1 192 3 view .LVU89
+ 450 0002 FFF7FEFF 		bl	DS18B20_Reset
+ 451              	.LVL39:
  193:Src/ds18b20.c **** 
  194:Src/ds18b20.c ****   DS18B20_Presence();
- 456              		.loc 1 194 3 view .LVU94
-ARM GAS  /tmp/ccCyGVCL.s 			page 13
-
-
- 457 0006 FFF7FEFF 		bl	DS18B20_Presence
- 458              	.LVL40:
+ 452              		.loc 1 194 3 view .LVU90
+ 453 0006 FFF7FEFF 		bl	DS18B20_Presence
+ 454              	.LVL40:
  195:Src/ds18b20.c **** 
  196:Src/ds18b20.c ****   DS18B20_WriteByte(0X55); /* 匹配 ROM */
- 459              		.loc 1 196 3 view .LVU95
- 460 000a 5520     		movs	r0, #85
- 461 000c FFF7FEFF 		bl	DS18B20_WriteByte
- 462              	.LVL41:
+ 455              		.loc 1 196 3 view .LVU91
+ 456 000a 5520     		movs	r0, #85
+ 457 000c FFF7FEFF 		bl	DS18B20_WriteByte
+ 458              	.LVL41:
+ARM GAS  /tmp/ccSHVwWu.s 			page 13
+
+
  197:Src/ds18b20.c **** }
- 463              		.loc 1 197 1 is_stmt 0 view .LVU96
- 464 0010 08BD     		pop	{r3, pc}
- 465              		.cfi_endproc
- 466              	.LFE74:
- 468              		.section	.text.DS18B20_ReadBit,"ax",%progbits
- 469              		.align	1
- 470              		.syntax unified
- 471              		.thumb
- 472              		.thumb_func
- 473              		.fpu softvfp
- 475              	DS18B20_ReadBit:
- 476              	.LFB70:
+ 459              		.loc 1 197 1 is_stmt 0 view .LVU92
+ 460 0010 08BD     		pop	{r3, pc}
+ 461              		.cfi_endproc
+ 462              	.LFE74:
+ 464              		.section	.text.DS18B20_ReadBit,"ax",%progbits
+ 465              		.align	1
+ 466              		.syntax unified
+ 467              		.thumb
+ 468              		.thumb_func
+ 469              		.fpu softvfp
+ 471              	DS18B20_ReadBit:
+ 472              	.LFB70:
  106:Src/ds18b20.c ****   uint8_t dat;
- 477              		.loc 1 106 38 is_stmt 1 view -0
- 478              		.cfi_startproc
- 479              		@ args = 0, pretend = 0, frame = 0
- 480              		@ frame_needed = 0, uses_anonymous_args = 0
- 481 0000 10B5     		push	{r4, lr}
- 482              	.LCFI11:
- 483              		.cfi_def_cfa_offset 8
- 484              		.cfi_offset 4, -8
- 485              		.cfi_offset 14, -4
+ 473              		.loc 1 106 38 is_stmt 1 view -0
+ 474              		.cfi_startproc
+ 475              		@ args = 0, pretend = 0, frame = 0
+ 476              		@ frame_needed = 0, uses_anonymous_args = 0
+ 477 0000 10B5     		push	{r4, lr}
+ 478              	.LCFI11:
+ 479              		.cfi_def_cfa_offset 8
+ 480              		.cfi_offset 4, -8
+ 481              		.cfi_offset 14, -4
  107:Src/ds18b20.c **** 
- 486              		.loc 1 107 3 view .LVU98
+ 482              		.loc 1 107 3 view .LVU94
  109:Src/ds18b20.c **** 
- 487              		.loc 1 109 3 view .LVU99
- 488 0002 FFF7FEFF 		bl	DS18B20_Mode_OUT_PP
- 489              	.LVL42:
+ 483              		.loc 1 109 3 view .LVU95
+ 484 0002 FFF7FEFF 		bl	DS18B20_Mode_OUT_PP
+ 485              	.LVL42:
  111:Src/ds18b20.c **** 
- 490              		.loc 1 111 3 view .LVU100
- 491 0006 0C4C     		ldr	r4, .L43
- 492 0008 0022     		movs	r2, #0
- 493 000a 4021     		movs	r1, #64
- 494 000c 2046     		mov	r0, r4
- 495 000e FFF7FEFF 		bl	HAL_GPIO_WritePin
- 496              	.LVL43:
+ 486              		.loc 1 111 3 view .LVU96
+ 487 0006 0C4C     		ldr	r4, .L43
+ 488 0008 0022     		movs	r2, #0
+ 489 000a 4021     		movs	r1, #64
+ 490 000c 2046     		mov	r0, r4
+ 491 000e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 492              	.LVL43:
  115:Src/ds18b20.c **** 
- 497              		.loc 1 115 3 view .LVU101
- 498 0012 0D20     		movs	r0, #13
- 499 0014 FFF7FEFF 		bl	bsp_delay_us
- 500              	.LVL44:
+ 493              		.loc 1 115 3 view .LVU97
+ 494 0012 0D20     		movs	r0, #13
+ 495 0014 FFF7FEFF 		bl	bsp_delay_us
+ 496              	.LVL44:
  117:Src/ds18b20.c **** 
- 501              		.loc 1 117 3 view .LVU102
- 502 0018 FFF7FEFF 		bl	DS18B20_Mode_IN_NP
- 503              	.LVL45:
+ 497              		.loc 1 117 3 view .LVU98
+ 498 0018 FFF7FEFF 		bl	DS18B20_Mode_IN_NP
+ 499              	.LVL45:
  119:Src/ds18b20.c ****     dat = 1;
- 504              		.loc 1 119 3 view .LVU103
+ 500              		.loc 1 119 3 view .LVU99
  119:Src/ds18b20.c ****     dat = 1;
-ARM GAS  /tmp/ccCyGVCL.s 			page 14
+ 501              		.loc 1 119 7 is_stmt 0 view .LVU100
+ 502 001c 4021     		movs	r1, #64
+ 503 001e 2046     		mov	r0, r4
+ 504 0020 FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 505              	.LVL46:
+ 506 0024 0446     		mov	r4, r0
+ 119:Src/ds18b20.c ****     dat = 1;
+ 507              		.loc 1 119 6 view .LVU101
+ARM GAS  /tmp/ccSHVwWu.s 			page 14
 
 
- 505              		.loc 1 119 7 is_stmt 0 view .LVU104
- 506 001c 4021     		movs	r1, #64
- 507 001e 2046     		mov	r0, r4
- 508 0020 FFF7FEFF 		bl	HAL_GPIO_ReadPin
- 509              	.LVL46:
- 510 0024 0446     		mov	r4, r0
- 119:Src/ds18b20.c ****     dat = 1;
- 511              		.loc 1 119 6 view .LVU105
- 512 0026 0128     		cmp	r0, #1
- 513 0028 00D0     		beq	.L40
+ 508 0026 0128     		cmp	r0, #1
+ 509 0028 00D0     		beq	.L40
  122:Src/ds18b20.c ****   }
- 514              		.loc 1 122 9 view .LVU106
- 515 002a 0024     		movs	r4, #0
- 516              	.L40:
- 517              	.LVL47:
+ 510              		.loc 1 122 9 view .LVU102
+ 511 002a 0024     		movs	r4, #0
+ 512              	.L40:
+ 513              	.LVL47:
  125:Src/ds18b20.c **** 
- 518              		.loc 1 125 3 is_stmt 1 view .LVU107
- 519 002c 2D20     		movs	r0, #45
- 520 002e FFF7FEFF 		bl	bsp_delay_us
- 521              	.LVL48:
+ 514              		.loc 1 125 3 is_stmt 1 view .LVU103
+ 515 002c 2D20     		movs	r0, #45
+ 516 002e FFF7FEFF 		bl	bsp_delay_us
+ 517              	.LVL48:
  127:Src/ds18b20.c **** }
- 522              		.loc 1 127 3 view .LVU108
+ 518              		.loc 1 127 3 view .LVU104
  128:Src/ds18b20.c **** 
- 523              		.loc 1 128 1 is_stmt 0 view .LVU109
- 524 0032 2046     		mov	r0, r4
- 525 0034 10BD     		pop	{r4, pc}
- 526              	.LVL49:
- 527              	.L44:
+ 519              		.loc 1 128 1 is_stmt 0 view .LVU105
+ 520 0032 2046     		mov	r0, r4
+ 521 0034 10BD     		pop	{r4, pc}
+ 522              	.LVL49:
+ 523              	.L44:
  128:Src/ds18b20.c **** 
- 528              		.loc 1 128 1 view .LVU110
- 529 0036 00BF     		.align	2
- 530              	.L43:
- 531 0038 00080140 		.word	1073809408
- 532              		.cfi_endproc
- 533              	.LFE70:
- 535              		.section	.text.DS18B20_ReadByte,"ax",%progbits
- 536              		.align	1
- 537              		.syntax unified
- 538              		.thumb
- 539              		.thumb_func
- 540              		.fpu softvfp
- 542              	DS18B20_ReadByte:
- 543              	.LFB71:
+ 524              		.loc 1 128 1 view .LVU106
+ 525 0036 00BF     		.align	2
+ 526              	.L43:
+ 527 0038 00080140 		.word	1073809408
+ 528              		.cfi_endproc
+ 529              	.LFE70:
+ 531              		.section	.text.DS18B20_ReadByte,"ax",%progbits
+ 532              		.align	1
+ 533              		.syntax unified
+ 534              		.thumb
+ 535              		.thumb_func
+ 536              		.fpu softvfp
+ 538              	DS18B20_ReadByte:
+ 539              	.LFB71:
  133:Src/ds18b20.c ****   uint8_t i, j, dat = 0;
- 544              		.loc 1 133 39 is_stmt 1 view -0
- 545              		.cfi_startproc
- 546              		@ args = 0, pretend = 0, frame = 0
- 547              		@ frame_needed = 0, uses_anonymous_args = 0
- 548 0000 38B5     		push	{r3, r4, r5, lr}
- 549              	.LCFI12:
- 550              		.cfi_def_cfa_offset 16
- 551              		.cfi_offset 3, -16
- 552              		.cfi_offset 4, -12
- 553              		.cfi_offset 5, -8
- 554              		.cfi_offset 14, -4
+ 540              		.loc 1 133 39 is_stmt 1 view -0
+ 541              		.cfi_startproc
+ 542              		@ args = 0, pretend = 0, frame = 0
+ 543              		@ frame_needed = 0, uses_anonymous_args = 0
+ 544 0000 38B5     		push	{r3, r4, r5, lr}
+ 545              	.LCFI12:
+ 546              		.cfi_def_cfa_offset 16
+ 547              		.cfi_offset 3, -16
+ 548              		.cfi_offset 4, -12
+ 549              		.cfi_offset 5, -8
+ 550              		.cfi_offset 14, -4
  134:Src/ds18b20.c **** 
- 555              		.loc 1 134 3 view .LVU112
-ARM GAS  /tmp/ccCyGVCL.s 			page 15
+ 551              		.loc 1 134 3 view .LVU108
+ 552              	.LVL50:
+ 136:Src/ds18b20.c ****     j = DS18B20_ReadBit();
+ 553              		.loc 1 136 3 view .LVU109
+ 134:Src/ds18b20.c **** 
+ 554              		.loc 1 134 17 is_stmt 0 view .LVU110
+ 555 0002 0025     		movs	r5, #0
+ 136:Src/ds18b20.c ****     j = DS18B20_ReadBit();
+ 556              		.loc 1 136 10 view .LVU111
+ARM GAS  /tmp/ccSHVwWu.s 			page 15
 
 
- 556              	.LVL50:
+ 557 0004 2C46     		mov	r4, r5
  136:Src/ds18b20.c ****     j = DS18B20_ReadBit();
- 557              		.loc 1 136 3 view .LVU113
- 134:Src/ds18b20.c **** 
- 558              		.loc 1 134 17 is_stmt 0 view .LVU114
- 559 0002 0025     		movs	r5, #0
- 136:Src/ds18b20.c ****     j = DS18B20_ReadBit();
- 560              		.loc 1 136 10 view .LVU115
- 561 0004 2C46     		mov	r4, r5
- 136:Src/ds18b20.c ****     j = DS18B20_ReadBit();
- 562              		.loc 1 136 3 view .LVU116
- 563 0006 06E0     		b	.L46
- 564              	.LVL51:
- 565              	.L47:
+ 558              		.loc 1 136 3 view .LVU112
+ 559 0006 06E0     		b	.L46
+ 560              	.LVL51:
+ 561              	.L47:
  137:Src/ds18b20.c ****     dat = (dat) | (j << i);
- 566              		.loc 1 137 5 is_stmt 1 discriminator 3 view .LVU117
+ 562              		.loc 1 137 5 is_stmt 1 discriminator 3 view .LVU113
  137:Src/ds18b20.c ****     dat = (dat) | (j << i);
- 567              		.loc 1 137 9 is_stmt 0 discriminator 3 view .LVU118
- 568 0008 FFF7FEFF 		bl	DS18B20_ReadBit
- 569              	.LVL52:
+ 563              		.loc 1 137 9 is_stmt 0 discriminator 3 view .LVU114
+ 564 0008 FFF7FEFF 		bl	DS18B20_ReadBit
+ 565              	.LVL52:
  138:Src/ds18b20.c ****   }
- 570              		.loc 1 138 5 is_stmt 1 discriminator 3 view .LVU119
+ 566              		.loc 1 138 5 is_stmt 1 discriminator 3 view .LVU115
  138:Src/ds18b20.c ****   }
- 571              		.loc 1 138 22 is_stmt 0 discriminator 3 view .LVU120
- 572 000c A040     		lsls	r0, r0, r4
- 573              	.LVL53:
+ 567              		.loc 1 138 22 is_stmt 0 discriminator 3 view .LVU116
+ 568 000c A040     		lsls	r0, r0, r4
+ 569              	.LVL53:
  138:Src/ds18b20.c ****   }
- 574              		.loc 1 138 17 discriminator 3 view .LVU121
- 575 000e 0543     		orrs	r5, r5, r0
- 576              	.LVL54:
+ 570              		.loc 1 138 17 discriminator 3 view .LVU117
+ 571 000e 0543     		orrs	r5, r5, r0
+ 572              	.LVL54:
  138:Src/ds18b20.c ****   }
- 577              		.loc 1 138 9 discriminator 3 view .LVU122
- 578 0010 EDB2     		uxtb	r5, r5
- 579              	.LVL55:
+ 573              		.loc 1 138 9 discriminator 3 view .LVU118
+ 574 0010 EDB2     		uxtb	r5, r5
+ 575              	.LVL55:
  136:Src/ds18b20.c ****     j = DS18B20_ReadBit();
- 580              		.loc 1 136 22 is_stmt 1 discriminator 3 view .LVU123
+ 576              		.loc 1 136 23 discriminator 3 view .LVU119
+ 577 0012 0134     		adds	r4, r4, #1
+ 578              	.LVL56:
  136:Src/ds18b20.c ****     j = DS18B20_ReadBit();
- 581              		.loc 1 136 23 is_stmt 0 discriminator 3 view .LVU124
- 582 0012 0134     		adds	r4, r4, #1
- 583              	.LVL56:
+ 579              		.loc 1 136 23 discriminator 3 view .LVU120
+ 580 0014 E4B2     		uxtb	r4, r4
+ 581              	.LVL57:
+ 582              	.L46:
  136:Src/ds18b20.c ****     j = DS18B20_ReadBit();
- 584              		.loc 1 136 23 discriminator 3 view .LVU125
- 585 0014 E4B2     		uxtb	r4, r4
- 586              	.LVL57:
- 587              	.L46:
- 136:Src/ds18b20.c ****     j = DS18B20_ReadBit();
- 588              		.loc 1 136 15 is_stmt 1 discriminator 1 view .LVU126
- 136:Src/ds18b20.c ****     j = DS18B20_ReadBit();
- 589              		.loc 1 136 3 is_stmt 0 discriminator 1 view .LVU127
- 590 0016 072C     		cmp	r4, #7
- 591 0018 F6D9     		bls	.L47
+ 583              		.loc 1 136 3 discriminator 1 view .LVU121
+ 584 0016 072C     		cmp	r4, #7
+ 585 0018 F6D9     		bls	.L47
  141:Src/ds18b20.c **** }
- 592              		.loc 1 141 3 is_stmt 1 view .LVU128
+ 586              		.loc 1 141 3 is_stmt 1 view .LVU122
  142:Src/ds18b20.c **** 
- 593              		.loc 1 142 1 is_stmt 0 view .LVU129
- 594 001a 2846     		mov	r0, r5
- 595 001c 38BD     		pop	{r3, r4, r5, pc}
-ARM GAS  /tmp/ccCyGVCL.s 			page 16
+ 587              		.loc 1 142 1 is_stmt 0 view .LVU123
+ 588 001a 2846     		mov	r0, r5
+ 589 001c 38BD     		pop	{r3, r4, r5, pc}
+ 142:Src/ds18b20.c **** 
+ 590              		.loc 1 142 1 view .LVU124
+ 591              		.cfi_endproc
+ 592              	.LFE71:
+ 594              		.section	.text.DS18B20_Init,"ax",%progbits
+ 595              		.align	1
+ 596              		.global	DS18B20_Init
+ 597              		.syntax unified
+ 598              		.thumb
+ 599              		.thumb_func
+ 600              		.fpu softvfp
+ 602              	DS18B20_Init:
+ARM GAS  /tmp/ccSHVwWu.s 			page 16
 
 
- 142:Src/ds18b20.c **** 
- 596              		.loc 1 142 1 view .LVU130
- 597              		.cfi_endproc
- 598              	.LFE71:
- 600              		.section	.text.DS18B20_Init,"ax",%progbits
- 601              		.align	1
- 602              		.global	DS18B20_Init
- 603              		.syntax unified
- 604              		.thumb
- 605              		.thumb_func
- 606              		.fpu softvfp
- 608              	DS18B20_Init:
- 609              	.LFB69:
+ 603              	.LFB69:
   95:Src/ds18b20.c ****   DS18B20_Mode_OUT_PP();
- 610              		.loc 1 95 28 is_stmt 1 view -0
- 611              		.cfi_startproc
- 612              		@ args = 0, pretend = 0, frame = 0
- 613              		@ frame_needed = 0, uses_anonymous_args = 0
- 614 0000 08B5     		push	{r3, lr}
- 615              	.LCFI13:
- 616              		.cfi_def_cfa_offset 8
- 617              		.cfi_offset 3, -8
- 618              		.cfi_offset 14, -4
+ 604              		.loc 1 95 28 is_stmt 1 view -0
+ 605              		.cfi_startproc
+ 606              		@ args = 0, pretend = 0, frame = 0
+ 607              		@ frame_needed = 0, uses_anonymous_args = 0
+ 608 0000 08B5     		push	{r3, lr}
+ 609              	.LCFI13:
+ 610              		.cfi_def_cfa_offset 8
+ 611              		.cfi_offset 3, -8
+ 612              		.cfi_offset 14, -4
   96:Src/ds18b20.c ****   DS18B20_OUT_1;
- 619              		.loc 1 96 3 view .LVU132
- 620 0002 FFF7FEFF 		bl	DS18B20_Mode_OUT_PP
- 621              	.LVL58:
+ 613              		.loc 1 96 3 view .LVU126
+ 614 0002 FFF7FEFF 		bl	DS18B20_Mode_OUT_PP
+ 615              	.LVL58:
   97:Src/ds18b20.c **** 
- 622              		.loc 1 97 3 view .LVU133
- 623 0006 0122     		movs	r2, #1
- 624 0008 4021     		movs	r1, #64
- 625 000a 0448     		ldr	r0, .L51
- 626 000c FFF7FEFF 		bl	HAL_GPIO_WritePin
- 627              	.LVL59:
+ 616              		.loc 1 97 3 view .LVU127
+ 617 0006 0122     		movs	r2, #1
+ 618 0008 4021     		movs	r1, #64
+ 619 000a 0448     		ldr	r0, .L51
+ 620 000c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 621              	.LVL59:
   99:Src/ds18b20.c ****   return DS18B20_Presence();
- 628              		.loc 1 99 3 view .LVU134
- 629 0010 FFF7FEFF 		bl	DS18B20_Reset
- 630              	.LVL60:
+ 622              		.loc 1 99 3 view .LVU128
+ 623 0010 FFF7FEFF 		bl	DS18B20_Reset
+ 624              	.LVL60:
  100:Src/ds18b20.c **** }
- 631              		.loc 1 100 3 view .LVU135
+ 625              		.loc 1 100 3 view .LVU129
  100:Src/ds18b20.c **** }
- 632              		.loc 1 100 10 is_stmt 0 view .LVU136
- 633 0014 FFF7FEFF 		bl	DS18B20_Presence
- 634              	.LVL61:
+ 626              		.loc 1 100 10 is_stmt 0 view .LVU130
+ 627 0014 FFF7FEFF 		bl	DS18B20_Presence
+ 628              	.LVL61:
  101:Src/ds18b20.c **** 
- 635              		.loc 1 101 1 view .LVU137
- 636 0018 08BD     		pop	{r3, pc}
- 637              	.L52:
- 638 001a 00BF     		.align	2
- 639              	.L51:
- 640 001c 00080140 		.word	1073809408
- 641              		.cfi_endproc
- 642              	.LFE69:
- 644              		.global	__aeabi_i2f
- 645              		.global	__aeabi_fmul
- 646              		.section	.text.DS18B20_GetTemp_SkipRom,"ax",%progbits
- 647              		.align	1
-ARM GAS  /tmp/ccCyGVCL.s 			page 17
-
-
- 648              		.global	DS18B20_GetTemp_SkipRom
- 649              		.syntax unified
- 650              		.thumb
- 651              		.thumb_func
- 652              		.fpu softvfp
- 654              	DS18B20_GetTemp_SkipRom:
- 655              	.LFB75:
+ 629              		.loc 1 101 1 view .LVU131
+ 630 0018 08BD     		pop	{r3, pc}
+ 631              	.L52:
+ 632 001a 00BF     		.align	2
+ 633              	.L51:
+ 634 001c 00080140 		.word	1073809408
+ 635              		.cfi_endproc
+ 636              	.LFE69:
+ 638              		.global	__aeabi_i2f
+ 639              		.global	__aeabi_fmul
+ 640              		.section	.text.DS18B20_GetTemp_SkipRom,"ax",%progbits
+ 641              		.align	1
+ 642              		.global	DS18B20_GetTemp_SkipRom
+ 643              		.syntax unified
+ 644              		.thumb
+ 645              		.thumb_func
+ 646              		.fpu softvfp
+ 648              	DS18B20_GetTemp_SkipRom:
+ 649              	.LFB75:
  198:Src/ds18b20.c **** 
  199:Src/ds18b20.c **** /**
  200:Src/ds18b20.c ****  * 存储的温度是16 位的带符号扩展的二进制补码形式
  201:Src/ds18b20.c ****  * 当工作在12位分辨率时，其中5个符号位，7个整数位，4个小数位
  202:Src/ds18b20.c ****  *
+ARM GAS  /tmp/ccSHVwWu.s 			page 17
+
+
  203:Src/ds18b20.c ****  *         |---------整数----------|-----小数 分辨率 1/(2^4)=0.0625----|
  204:Src/ds18b20.c ****  * 低字节  | 2^3 | 2^2 | 2^1 | 2^0 | 2^(-1) | 2^(-2) | 2^(-3) | 2^(-4) |
  205:Src/ds18b20.c ****  *
@@ -990,219 +978,212 @@ ARM GAS  /tmp/ccCyGVCL.s 			page 1
  217:Src/ds18b20.c ****  * @retval 温度值
  218:Src/ds18b20.c ****  */
  219:Src/ds18b20.c **** float DS18B20_GetTemp_SkipRom(void) {
- 656              		.loc 1 219 37 is_stmt 1 view -0
- 657              		.cfi_startproc
- 658              		@ args = 0, pretend = 0, frame = 0
- 659              		@ frame_needed = 0, uses_anonymous_args = 0
- 660 0000 10B5     		push	{r4, lr}
- 661              	.LCFI14:
- 662              		.cfi_def_cfa_offset 8
- 663              		.cfi_offset 4, -8
- 664              		.cfi_offset 14, -4
+ 650              		.loc 1 219 37 is_stmt 1 view -0
+ 651              		.cfi_startproc
+ 652              		@ args = 0, pretend = 0, frame = 0
+ 653              		@ frame_needed = 0, uses_anonymous_args = 0
+ 654 0000 10B5     		push	{r4, lr}
+ 655              	.LCFI14:
+ 656              		.cfi_def_cfa_offset 8
+ 657              		.cfi_offset 4, -8
+ 658              		.cfi_offset 14, -4
  220:Src/ds18b20.c ****   uint8_t tpmsb, tplsb;
- 665              		.loc 1 220 3 view .LVU139
+ 659              		.loc 1 220 3 view .LVU133
  221:Src/ds18b20.c ****   int16_t s_tem;
- 666              		.loc 1 221 3 view .LVU140
+ 660              		.loc 1 221 3 view .LVU134
  222:Src/ds18b20.c ****   float f_tem;
- 667              		.loc 1 222 3 view .LVU141
+ 661              		.loc 1 222 3 view .LVU135
  223:Src/ds18b20.c **** 
  224:Src/ds18b20.c ****   DS18B20_SkipRom();
- 668              		.loc 1 224 3 view .LVU142
- 669 0002 FFF7FEFF 		bl	DS18B20_SkipRom
- 670              	.LVL62:
+ 662              		.loc 1 224 3 view .LVU136
+ 663 0002 FFF7FEFF 		bl	DS18B20_SkipRom
+ 664              	.LVL62:
  225:Src/ds18b20.c ****   DS18B20_WriteByte(0X44); /* 开始转换 */
- 671              		.loc 1 225 3 view .LVU143
- 672 0006 4420     		movs	r0, #68
- 673 0008 FFF7FEFF 		bl	DS18B20_WriteByte
- 674              	.LVL63:
+ 665              		.loc 1 225 3 view .LVU137
+ 666 0006 4420     		movs	r0, #68
+ 667 0008 FFF7FEFF 		bl	DS18B20_WriteByte
+ 668              	.LVL63:
  226:Src/ds18b20.c **** 
  227:Src/ds18b20.c ****   DS18B20_SkipRom();
- 675              		.loc 1 227 3 view .LVU144
-ARM GAS  /tmp/ccCyGVCL.s 			page 18
-
-
- 676 000c FFF7FEFF 		bl	DS18B20_SkipRom
- 677              	.LVL64:
+ 669              		.loc 1 227 3 view .LVU138
+ 670 000c FFF7FEFF 		bl	DS18B20_SkipRom
+ 671              	.LVL64:
  228:Src/ds18b20.c ****   DS18B20_WriteByte(0XBE); /* 读温度值 */
- 678              		.loc 1 228 3 view .LVU145
- 679 0010 BE20     		movs	r0, #190
- 680 0012 FFF7FEFF 		bl	DS18B20_WriteByte
- 681              	.LVL65:
+ 672              		.loc 1 228 3 view .LVU139
+ 673 0010 BE20     		movs	r0, #190
+ 674 0012 FFF7FEFF 		bl	DS18B20_WriteByte
+ 675              	.LVL65:
  229:Src/ds18b20.c **** 
  230:Src/ds18b20.c ****   tplsb = DS18B20_ReadByte();
- 682              		.loc 1 230 3 view .LVU146
- 683              		.loc 1 230 11 is_stmt 0 view .LVU147
- 684 0016 FFF7FEFF 		bl	DS18B20_ReadByte
- 685              	.LVL66:
- 686 001a 0446     		mov	r4, r0
- 687              	.LVL67:
+ 676              		.loc 1 230 3 view .LVU140
+ 677              		.loc 1 230 11 is_stmt 0 view .LVU141
+ 678 0016 FFF7FEFF 		bl	DS18B20_ReadByte
+ARM GAS  /tmp/ccSHVwWu.s 			page 18
+
+
+ 679              	.LVL66:
+ 680 001a 0446     		mov	r4, r0
+ 681              	.LVL67:
  231:Src/ds18b20.c ****   tpmsb = DS18B20_ReadByte();
- 688              		.loc 1 231 3 is_stmt 1 view .LVU148
- 689              		.loc 1 231 11 is_stmt 0 view .LVU149
- 690 001c FFF7FEFF 		bl	DS18B20_ReadByte
- 691              	.LVL68:
+ 682              		.loc 1 231 3 is_stmt 1 view .LVU142
+ 683              		.loc 1 231 11 is_stmt 0 view .LVU143
+ 684 001c FFF7FEFF 		bl	DS18B20_ReadByte
+ 685              	.LVL68:
  232:Src/ds18b20.c **** 
  233:Src/ds18b20.c ****   s_tem = tpmsb << 8;
- 692              		.loc 1 233 3 is_stmt 1 view .LVU150
- 693              		.loc 1 233 17 is_stmt 0 view .LVU151
- 694 0020 0002     		lsls	r0, r0, #8
- 695              	.LVL69:
- 696              		.loc 1 233 9 view .LVU152
- 697 0022 03B2     		sxth	r3, r0
- 698              	.LVL70:
+ 686              		.loc 1 233 3 is_stmt 1 view .LVU144
+ 687              		.loc 1 233 17 is_stmt 0 view .LVU145
+ 688 0020 0002     		lsls	r0, r0, #8
+ 689              	.LVL69:
+ 690              		.loc 1 233 9 view .LVU146
+ 691 0022 03B2     		sxth	r3, r0
+ 692              	.LVL70:
  234:Src/ds18b20.c ****   s_tem = s_tem | tplsb;
- 699              		.loc 1 234 3 is_stmt 1 view .LVU153
- 700              		.loc 1 234 17 is_stmt 0 view .LVU154
- 701 0024 20B2     		sxth	r0, r4
- 702              	.LVL71:
+ 693              		.loc 1 234 3 is_stmt 1 view .LVU147
+ 694              		.loc 1 234 17 is_stmt 0 view .LVU148
+ 695 0024 20B2     		sxth	r0, r4
+ 696              	.LVL71:
  235:Src/ds18b20.c **** 
  236:Src/ds18b20.c ****   if (s_tem < 0) /* 负温度 */
- 703              		.loc 1 236 3 is_stmt 1 view .LVU155
- 704              		.loc 1 236 6 is_stmt 0 view .LVU156
- 705 0026 1843     		orrs	r0, r0, r3
- 706              	.LVL72:
- 707              		.loc 1 236 6 view .LVU157
- 708 0028 06D4     		bmi	.L57
+ 697              		.loc 1 236 3 is_stmt 1 view .LVU149
+ 698              		.loc 1 236 6 is_stmt 0 view .LVU150
+ 699 0026 1843     		orrs	r0, r0, r3
+ 700              	.LVL72:
+ 701              		.loc 1 236 6 view .LVU151
+ 702 0028 06D4     		bmi	.L57
  237:Src/ds18b20.c ****   {
  238:Src/ds18b20.c ****     f_tem = (~s_tem + 1) * 0.0625f;
  239:Src/ds18b20.c ****   } else {
  240:Src/ds18b20.c ****     f_tem = s_tem * 0.0625f;
- 709              		.loc 1 240 5 is_stmt 1 view .LVU158
- 710              		.loc 1 240 19 is_stmt 0 view .LVU159
- 711 002a FFF7FEFF 		bl	__aeabi_i2f
- 712              	.LVL73:
- 713              		.loc 1 240 11 view .LVU160
- 714 002e 4FF07651 		mov	r1, #1031798784
- 715 0032 FFF7FEFF 		bl	__aeabi_fmul
- 716              	.LVL74:
+ 703              		.loc 1 240 5 is_stmt 1 view .LVU152
+ 704              		.loc 1 240 19 is_stmt 0 view .LVU153
+ 705 002a FFF7FEFF 		bl	__aeabi_i2f
+ 706              	.LVL73:
+ 707              		.loc 1 240 11 view .LVU154
+ 708 002e 4FF07651 		mov	r1, #1031798784
+ 709 0032 FFF7FEFF 		bl	__aeabi_fmul
+ 710              	.LVL74:
  241:Src/ds18b20.c ****   }
  242:Src/ds18b20.c **** 
  243:Src/ds18b20.c ****   return f_tem;
-ARM GAS  /tmp/ccCyGVCL.s 			page 19
-
-
- 717              		.loc 1 243 3 is_stmt 1 view .LVU161
- 718              	.L53:
+ 711              		.loc 1 243 3 is_stmt 1 view .LVU155
+ 712              	.L53:
  244:Src/ds18b20.c **** }
- 719              		.loc 1 244 1 is_stmt 0 view .LVU162
- 720 0036 10BD     		pop	{r4, pc}
- 721              	.LVL75:
- 722              	.L57:
+ 713              		.loc 1 244 1 is_stmt 0 view .LVU156
+ 714 0036 10BD     		pop	{r4, pc}
+ 715              	.LVL75:
+ 716              	.L57:
  238:Src/ds18b20.c ****   } else {
- 723              		.loc 1 238 5 is_stmt 1 view .LVU163
+ 717              		.loc 1 238 5 is_stmt 1 view .LVU157
  238:Src/ds18b20.c ****   } else {
- 724              		.loc 1 238 26 is_stmt 0 view .LVU164
- 725 0038 4042     		rsbs	r0, r0, #0
- 726              	.LVL76:
+ 718              		.loc 1 238 26 is_stmt 0 view .LVU158
+ 719 0038 4042     		rsbs	r0, r0, #0
+ARM GAS  /tmp/ccSHVwWu.s 			page 19
+
+
+ 720              	.LVL76:
  238:Src/ds18b20.c ****   } else {
- 727              		.loc 1 238 26 view .LVU165
- 728 003a FFF7FEFF 		bl	__aeabi_i2f
- 729              	.LVL77:
+ 721              		.loc 1 238 26 view .LVU159
+ 722 003a FFF7FEFF 		bl	__aeabi_i2f
+ 723              	.LVL77:
  238:Src/ds18b20.c ****   } else {
- 730              		.loc 1 238 11 view .LVU166
- 731 003e 4FF07651 		mov	r1, #1031798784
- 732 0042 FFF7FEFF 		bl	__aeabi_fmul
- 733              	.LVL78:
+ 724              		.loc 1 238 11 view .LVU160
+ 725 003e 4FF07651 		mov	r1, #1031798784
+ 726 0042 FFF7FEFF 		bl	__aeabi_fmul
+ 727              	.LVL78:
  238:Src/ds18b20.c ****   } else {
- 734              		.loc 1 238 11 view .LVU167
- 735 0046 F6E7     		b	.L53
- 736              		.cfi_endproc
- 737              	.LFE75:
- 739              		.section	.text.DS18B20_ReadId,"ax",%progbits
- 740              		.align	1
- 741              		.global	DS18B20_ReadId
- 742              		.syntax unified
- 743              		.thumb
- 744              		.thumb_func
- 745              		.fpu softvfp
- 747              	DS18B20_ReadId:
- 748              	.LVL79:
- 749              	.LFB76:
+ 728              		.loc 1 238 11 view .LVU161
+ 729 0046 F6E7     		b	.L53
+ 730              		.cfi_endproc
+ 731              	.LFE75:
+ 733              		.section	.text.DS18B20_ReadId,"ax",%progbits
+ 734              		.align	1
+ 735              		.global	DS18B20_ReadId
+ 736              		.syntax unified
+ 737              		.thumb
+ 738              		.thumb_func
+ 739              		.fpu softvfp
+ 741              	DS18B20_ReadId:
+ 742              	.LVL79:
+ 743              	.LFB76:
  245:Src/ds18b20.c **** 
  246:Src/ds18b20.c **** /**
  247:Src/ds18b20.c ****  * @brief  在匹配 ROM 情况下获取 DS18B20 温度值
  248:Src/ds18b20.c ****  * @param  ds18b20_id：用于存放 DS18B20 序列号的数组的首地址
  249:Src/ds18b20.c ****  */
  250:Src/ds18b20.c **** void DS18B20_ReadId(uint8_t *ds18b20_id) {
- 750              		.loc 1 250 42 is_stmt 1 view -0
- 751              		.cfi_startproc
- 752              		@ args = 0, pretend = 0, frame = 0
- 753              		@ frame_needed = 0, uses_anonymous_args = 0
- 754              		.loc 1 250 42 is_stmt 0 view .LVU169
- 755 0000 38B5     		push	{r3, r4, r5, lr}
- 756              	.LCFI15:
- 757              		.cfi_def_cfa_offset 16
- 758              		.cfi_offset 3, -16
- 759              		.cfi_offset 4, -12
- 760              		.cfi_offset 5, -8
- 761              		.cfi_offset 14, -4
- 762 0002 0546     		mov	r5, r0
+ 744              		.loc 1 250 42 is_stmt 1 view -0
+ 745              		.cfi_startproc
+ 746              		@ args = 0, pretend = 0, frame = 0
+ 747              		@ frame_needed = 0, uses_anonymous_args = 0
+ 748              		.loc 1 250 42 is_stmt 0 view .LVU163
+ 749 0000 38B5     		push	{r3, r4, r5, lr}
+ 750              	.LCFI15:
+ 751              		.cfi_def_cfa_offset 16
+ 752              		.cfi_offset 3, -16
+ 753              		.cfi_offset 4, -12
+ 754              		.cfi_offset 5, -8
+ 755              		.cfi_offset 14, -4
+ 756 0002 0546     		mov	r5, r0
  251:Src/ds18b20.c ****   uint8_t uc;
-ARM GAS  /tmp/ccCyGVCL.s 			page 20
-
-
- 763              		.loc 1 251 3 is_stmt 1 view .LVU170
+ 757              		.loc 1 251 3 is_stmt 1 view .LVU164
  252:Src/ds18b20.c **** 
  253:Src/ds18b20.c ****   DS18B20_WriteByte(0x33); //读取序列号
- 764              		.loc 1 253 3 view .LVU171
- 765 0004 3320     		movs	r0, #51
- 766              	.LVL80:
- 767              		.loc 1 253 3 is_stmt 0 view .LVU172
- 768 0006 FFF7FEFF 		bl	DS18B20_WriteByte
- 769              	.LVL81:
+ 758              		.loc 1 253 3 view .LVU165
+ 759 0004 3320     		movs	r0, #51
+ 760              	.LVL80:
+ 761              		.loc 1 253 3 is_stmt 0 view .LVU166
+ 762 0006 FFF7FEFF 		bl	DS18B20_WriteByte
+ 763              	.LVL81:
  254:Src/ds18b20.c **** 
  255:Src/ds18b20.c ****   for (uc = 0; uc < 8; uc++) {
- 770              		.loc 1 255 3 is_stmt 1 view .LVU173
- 771              		.loc 1 255 11 is_stmt 0 view .LVU174
- 772 000a 0024     		movs	r4, #0
- 773              		.loc 1 255 3 view .LVU175
- 774 000c 04E0     		b	.L59
- 775              	.LVL82:
- 776              	.L60:
+ 764              		.loc 1 255 3 is_stmt 1 view .LVU167
+ARM GAS  /tmp/ccSHVwWu.s 			page 20
+
+
+ 765              		.loc 1 255 11 is_stmt 0 view .LVU168
+ 766 000a 0024     		movs	r4, #0
+ 767              		.loc 1 255 3 view .LVU169
+ 768 000c 04E0     		b	.L59
+ 769              	.LVL82:
+ 770              	.L60:
  256:Src/ds18b20.c ****     ds18b20_id[uc] = DS18B20_ReadByte();
- 777              		.loc 1 256 5 is_stmt 1 discriminator 3 view .LVU176
- 778              		.loc 1 256 22 is_stmt 0 discriminator 3 view .LVU177
- 779 000e FFF7FEFF 		bl	DS18B20_ReadByte
- 780              	.LVL83:
- 781              		.loc 1 256 20 discriminator 3 view .LVU178
- 782 0012 2855     		strb	r0, [r5, r4]
+ 771              		.loc 1 256 5 is_stmt 1 discriminator 3 view .LVU170
+ 772              		.loc 1 256 22 is_stmt 0 discriminator 3 view .LVU171
+ 773 000e FFF7FEFF 		bl	DS18B20_ReadByte
+ 774              	.LVL83:
+ 775              		.loc 1 256 20 discriminator 3 view .LVU172
+ 776 0012 2855     		strb	r0, [r5, r4]
  255:Src/ds18b20.c ****     ds18b20_id[uc] = DS18B20_ReadByte();
- 783              		.loc 1 255 24 is_stmt 1 discriminator 3 view .LVU179
+ 777              		.loc 1 255 26 discriminator 3 view .LVU173
+ 778 0014 0134     		adds	r4, r4, #1
+ 779              	.LVL84:
  255:Src/ds18b20.c ****     ds18b20_id[uc] = DS18B20_ReadByte();
- 784              		.loc 1 255 26 is_stmt 0 discriminator 3 view .LVU180
- 785 0014 0134     		adds	r4, r4, #1
- 786              	.LVL84:
+ 780              		.loc 1 255 26 discriminator 3 view .LVU174
+ 781 0016 E4B2     		uxtb	r4, r4
+ 782              	.LVL85:
+ 783              	.L59:
  255:Src/ds18b20.c ****     ds18b20_id[uc] = DS18B20_ReadByte();
- 787              		.loc 1 255 26 discriminator 3 view .LVU181
- 788 0016 E4B2     		uxtb	r4, r4
- 789              	.LVL85:
- 790              	.L59:
- 255:Src/ds18b20.c ****     ds18b20_id[uc] = DS18B20_ReadByte();
- 791              		.loc 1 255 16 is_stmt 1 discriminator 1 view .LVU182
- 255:Src/ds18b20.c ****     ds18b20_id[uc] = DS18B20_ReadByte();
- 792              		.loc 1 255 3 is_stmt 0 discriminator 1 view .LVU183
- 793 0018 072C     		cmp	r4, #7
- 794 001a F8D9     		bls	.L60
+ 784              		.loc 1 255 3 discriminator 1 view .LVU175
+ 785 0018 072C     		cmp	r4, #7
+ 786 001a F8D9     		bls	.L60
  257:Src/ds18b20.c ****   }
  258:Src/ds18b20.c **** }
- 795              		.loc 1 258 1 view .LVU184
- 796 001c 38BD     		pop	{r3, r4, r5, pc}
- 797              		.loc 1 258 1 view .LVU185
- 798              		.cfi_endproc
- 799              	.LFE76:
- 801              		.section	.text.DS18B20_GetTemp_MatchRom,"ax",%progbits
- 802              		.align	1
- 803              		.global	DS18B20_GetTemp_MatchRom
- 804              		.syntax unified
- 805              		.thumb
- 806              		.thumb_func
- 807              		.fpu softvfp
- 809              	DS18B20_GetTemp_MatchRom:
-ARM GAS  /tmp/ccCyGVCL.s 			page 21
-
-
- 810              	.LVL86:
- 811              	.LFB77:
+ 787              		.loc 1 258 1 view .LVU176
+ 788 001c 38BD     		pop	{r3, r4, r5, pc}
+ 789              		.loc 1 258 1 view .LVU177
+ 790              		.cfi_endproc
+ 791              	.LFE76:
+ 793              		.section	.text.DS18B20_GetTemp_MatchRom,"ax",%progbits
+ 794              		.align	1
+ 795              		.global	DS18B20_GetTemp_MatchRom
+ 796              		.syntax unified
+ 797              		.thumb
+ 798              		.thumb_func
+ 799              		.fpu softvfp
+ 801              	DS18B20_GetTemp_MatchRom:
+ 802              	.LVL86:
+ 803              	.LFB77:
  259:Src/ds18b20.c **** 
  260:Src/ds18b20.c **** /**
  261:Src/ds18b20.c ****  * @brief  在匹配 ROM 情况下获取 DS18B20 温度值
@@ -1210,243 +1191,239 @@ ARM GAS  /tmp/ccCyGVCL.s 			page 1
  263:Src/ds18b20.c ****  * @retval 温度值
  264:Src/ds18b20.c ****  */
  265:Src/ds18b20.c **** float DS18B20_GetTemp_MatchRom(uint8_t *ds18b20_id) {
- 812              		.loc 1 265 53 is_stmt 1 view -0
- 813              		.cfi_startproc
- 814              		@ args = 0, pretend = 0, frame = 0
- 815              		@ frame_needed = 0, uses_anonymous_args = 0
- 816              		.loc 1 265 53 is_stmt 0 view .LVU187
- 817 0000 38B5     		push	{r3, r4, r5, lr}
- 818              	.LCFI16:
- 819              		.cfi_def_cfa_offset 16
- 820              		.cfi_offset 3, -16
- 821              		.cfi_offset 4, -12
- 822              		.cfi_offset 5, -8
- 823              		.cfi_offset 14, -4
- 824 0002 0546     		mov	r5, r0
+ 804              		.loc 1 265 53 is_stmt 1 view -0
+ 805              		.cfi_startproc
+ 806              		@ args = 0, pretend = 0, frame = 0
+ 807              		@ frame_needed = 0, uses_anonymous_args = 0
+ 808              		.loc 1 265 53 is_stmt 0 view .LVU179
+ 809 0000 38B5     		push	{r3, r4, r5, lr}
+ 810              	.LCFI16:
+ARM GAS  /tmp/ccSHVwWu.s 			page 21
+
+
+ 811              		.cfi_def_cfa_offset 16
+ 812              		.cfi_offset 3, -16
+ 813              		.cfi_offset 4, -12
+ 814              		.cfi_offset 5, -8
+ 815              		.cfi_offset 14, -4
+ 816 0002 0546     		mov	r5, r0
  266:Src/ds18b20.c ****   uint8_t tpmsb, tplsb, i;
- 825              		.loc 1 266 3 is_stmt 1 view .LVU188
+ 817              		.loc 1 266 3 is_stmt 1 view .LVU180
  267:Src/ds18b20.c ****   int16_t s_tem;
- 826              		.loc 1 267 3 view .LVU189
+ 818              		.loc 1 267 3 view .LVU181
  268:Src/ds18b20.c ****   float f_tem;
- 827              		.loc 1 268 3 view .LVU190
+ 819              		.loc 1 268 3 view .LVU182
  269:Src/ds18b20.c **** 
  270:Src/ds18b20.c ****   DS18B20_MatchRom(); /* 匹配ROM */
- 828              		.loc 1 270 3 view .LVU191
- 829 0004 FFF7FEFF 		bl	DS18B20_MatchRom
- 830              	.LVL87:
+ 820              		.loc 1 270 3 view .LVU183
+ 821 0004 FFF7FEFF 		bl	DS18B20_MatchRom
+ 822              	.LVL87:
  271:Src/ds18b20.c **** 
  272:Src/ds18b20.c ****   for (i = 0; i < 8; i++) {
- 831              		.loc 1 272 3 view .LVU192
- 832              		.loc 1 272 10 is_stmt 0 view .LVU193
- 833 0008 0024     		movs	r4, #0
- 834              		.loc 1 272 3 view .LVU194
- 835 000a 04E0     		b	.L63
- 836              	.LVL88:
- 837              	.L64:
+ 823              		.loc 1 272 3 view .LVU184
+ 824              		.loc 1 272 10 is_stmt 0 view .LVU185
+ 825 0008 0024     		movs	r4, #0
+ 826              		.loc 1 272 3 view .LVU186
+ 827 000a 04E0     		b	.L63
+ 828              	.LVL88:
+ 829              	.L64:
  273:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
- 838              		.loc 1 273 5 is_stmt 1 discriminator 3 view .LVU195
- 839 000c 285D     		ldrb	r0, [r5, r4]	@ zero_extendqisi2
- 840 000e FFF7FEFF 		bl	DS18B20_WriteByte
- 841              	.LVL89:
+ 830              		.loc 1 273 5 is_stmt 1 discriminator 3 view .LVU187
+ 831 000c 285D     		ldrb	r0, [r5, r4]	@ zero_extendqisi2
+ 832 000e FFF7FEFF 		bl	DS18B20_WriteByte
+ 833              	.LVL89:
  272:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
- 842              		.loc 1 272 22 discriminator 3 view .LVU196
+ 834              		.loc 1 272 23 is_stmt 0 discriminator 3 view .LVU188
+ 835 0012 0134     		adds	r4, r4, #1
+ 836              	.LVL90:
  272:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
- 843              		.loc 1 272 23 is_stmt 0 discriminator 3 view .LVU197
- 844 0012 0134     		adds	r4, r4, #1
- 845              	.LVL90:
+ 837              		.loc 1 272 23 discriminator 3 view .LVU189
+ 838 0014 E4B2     		uxtb	r4, r4
+ 839              	.LVL91:
+ 840              	.L63:
  272:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
- 846              		.loc 1 272 23 discriminator 3 view .LVU198
- 847 0014 E4B2     		uxtb	r4, r4
- 848              	.LVL91:
-ARM GAS  /tmp/ccCyGVCL.s 			page 22
-
-
- 849              	.L63:
- 272:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
- 850              		.loc 1 272 15 is_stmt 1 discriminator 1 view .LVU199
- 272:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
- 851              		.loc 1 272 3 is_stmt 0 discriminator 1 view .LVU200
- 852 0016 072C     		cmp	r4, #7
- 853 0018 F8D9     		bls	.L64
+ 841              		.loc 1 272 3 discriminator 1 view .LVU190
+ 842 0016 072C     		cmp	r4, #7
+ 843 0018 F8D9     		bls	.L64
  274:Src/ds18b20.c ****   }
  275:Src/ds18b20.c **** 
  276:Src/ds18b20.c ****   DS18B20_WriteByte(0X44); /* 开始转换 */
- 854              		.loc 1 276 3 is_stmt 1 view .LVU201
- 855 001a 4420     		movs	r0, #68
- 856 001c FFF7FEFF 		bl	DS18B20_WriteByte
- 857              	.LVL92:
+ 844              		.loc 1 276 3 is_stmt 1 view .LVU191
+ 845 001a 4420     		movs	r0, #68
+ 846 001c FFF7FEFF 		bl	DS18B20_WriteByte
+ 847              	.LVL92:
  277:Src/ds18b20.c **** 
  278:Src/ds18b20.c ****   DS18B20_MatchRom(); /* 匹配ROM */
- 858              		.loc 1 278 3 view .LVU202
- 859 0020 FFF7FEFF 		bl	DS18B20_MatchRom
- 860              	.LVL93:
+ 848              		.loc 1 278 3 view .LVU192
+ 849 0020 FFF7FEFF 		bl	DS18B20_MatchRom
+ 850              	.LVL93:
  279:Src/ds18b20.c **** 
+ARM GAS  /tmp/ccSHVwWu.s 			page 22
+
+
  280:Src/ds18b20.c ****   for (i = 0; i < 8; i++) {
- 861              		.loc 1 280 3 view .LVU203
- 862              		.loc 1 280 10 is_stmt 0 view .LVU204
- 863 0024 0024     		movs	r4, #0
- 864              		.loc 1 280 3 view .LVU205
- 865 0026 04E0     		b	.L65
- 866              	.LVL94:
- 867              	.L66:
+ 851              		.loc 1 280 3 view .LVU193
+ 852              		.loc 1 280 10 is_stmt 0 view .LVU194
+ 853 0024 0024     		movs	r4, #0
+ 854              		.loc 1 280 3 view .LVU195
+ 855 0026 04E0     		b	.L65
+ 856              	.LVL94:
+ 857              	.L66:
  281:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
- 868              		.loc 1 281 5 is_stmt 1 discriminator 3 view .LVU206
- 869 0028 285D     		ldrb	r0, [r5, r4]	@ zero_extendqisi2
- 870 002a FFF7FEFF 		bl	DS18B20_WriteByte
- 871              	.LVL95:
+ 858              		.loc 1 281 5 is_stmt 1 discriminator 3 view .LVU196
+ 859 0028 285D     		ldrb	r0, [r5, r4]	@ zero_extendqisi2
+ 860 002a FFF7FEFF 		bl	DS18B20_WriteByte
+ 861              	.LVL95:
  280:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
- 872              		.loc 1 280 22 discriminator 3 view .LVU207
+ 862              		.loc 1 280 23 is_stmt 0 discriminator 3 view .LVU197
+ 863 002e 0134     		adds	r4, r4, #1
+ 864              	.LVL96:
  280:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
- 873              		.loc 1 280 23 is_stmt 0 discriminator 3 view .LVU208
- 874 002e 0134     		adds	r4, r4, #1
- 875              	.LVL96:
+ 865              		.loc 1 280 23 discriminator 3 view .LVU198
+ 866 0030 E4B2     		uxtb	r4, r4
+ 867              	.LVL97:
+ 868              	.L65:
  280:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
- 876              		.loc 1 280 23 discriminator 3 view .LVU209
- 877 0030 E4B2     		uxtb	r4, r4
- 878              	.LVL97:
- 879              	.L65:
- 280:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
- 880              		.loc 1 280 15 is_stmt 1 discriminator 1 view .LVU210
- 280:Src/ds18b20.c ****     DS18B20_WriteByte(ds18b20_id[i]);
- 881              		.loc 1 280 3 is_stmt 0 discriminator 1 view .LVU211
- 882 0032 072C     		cmp	r4, #7
- 883 0034 F8D9     		bls	.L66
+ 869              		.loc 1 280 3 discriminator 1 view .LVU199
+ 870 0032 072C     		cmp	r4, #7
+ 871 0034 F8D9     		bls	.L66
  282:Src/ds18b20.c ****   }
  283:Src/ds18b20.c **** 
  284:Src/ds18b20.c ****   DS18B20_WriteByte(0XBE); /* 读温度值 */
- 884              		.loc 1 284 3 is_stmt 1 view .LVU212
- 885 0036 BE20     		movs	r0, #190
- 886 0038 FFF7FEFF 		bl	DS18B20_WriteByte
- 887              	.LVL98:
-ARM GAS  /tmp/ccCyGVCL.s 			page 23
-
-
+ 872              		.loc 1 284 3 is_stmt 1 view .LVU200
+ 873 0036 BE20     		movs	r0, #190
+ 874 0038 FFF7FEFF 		bl	DS18B20_WriteByte
+ 875              	.LVL98:
  285:Src/ds18b20.c **** 
  286:Src/ds18b20.c ****   tplsb = DS18B20_ReadByte();
- 888              		.loc 1 286 3 view .LVU213
- 889              		.loc 1 286 11 is_stmt 0 view .LVU214
- 890 003c FFF7FEFF 		bl	DS18B20_ReadByte
- 891              	.LVL99:
- 892 0040 0446     		mov	r4, r0
- 893              	.LVL100:
+ 876              		.loc 1 286 3 view .LVU201
+ 877              		.loc 1 286 11 is_stmt 0 view .LVU202
+ 878 003c FFF7FEFF 		bl	DS18B20_ReadByte
+ 879              	.LVL99:
+ 880 0040 0446     		mov	r4, r0
+ 881              	.LVL100:
  287:Src/ds18b20.c ****   tpmsb = DS18B20_ReadByte();
- 894              		.loc 1 287 3 is_stmt 1 view .LVU215
- 895              		.loc 1 287 11 is_stmt 0 view .LVU216
- 896 0042 FFF7FEFF 		bl	DS18B20_ReadByte
- 897              	.LVL101:
+ 882              		.loc 1 287 3 is_stmt 1 view .LVU203
+ 883              		.loc 1 287 11 is_stmt 0 view .LVU204
+ 884 0042 FFF7FEFF 		bl	DS18B20_ReadByte
+ 885              	.LVL101:
  288:Src/ds18b20.c **** 
  289:Src/ds18b20.c ****   s_tem = tpmsb << 8;
- 898              		.loc 1 289 3 is_stmt 1 view .LVU217
- 899              		.loc 1 289 17 is_stmt 0 view .LVU218
- 900 0046 0002     		lsls	r0, r0, #8
- 901              	.LVL102:
- 902              		.loc 1 289 9 view .LVU219
- 903 0048 03B2     		sxth	r3, r0
- 904              	.LVL103:
+ 886              		.loc 1 289 3 is_stmt 1 view .LVU205
+ 887              		.loc 1 289 17 is_stmt 0 view .LVU206
+ 888 0046 0002     		lsls	r0, r0, #8
+ 889              	.LVL102:
+ 890              		.loc 1 289 9 view .LVU207
+ 891 0048 03B2     		sxth	r3, r0
+ 892              	.LVL103:
  290:Src/ds18b20.c ****   s_tem = s_tem | tplsb;
- 905              		.loc 1 290 3 is_stmt 1 view .LVU220
- 906              		.loc 1 290 17 is_stmt 0 view .LVU221
- 907 004a 20B2     		sxth	r0, r4
- 908              	.LVL104:
+ 893              		.loc 1 290 3 is_stmt 1 view .LVU208
+ARM GAS  /tmp/ccSHVwWu.s 			page 23
+
+
+ 894              		.loc 1 290 17 is_stmt 0 view .LVU209
+ 895 004a 20B2     		sxth	r0, r4
+ 896              	.LVL104:
  291:Src/ds18b20.c **** 
  292:Src/ds18b20.c ****   if (s_tem < 0) /* 负温度 */
- 909              		.loc 1 292 3 is_stmt 1 view .LVU222
- 910              		.loc 1 292 6 is_stmt 0 view .LVU223
- 911 004c 1843     		orrs	r0, r0, r3
- 912              	.LVL105:
- 913              		.loc 1 292 6 view .LVU224
- 914 004e 06D4     		bmi	.L70
+ 897              		.loc 1 292 3 is_stmt 1 view .LVU210
+ 898              		.loc 1 292 6 is_stmt 0 view .LVU211
+ 899 004c 1843     		orrs	r0, r0, r3
+ 900              	.LVL105:
+ 901              		.loc 1 292 6 view .LVU212
+ 902 004e 06D4     		bmi	.L70
  293:Src/ds18b20.c ****   {
  294:Src/ds18b20.c ****     f_tem = (~s_tem + 1) * 0.0625f;
  295:Src/ds18b20.c ****   } else {
  296:Src/ds18b20.c ****     f_tem = s_tem * 0.0625f;
- 915              		.loc 1 296 5 is_stmt 1 view .LVU225
- 916              		.loc 1 296 19 is_stmt 0 view .LVU226
- 917 0050 FFF7FEFF 		bl	__aeabi_i2f
- 918              	.LVL106:
- 919              		.loc 1 296 11 view .LVU227
- 920 0054 4FF07651 		mov	r1, #1031798784
- 921 0058 FFF7FEFF 		bl	__aeabi_fmul
- 922              	.LVL107:
+ 903              		.loc 1 296 5 is_stmt 1 view .LVU213
+ 904              		.loc 1 296 19 is_stmt 0 view .LVU214
+ 905 0050 FFF7FEFF 		bl	__aeabi_i2f
+ 906              	.LVL106:
+ 907              		.loc 1 296 11 view .LVU215
+ 908 0054 4FF07651 		mov	r1, #1031798784
+ 909 0058 FFF7FEFF 		bl	__aeabi_fmul
+ 910              	.LVL107:
  297:Src/ds18b20.c ****   }
  298:Src/ds18b20.c **** 
  299:Src/ds18b20.c ****   return f_tem;
- 923              		.loc 1 299 3 is_stmt 1 view .LVU228
- 924              	.L62:
+ 911              		.loc 1 299 3 is_stmt 1 view .LVU216
+ 912              	.L62:
  300:Src/ds18b20.c **** }
- 925              		.loc 1 300 1 is_stmt 0 view .LVU229
- 926 005c 38BD     		pop	{r3, r4, r5, pc}
- 927              	.LVL108:
- 928              	.L70:
-ARM GAS  /tmp/ccCyGVCL.s 			page 24
+ 913              		.loc 1 300 1 is_stmt 0 view .LVU217
+ 914 005c 38BD     		pop	{r3, r4, r5, pc}
+ 915              	.LVL108:
+ 916              	.L70:
+ 294:Src/ds18b20.c ****   } else {
+ 917              		.loc 1 294 5 is_stmt 1 view .LVU218
+ 294:Src/ds18b20.c ****   } else {
+ 918              		.loc 1 294 26 is_stmt 0 view .LVU219
+ 919 005e 4042     		rsbs	r0, r0, #0
+ 920              	.LVL109:
+ 294:Src/ds18b20.c ****   } else {
+ 921              		.loc 1 294 26 view .LVU220
+ 922 0060 FFF7FEFF 		bl	__aeabi_i2f
+ 923              	.LVL110:
+ 294:Src/ds18b20.c ****   } else {
+ 924              		.loc 1 294 11 view .LVU221
+ 925 0064 4FF07651 		mov	r1, #1031798784
+ 926 0068 FFF7FEFF 		bl	__aeabi_fmul
+ 927              	.LVL111:
+ 294:Src/ds18b20.c ****   } else {
+ 928              		.loc 1 294 11 view .LVU222
+ 929 006c F6E7     		b	.L62
+ 930              		.cfi_endproc
+ 931              	.LFE77:
+ 933              		.text
+ 934              	.Letext0:
+ 935              		.file 2 "/usr/local/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include/machine/_default_type
+ 936              		.file 3 "/usr/local/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include/sys/_stdint.h"
+ARM GAS  /tmp/ccSHVwWu.s 			page 24
 
 
- 294:Src/ds18b20.c ****   } else {
- 929              		.loc 1 294 5 is_stmt 1 view .LVU230
- 294:Src/ds18b20.c ****   } else {
- 930              		.loc 1 294 26 is_stmt 0 view .LVU231
- 931 005e 4042     		rsbs	r0, r0, #0
- 932              	.LVL109:
- 294:Src/ds18b20.c ****   } else {
- 933              		.loc 1 294 26 view .LVU232
- 934 0060 FFF7FEFF 		bl	__aeabi_i2f
- 935              	.LVL110:
- 294:Src/ds18b20.c ****   } else {
- 936              		.loc 1 294 11 view .LVU233
- 937 0064 4FF07651 		mov	r1, #1031798784
- 938 0068 FFF7FEFF 		bl	__aeabi_fmul
- 939              	.LVL111:
- 294:Src/ds18b20.c ****   } else {
- 940              		.loc 1 294 11 view .LVU234
- 941 006c F6E7     		b	.L62
- 942              		.cfi_endproc
- 943              	.LFE77:
- 945              		.text
- 946              	.Letext0:
- 947              		.file 2 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h"
- 948              		.file 3 "Drivers/CMSIS/Include/core_cm3.h"
- 949              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
- 950              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 951              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
- 952              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
-ARM GAS  /tmp/ccCyGVCL.s 			page 25
+ 937              		.file 4 "Drivers/CMSIS/Include/core_cm3.h"
+ 938              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 939              		.file 6 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 940              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 941              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ARM GAS  /tmp/ccSHVwWu.s 			page 25
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 ds18b20.c
-     /tmp/ccCyGVCL.s:16     .text.DS18B20_Mode_OUT_PP:0000000000000000 $t
-     /tmp/ccCyGVCL.s:23     .text.DS18B20_Mode_OUT_PP:0000000000000000 DS18B20_Mode_OUT_PP
-     /tmp/ccCyGVCL.s:64     .text.DS18B20_Mode_OUT_PP:0000000000000020 $d
-     /tmp/ccCyGVCL.s:69     .text.DS18B20_Mode_IN_NP:0000000000000000 $t
-     /tmp/ccCyGVCL.s:75     .text.DS18B20_Mode_IN_NP:0000000000000000 DS18B20_Mode_IN_NP
-     /tmp/ccCyGVCL.s:114    .text.DS18B20_Mode_IN_NP:000000000000001c $d
-     /tmp/ccCyGVCL.s:119    .text.DS18B20_Reset:0000000000000000 $t
-     /tmp/ccCyGVCL.s:125    .text.DS18B20_Reset:0000000000000000 DS18B20_Reset
-     /tmp/ccCyGVCL.s:165    .text.DS18B20_Reset:000000000000002c $d
-     /tmp/ccCyGVCL.s:170    .text.DS18B20_WriteByte:0000000000000000 $t
-     /tmp/ccCyGVCL.s:176    .text.DS18B20_WriteByte:0000000000000000 DS18B20_WriteByte
-     /tmp/ccCyGVCL.s:283    .text.DS18B20_WriteByte:0000000000000068 $d
-     /tmp/ccCyGVCL.s:288    .text.DS18B20_Presence:0000000000000000 $t
-     /tmp/ccCyGVCL.s:294    .text.DS18B20_Presence:0000000000000000 DS18B20_Presence
-     /tmp/ccCyGVCL.s:398    .text.DS18B20_Presence:0000000000000054 $d
-     /tmp/ccCyGVCL.s:403    .text.DS18B20_SkipRom:0000000000000000 $t
-     /tmp/ccCyGVCL.s:409    .text.DS18B20_SkipRom:0000000000000000 DS18B20_SkipRom
-     /tmp/ccCyGVCL.s:436    .text.DS18B20_MatchRom:0000000000000000 $t
-     /tmp/ccCyGVCL.s:442    .text.DS18B20_MatchRom:0000000000000000 DS18B20_MatchRom
-     /tmp/ccCyGVCL.s:469    .text.DS18B20_ReadBit:0000000000000000 $t
-     /tmp/ccCyGVCL.s:475    .text.DS18B20_ReadBit:0000000000000000 DS18B20_ReadBit
-     /tmp/ccCyGVCL.s:531    .text.DS18B20_ReadBit:0000000000000038 $d
-     /tmp/ccCyGVCL.s:536    .text.DS18B20_ReadByte:0000000000000000 $t
-     /tmp/ccCyGVCL.s:542    .text.DS18B20_ReadByte:0000000000000000 DS18B20_ReadByte
-     /tmp/ccCyGVCL.s:601    .text.DS18B20_Init:0000000000000000 $t
-     /tmp/ccCyGVCL.s:608    .text.DS18B20_Init:0000000000000000 DS18B20_Init
-     /tmp/ccCyGVCL.s:640    .text.DS18B20_Init:000000000000001c $d
-     /tmp/ccCyGVCL.s:647    .text.DS18B20_GetTemp_SkipRom:0000000000000000 $t
-     /tmp/ccCyGVCL.s:654    .text.DS18B20_GetTemp_SkipRom:0000000000000000 DS18B20_GetTemp_SkipRom
-     /tmp/ccCyGVCL.s:740    .text.DS18B20_ReadId:0000000000000000 $t
-     /tmp/ccCyGVCL.s:747    .text.DS18B20_ReadId:0000000000000000 DS18B20_ReadId
-     /tmp/ccCyGVCL.s:802    .text.DS18B20_GetTemp_MatchRom:0000000000000000 $t
-     /tmp/ccCyGVCL.s:809    .text.DS18B20_GetTemp_MatchRom:0000000000000000 DS18B20_GetTemp_MatchRom
+     /tmp/ccSHVwWu.s:16     .text.DS18B20_Mode_OUT_PP:0000000000000000 $t
+     /tmp/ccSHVwWu.s:23     .text.DS18B20_Mode_OUT_PP:0000000000000000 DS18B20_Mode_OUT_PP
+     /tmp/ccSHVwWu.s:64     .text.DS18B20_Mode_OUT_PP:0000000000000020 $d
+     /tmp/ccSHVwWu.s:69     .text.DS18B20_Mode_IN_NP:0000000000000000 $t
+     /tmp/ccSHVwWu.s:75     .text.DS18B20_Mode_IN_NP:0000000000000000 DS18B20_Mode_IN_NP
+     /tmp/ccSHVwWu.s:114    .text.DS18B20_Mode_IN_NP:000000000000001c $d
+     /tmp/ccSHVwWu.s:119    .text.DS18B20_Reset:0000000000000000 $t
+     /tmp/ccSHVwWu.s:125    .text.DS18B20_Reset:0000000000000000 DS18B20_Reset
+     /tmp/ccSHVwWu.s:165    .text.DS18B20_Reset:000000000000002c $d
+     /tmp/ccSHVwWu.s:170    .text.DS18B20_WriteByte:0000000000000000 $t
+     /tmp/ccSHVwWu.s:176    .text.DS18B20_WriteByte:0000000000000000 DS18B20_WriteByte
+     /tmp/ccSHVwWu.s:281    .text.DS18B20_WriteByte:0000000000000068 $d
+     /tmp/ccSHVwWu.s:286    .text.DS18B20_Presence:0000000000000000 $t
+     /tmp/ccSHVwWu.s:292    .text.DS18B20_Presence:0000000000000000 DS18B20_Presence
+     /tmp/ccSHVwWu.s:394    .text.DS18B20_Presence:0000000000000054 $d
+     /tmp/ccSHVwWu.s:399    .text.DS18B20_SkipRom:0000000000000000 $t
+     /tmp/ccSHVwWu.s:405    .text.DS18B20_SkipRom:0000000000000000 DS18B20_SkipRom
+     /tmp/ccSHVwWu.s:432    .text.DS18B20_MatchRom:0000000000000000 $t
+     /tmp/ccSHVwWu.s:438    .text.DS18B20_MatchRom:0000000000000000 DS18B20_MatchRom
+     /tmp/ccSHVwWu.s:465    .text.DS18B20_ReadBit:0000000000000000 $t
+     /tmp/ccSHVwWu.s:471    .text.DS18B20_ReadBit:0000000000000000 DS18B20_ReadBit
+     /tmp/ccSHVwWu.s:527    .text.DS18B20_ReadBit:0000000000000038 $d
+     /tmp/ccSHVwWu.s:532    .text.DS18B20_ReadByte:0000000000000000 $t
+     /tmp/ccSHVwWu.s:538    .text.DS18B20_ReadByte:0000000000000000 DS18B20_ReadByte
+     /tmp/ccSHVwWu.s:595    .text.DS18B20_Init:0000000000000000 $t
+     /tmp/ccSHVwWu.s:602    .text.DS18B20_Init:0000000000000000 DS18B20_Init
+     /tmp/ccSHVwWu.s:634    .text.DS18B20_Init:000000000000001c $d
+     /tmp/ccSHVwWu.s:641    .text.DS18B20_GetTemp_SkipRom:0000000000000000 $t
+     /tmp/ccSHVwWu.s:648    .text.DS18B20_GetTemp_SkipRom:0000000000000000 DS18B20_GetTemp_SkipRom
+     /tmp/ccSHVwWu.s:734    .text.DS18B20_ReadId:0000000000000000 $t
+     /tmp/ccSHVwWu.s:741    .text.DS18B20_ReadId:0000000000000000 DS18B20_ReadId
+     /tmp/ccSHVwWu.s:794    .text.DS18B20_GetTemp_MatchRom:0000000000000000 $t
+     /tmp/ccSHVwWu.s:801    .text.DS18B20_GetTemp_MatchRom:0000000000000000 DS18B20_GetTemp_MatchRom
 
 UNDEFINED SYMBOLS
 HAL_GPIO_Init

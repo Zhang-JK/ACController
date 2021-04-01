@@ -8,10 +8,10 @@
 //   return len;
 // }
 
-int servo1_up = 2000;
-int servo1_down = 1300;
-int servo2_up = 1750;
-int servo2_down = 1100;
+int servo1_up = 1600;
+int servo1_down = 950;
+int servo2_up = 1600;
+int servo2_down = 950;
 
 struct State state;
 
@@ -160,6 +160,11 @@ void update_info() {
     if(state.re_sw != REMOTE_ON) {
         state.sw = HAL_GPIO_ReadPin(MAIN_SWITCH_GPIO_Port, MAIN_SWITCH_Pin) == GPIO_PIN_RESET ? SYS_ON : SYS_OFF;
         state.mode = ONOFF_MODE;
+        if(Uart1_Rx_Cnt != 0) {
+            Uart1_Rx_Cnt = 0;
+            memset(RxBuffer, 0x00, sizeof(RxBuffer));
+            printf("Remote control is not ON\n");
+        }
     }
     if(state.re_sw == REMOTE_ON && Uart1_Rx_Cnt != 0) bluetooth_decode(msg);
     state.on_sw = HAL_GPIO_ReadPin(ON_SWITCH_GPIO_Port, ON_SWITCH_Pin) == GPIO_PIN_RESET ? ON_OFF : ON_ON;
@@ -175,8 +180,8 @@ void update_info() {
         strcpy(msg, "Change mode to ");
         strcat(msg, state.mode == ONOFF_MODE ? "ONOFF mode\n" : state.mode == TIME_MODE ? "TIME mode\n" : "TEMP mode\n");
         if(state.mode == TIME_MODE) {state.startTime = runningTime; state.shutDownTime = runningTime;}
-        changeLight(state.mode, state.lightOff);
     }
+    changeLight(state.mode, state.lightOff);
     if(msg[0] != '0') printf(msg);
 }
 
@@ -221,6 +226,7 @@ void send_state() {
     printf("\n");
 }
 
+int validCheckCounter = 0;
 int initTemp = 0;
 void move(enum SystemSwitch pos) {
     if(pos == SYS_ON) {
@@ -235,7 +241,7 @@ void move(enum SystemSwitch pos) {
         }
 
         state.startTime = runningTime;
-        initTemp = state.temp;
+        if (state.mode == TEMP_MODE) {initTemp = state.temp; validCheckCounter = 0;}
         HAL_GPIO_WritePin(LED_ON_BOARD_GPIO_Port, LED_ON_BOARD_Pin, GPIO_PIN_RESET);
     }
 
@@ -274,6 +280,21 @@ void tempCheck() {
         state.tempAchieveCounter = 0;
     }
     else checkounter++;
+
+    if(validCheckCounter >= 180){
+        if(state.sw == SYS_ON && state.temp > initTemp) {
+            validCheckCounter++;
+            if (validCheckCounter >= 188) {
+                state.sw = SYS_OFF;
+                move(state.sw);
+                if(servo1_up < 1900)
+                    servo1_up += 100;
+                HAL_Delay(1000);
+            }
+        }
+        else validCheckCounter = 0;
+    }
+    else validCheckCounter++;
 }
 
 void timeCheck() {

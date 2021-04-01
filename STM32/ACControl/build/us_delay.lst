@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc5dfU04.s 			page 1
+ARM GAS  /tmp/cccQKtbP.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc5dfU04.s 			page 1
   40 0006 034A     		ldr	r2, .L2+4
   41 0008 1368     		ldr	r3, [r2]
   42 000a 0133     		adds	r3, r3, #1
-ARM GAS  /tmp/cc5dfU04.s 			page 2
+ARM GAS  /tmp/cccQKtbP.s 			page 2
 
 
   43 000c 1360     		str	r3, [r2]
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc5dfU04.s 			page 1
   97              	bsp_delay_us:
   98              	.LVL2:
   99              	.LFB70:
-ARM GAS  /tmp/cc5dfU04.s 			page 3
+ARM GAS  /tmp/cccQKtbP.s 			page 3
 
 
   18:Src/us_delay.c **** 
@@ -136,25 +136,25 @@ ARM GAS  /tmp/cc5dfU04.s 			page 1
   20:Src/us_delay.c ****   uint16_t differ = 0xffff - us;
  110              		.loc 1 20 3 is_stmt 1 view .LVU11
  111              		.loc 1 20 12 is_stmt 0 view .LVU12
- 112 0002 C343     		mvns	r3, r0
- 113 0004 9BB2     		uxth	r3, r3
- 114              	.LVL3:
+ 112 0002 C043     		mvns	r0, r0
+ 113              	.LVL3:
+ 114              		.loc 1 20 12 view .LVU13
+ 115 0004 83B2     		uxth	r3, r0
+ 116              	.LVL4:
   21:Src/us_delay.c **** 
   22:Src/us_delay.c ****   us_delay_timeout = 0;
- 115              		.loc 1 22 3 is_stmt 1 view .LVU13
- 116              		.loc 1 22 20 is_stmt 0 view .LVU14
- 117 0006 084A     		ldr	r2, .L11
- 118 0008 0021     		movs	r1, #0
- 119 000a 1160     		str	r1, [r2]
+ 117              		.loc 1 22 3 is_stmt 1 view .LVU14
+ 118              		.loc 1 22 20 is_stmt 0 view .LVU15
+ 119 0006 084A     		ldr	r2, .L11
+ 120 0008 0021     		movs	r1, #0
+ 121 000a 1160     		str	r1, [r2]
   23:Src/us_delay.c ****   __HAL_TIM_SET_COUNTER(&htim3, differ);
- 120              		.loc 1 23 3 is_stmt 1 view .LVU15
- 121 000c 0748     		ldr	r0, .L11+4
- 122              	.LVL4:
- 123              		.loc 1 23 3 is_stmt 0 view .LVU16
+ 122              		.loc 1 23 3 is_stmt 1 view .LVU16
+ 123 000c 0748     		ldr	r0, .L11+4
  124 000e 0268     		ldr	r2, [r0]
  125 0010 5362     		str	r3, [r2, #36]
   24:Src/us_delay.c ****   HAL_TIM_Base_Start_IT(&htim3);
- 126              		.loc 1 24 3 is_stmt 1 view .LVU17
+ 126              		.loc 1 24 3 view .LVU17
  127 0012 FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
  128              	.LVL5:
   25:Src/us_delay.c **** 
@@ -164,77 +164,76 @@ ARM GAS  /tmp/cc5dfU04.s 			page 1
   27:Src/us_delay.c ****     ;
  131              		.loc 1 27 5 discriminator 1 view .LVU19
   26:Src/us_delay.c ****     ;
- 132              		.loc 1 26 9 discriminator 1 view .LVU20
+ 132              		.loc 1 26 27 is_stmt 0 discriminator 1 view .LVU20
+ 133 0016 044B     		ldr	r3, .L11
+ 134 0018 1B68     		ldr	r3, [r3]
   26:Src/us_delay.c ****     ;
- 133              		.loc 1 26 27 is_stmt 0 discriminator 1 view .LVU21
- 134 0016 044B     		ldr	r3, .L11
- 135 0018 1B68     		ldr	r3, [r3]
-  26:Src/us_delay.c ****     ;
- 136              		.loc 1 26 9 discriminator 1 view .LVU22
- 137 001a 002B     		cmp	r3, #0
- 138 001c FBD0     		beq	.L9
+ 135              		.loc 1 26 9 discriminator 1 view .LVU21
+ 136 001a 002B     		cmp	r3, #0
+ 137 001c FBD0     		beq	.L9
   28:Src/us_delay.c ****   HAL_TIM_Base_Stop(&htim3);
- 139              		.loc 1 28 3 is_stmt 1 view .LVU23
- 140 001e 0348     		ldr	r0, .L11+4
- 141 0020 FFF7FEFF 		bl	HAL_TIM_Base_Stop
- 142              	.LVL6:
-ARM GAS  /tmp/cc5dfU04.s 			page 4
-
-
+ 138              		.loc 1 28 3 is_stmt 1 view .LVU22
+ 139 001e 0348     		ldr	r0, .L11+4
+ 140 0020 FFF7FEFF 		bl	HAL_TIM_Base_Stop
+ 141              	.LVL6:
   29:Src/us_delay.c **** }
- 143              		.loc 1 29 1 is_stmt 0 view .LVU24
- 144 0024 08BD     		pop	{r3, pc}
- 145              	.L12:
- 146 0026 00BF     		.align	2
- 147              	.L11:
- 148 0028 00000000 		.word	.LANCHOR0
- 149 002c 00000000 		.word	htim3
- 150              		.cfi_endproc
- 151              	.LFE70:
- 153              		.global	us_delay_timeout
- 154              		.section	.bss.counterD,"aw",%nobits
- 155              		.align	2
- 156              		.set	.LANCHOR1,. + 0
- 159              	counterD:
- 160 0000 00000000 		.space	4
- 161              		.section	.bss.us_delay_timeout,"aw",%nobits
- 162              		.align	2
- 163              		.set	.LANCHOR0,. + 0
- 166              	us_delay_timeout:
- 167 0000 00000000 		.space	4
- 168              		.text
- 169              	.Letext0:
- 170              		.file 2 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h"
- 171              		.file 3 "Drivers/CMSIS/Include/core_cm3.h"
- 172              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
- 173              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 174              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
- 175              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
- 176              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
- 177              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
- 178              		.file 10 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stddef.h"
- 179              		.file 11 "/usr/include/newlib/sys/_types.h"
- 180              		.file 12 "/usr/include/newlib/sys/reent.h"
- 181              		.file 13 "/usr/include/newlib/sys/lock.h"
- 182              		.file 14 "Inc/tim.h"
-ARM GAS  /tmp/cc5dfU04.s 			page 5
+ 142              		.loc 1 29 1 is_stmt 0 view .LVU23
+ARM GAS  /tmp/cccQKtbP.s 			page 4
+
+
+ 143 0024 08BD     		pop	{r3, pc}
+ 144              	.L12:
+ 145 0026 00BF     		.align	2
+ 146              	.L11:
+ 147 0028 00000000 		.word	.LANCHOR0
+ 148 002c 00000000 		.word	htim3
+ 149              		.cfi_endproc
+ 150              	.LFE70:
+ 152              		.global	us_delay_timeout
+ 153              		.section	.bss.counterD,"aw",%nobits
+ 154              		.align	2
+ 155              		.set	.LANCHOR1,. + 0
+ 158              	counterD:
+ 159 0000 00000000 		.space	4
+ 160              		.section	.bss.us_delay_timeout,"aw",%nobits
+ 161              		.align	2
+ 162              		.set	.LANCHOR0,. + 0
+ 165              	us_delay_timeout:
+ 166 0000 00000000 		.space	4
+ 167              		.text
+ 168              	.Letext0:
+ 169              		.file 2 "/usr/local/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include/machine/_default_type
+ 170              		.file 3 "/usr/local/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include/sys/_stdint.h"
+ 171              		.file 4 "Drivers/CMSIS/Include/core_cm3.h"
+ 172              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 173              		.file 6 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 174              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 175              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 176              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 177              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 178              		.file 11 "/usr/local/gcc-arm-none-eabi-8-2019-q3-update/lib/gcc/arm-none-eabi/8.3.1/include/stddef
+ 179              		.file 12 "/usr/local/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include/sys/_types.h"
+ 180              		.file 13 "/usr/local/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include/sys/reent.h"
+ 181              		.file 14 "/usr/local/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include/sys/lock.h"
+ 182              		.file 15 "Inc/tim.h"
+ARM GAS  /tmp/cccQKtbP.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 us_delay.c
-     /tmp/cc5dfU04.s:16     .text.timeoutCallback:0000000000000000 $t
-     /tmp/cc5dfU04.s:24     .text.timeoutCallback:0000000000000000 timeoutCallback
-     /tmp/cc5dfU04.s:49     .text.timeoutCallback:0000000000000010 $d
-     /tmp/cc5dfU04.s:55     .text.usDelayInit:0000000000000000 $t
-     /tmp/cc5dfU04.s:62     .text.usDelayInit:0000000000000000 usDelayInit
-     /tmp/cc5dfU04.s:84     .text.usDelayInit:0000000000000010 $d
-     /tmp/cc5dfU04.s:90     .text.bsp_delay_us:0000000000000000 $t
-     /tmp/cc5dfU04.s:97     .text.bsp_delay_us:0000000000000000 bsp_delay_us
-     /tmp/cc5dfU04.s:148    .text.bsp_delay_us:0000000000000028 $d
-     /tmp/cc5dfU04.s:166    .bss.us_delay_timeout:0000000000000000 us_delay_timeout
-     /tmp/cc5dfU04.s:155    .bss.counterD:0000000000000000 $d
-     /tmp/cc5dfU04.s:159    .bss.counterD:0000000000000000 counterD
-     /tmp/cc5dfU04.s:162    .bss.us_delay_timeout:0000000000000000 $d
+     /tmp/cccQKtbP.s:16     .text.timeoutCallback:0000000000000000 $t
+     /tmp/cccQKtbP.s:24     .text.timeoutCallback:0000000000000000 timeoutCallback
+     /tmp/cccQKtbP.s:49     .text.timeoutCallback:0000000000000010 $d
+     /tmp/cccQKtbP.s:55     .text.usDelayInit:0000000000000000 $t
+     /tmp/cccQKtbP.s:62     .text.usDelayInit:0000000000000000 usDelayInit
+     /tmp/cccQKtbP.s:84     .text.usDelayInit:0000000000000010 $d
+     /tmp/cccQKtbP.s:90     .text.bsp_delay_us:0000000000000000 $t
+     /tmp/cccQKtbP.s:97     .text.bsp_delay_us:0000000000000000 bsp_delay_us
+     /tmp/cccQKtbP.s:147    .text.bsp_delay_us:0000000000000028 $d
+     /tmp/cccQKtbP.s:165    .bss.us_delay_timeout:0000000000000000 us_delay_timeout
+     /tmp/cccQKtbP.s:154    .bss.counterD:0000000000000000 $d
+     /tmp/cccQKtbP.s:158    .bss.counterD:0000000000000000 counterD
+     /tmp/cccQKtbP.s:161    .bss.us_delay_timeout:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 HAL_TIM_RegisterCallback
